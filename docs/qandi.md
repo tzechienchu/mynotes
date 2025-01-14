@@ -71,3 +71,11 @@
 ### QSIS 地震
 
 [QSIS Web Site](https://smartsensors.earth.sinica.edu.tw/)
+
+### Life create boundary 
+
+    Let the university unable to see
+    It is not saying inside the cell physics not apply.
+    It is saying the condition is different
+    Boundary is created 
+    Like black hole
