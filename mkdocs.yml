@@ -9,6 +9,7 @@ nav:
   - 'Schematics': 'schematics.md'
   - 'Pins': 'pins.md'
   - 'Tutorial': 'tutorial.md'
+  - 'Resources': 'resources.md'
   - 'Firmware Spec Template': 'firmware_spec.md'
 
 markdown_extensions:
