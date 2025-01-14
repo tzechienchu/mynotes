@@ -1,0 +1,24 @@
+site_name: Frank's Notes
+theme:
+  name: material
+nav:
+  - 'Help': 'help.md'
+  - '2025-01': 'Y2025-01.md'
+  - '2024': 'Y2024.md'
+  - 'Schematics': 'schematics.md'
+  - 'Pins': 'pins.md'
+  - 'Tutorial': 'tutorial.md'
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+theme:
+  name: material
+  features:
+    - content.code.select
+    - content.code.copy
