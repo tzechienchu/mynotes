@@ -2,7 +2,7 @@ site_name: Frank's Notes
 theme:
   name: material
 nav:
-  - 'Help': 'help.md'
+  - 'Help': 'index.md'
   - 'Quotes & Ideas': 'qandi.md'
   - '2025-01': 'Y2025-01.md'
   - '2024': 'Y2024.md'
