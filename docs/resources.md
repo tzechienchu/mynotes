@@ -23,3 +23,41 @@ Mob Programming Example
 [https://kastner.ucsd.edu/wp-content/uploads/2014/04/admin/fpl-riffa2.pdf](https://kastner.ucsd.edu/wp-content/uploads/2014/04/admin/fpl-riffa2.pdf)
 
 [https://github.com/KastnerRG/riffa](https://github.com/KastnerRG/riffa)
+
+[Riffa AXI in OpenCore](https://opencores.org/websvn/listing?repname=qaz_libs&path=%2Fqaz_libs%2Ftrunk%2FPCIe%2Fsrc%2FRIFFA%2F&rev=43)
+
+[Some Riffa User](https://gitlab.in2p3.fr/csantos/apc/WA105/ml605-parisroc-wa105-firmware/-/tree/master/src)
+
+## FPGA
+
+### SYZYGY Interface
+
+SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
+
+![Opal Kelly](images/2025/syzygy-brain-peripherals_jpg_md-xl.jpg)
+
+### HLS
+
+[https://www.acri.c.titech.ac.jp/wordpress/](https://www.acri.c.titech.ac.jp/wordpress/)
+
+[https://github.com/acri-room/hls-challenge-labs](https://github.com/acri-room/hls-challenge-labs)
+
+[https://acri-vhls-challenge.web.app/](https://acri-vhls-challenge.web.app/)
+
+## DAQ
+
+### Use hdmi video capture as data input
+
+[HDMI Output as Data to PC](https://github.com/steve-m/hsdaoh)
+
+### A 2 GHz oscilloscope for everyone
+
+[https://www.crowdsupply.com/andy-haas/haasoscope-pro](https://www.crowdsupply.com/andy-haas/haasoscope-pro)
+
+[https://github.com/drandyhaas/HaasoscopePro](https://github.com/drandyhaas/HaasoscopePro)
+
+### DAQ Sync
+
+[data-acquisition-synchronisation](https://dewesoft.com/blog/data-acquisition-synchronisation)
+
+

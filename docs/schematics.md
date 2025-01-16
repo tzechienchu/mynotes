@@ -11,7 +11,13 @@
 
 ### USB2 FT2232
 
+[ftdi-asynchronous-fifo-usb-communication-with-fpga](https://rohitksingh.in/posts/ftdi-asynchronous-fifo-usb-communication-with-fpga/)
+
 [FT245 FIFO Design](https://github.com/esynr3z/proto245)
+
+![FT245 FIFO on USB104 A7](images/2025/Screenshot%20from%202025-01-16%2016-09-04.png)
+
+![FT245 FIFO on USB104 A7](images/2025/Screenshot%20from%202025-01-16%2016-19-43.png)
 
 ### USB3 FT60X Schematics
 
