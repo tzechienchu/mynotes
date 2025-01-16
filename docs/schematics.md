@@ -15,6 +15,12 @@
 
 ![FT60X Data Sheet](schematics/Screenshot from 2025-01-06 16-38-42.jpg){: style="height:300px"}
 
+## Lattice
+
+### ICEStick 1K
+
+ICEStick 1K IO and Platform Define for Litex [icestick1Kio.md](subtitles/icestick1Kio.md)
+
 ## Open Ephys
 
 ### ONIX

@@ -25,6 +25,29 @@
 | AC5 | ClockOut |   output  |
 | AC6 | OE#      |   input   |
 
+### PyFTID Doc
+
+[PyFTDI Doc](https://eblot.github.io/pyftdi/index.html)
+
+### SPI and Other Pins
+
+![FT2232 IO](pins/Screenshot%20from%202025-01-14%2017-07-20.png){: style="height:600px"}
+
+### FT2232 Code
+
+[Python FTDI for SPI](https://www.alexallmont.com/spi-refresher/).
+
+``` py
+from pyftdi.ftdi import Ftdi
+Ftdi.show_devices()
+from pyftdi.spi import SpiController
+
+spi.configure('ftdi://ftdi:2232h:1:7b/1')
+slave = spi.get_port(cs=1, freq=10E6, mode=2)
+write_buf = b'\x01\x02\x03'
+read_buf = slave.exchange(write_buf, duplex=True)
+```
+
 ## Raspberry Pi
 
 ### Pi 4 IO

@@ -9,6 +9,8 @@
 
 [Litex MIPI CSI](https://github.com/gatecat/litex-nexus-mipi)
 
+ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
+
 ## Software Engineering
 
 Mob Programming
