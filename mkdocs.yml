@@ -10,6 +10,7 @@ nav:
   - 'Pins': 'pins.md'
   - 'Tutorial': 'tutorial.md'
   - 'Resources': 'resources.md'
+  - 'Papers': 'papers.md'
   - 'Firmware Spec Template': 'firmware_spec.md'
   - 'Board Spec Template': 'board_spec.md'
 
