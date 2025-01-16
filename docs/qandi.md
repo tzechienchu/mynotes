@@ -172,4 +172,8 @@
 
 ### company can only claim dominance
 
-    History has shown us that one company can only claim dominance over that technology for so long — and the bigger it gets, the more energy it takes to maintain it.
+    History has shown us 
+    that one company can only claim dominance 
+    over that technology for so long — 
+    and the bigger it gets, 
+    the more energy it takes to maintain it.
