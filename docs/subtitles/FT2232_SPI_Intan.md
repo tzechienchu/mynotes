@@ -1,6 +1,6 @@
 # FT2232 for Intan through SPI
 
-PYFTDI Github 
+PYFTDI Github
 [https://github.com/eblot/pyftdi](https://github.com/eblot/pyftdi)
 
 ```py

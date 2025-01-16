@@ -2,13 +2,18 @@
 
 ## Software Engineering
 
+### Mob Programming
+
+![mob](images/2025/Screenshot%20from%202024-09-12%2012-18-24.png)
+
 Mob Programming
 [woodyzuill.com](https://woodyzuill.com/).
 
 Mob Programming Example
 [Youtube Video](https://www.youtube.com/watch?v=p_pvslS4gEI&t=4s).
 
-Agile Firmware and Hardware Design
+### Agile Firmware and Hardware Design
+
 [Youtube Video](https://www.youtube.com/watch?v=rG4rC5oLx7Y&t=1s)
 
 ## RIffa

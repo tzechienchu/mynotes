@@ -17,8 +17,19 @@
 
 ## Detail Block
 
-### Power Source
+### Power 
+
+    Type-C 20V
+    20V to 12V
+    12V to 5V
+    5V to 3.3V
+    5V to 2.5V
+    5V to 1.8V
 
 ### Control Path
 
+    SPI CS/CLK -> LVDS
+
 ### Data Path
+
+    SPI MISO/MOSI <-> LVDS

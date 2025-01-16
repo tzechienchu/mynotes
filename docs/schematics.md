@@ -7,9 +7,13 @@
 
 ![FPGA Daisy Chain JTAG](schematics/Screenshot%20from%202024-12-31 16-09-01.jpg){: style="height:300px"}
 
-## FT60X
+## FTDI
 
-### FT60X Schematics
+### USB2 FT2232
+
+[FT245 FIFO Design](https://github.com/esynr3z/proto245)
+
+### USB3 FT60X Schematics
 
 ![FT60X](schematics/Screenshot%20from%202024-12-30 16-55-36.jpg){: style="height:600px"}
 
@@ -21,14 +25,30 @@
 
 ICEStick 1K IO and Platform Define for Litex [icestick1Kio.md](subtitles/icestick1Kio.md)
 
+### CrossLink-NX USB3
+
+USB3 Support CrossLinkU-NX
+
+[Lattice CrossLink-NX](https://www.latticesemi.com/Products/FPGAandCPLD/CrossLink-NX)
+
+[tinyCLUNX33 Kit](https://tinyclunx33.tinyvision.ai/)
+
+### PICO + ICE40
+
+[pico-ice RP2040 plus Lattice iCE40UP5K FPGA](https://www.tindie.com/products/tinyvision_ai/pico-ice-rp2040-plus-lattice-ice40up5k-fpga/)
+
+[https://github.com/tinyvision-ai-inc/pico-ice-sdk/](https://github.com/tinyvision-ai-inc/pico-ice-sdk/)
+
 ## Open Ephys
 
-### ONIX
+### ONIX Schematics
 
 Open Ephys FMC-Host [fmc-host_schematic.pdf](schematics/fmc-host_schematic.pdf)
 
 Open Ephys Breakout Board [breakout_schematic.pdf](schematics/breakout_schematic.pdf)
 
 ## Sparkfun
+
+### MicroMod
 
 Sprkfun [MicroMod_ATP_Carrier_Board_Schematic.pdf](schematics/MicroMod_ATP_Carrier_Board_Schematic.pdf)
