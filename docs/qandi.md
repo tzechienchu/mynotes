@@ -55,7 +55,66 @@
     不費力而安詳
     他完成他完美的旨意。”
 
+### I walked today where Jesus walks
+
+    I walked today where Jesus walks
+    今天，我⾛在耶穌⾛過的路上
+    Down the crowded street
+    下到擁擠的街道
+    Where the children have no place to play
+    那裡，孩童無處可玩
+    Where the homeless wait
+    那裡，流浪的⼈等待
+    For life to take them in
+    等候帶領進入⽣命
+    Yes, I walked with Jesus there today
+    是的，我與耶穌⾛在那裡
+    I saw the Lord behind the eyes
+    在無數眼睛的後⾯，我看⾒了主
+    Of the broken men, And I felt His wounded hand reach out
+    在破碎的⼈⼼背後，我感覺祂伸出釘痕的⼿
+    And as the careless traffic sped
+    當無情的⾞輛急馳⽽過
+    Along the other side
+    獨⾃在街道另⼀邊
+    I saw Jesus walk the streets today
+    今天，我看⾒耶穌⾛在街上
+    Where the least of all
+    那裡最卑微的⼈
+    Find no place to turn
+    無家可歸
+    And they fall without a name
+    他們倒臥街頭，依然默默無名
+    Jesus walks with these
+    耶穌與他們同⾏
+    The hungry and the lost
+    那些飢餓與失喪
+    Off’ring water from a cup and bread
+    獻上杯⽔與麵包
+    The Bread of Life, the living Stream
+    是⽣命的糧與活⽔
+    Where teeming million cross
+    那裡充滿百萬個⼗字架
+    I saw Jesus walk the streets today
+    今天，我看⾒耶穌⾛在街上
+    Where the least of all
+    那裡最卑微的⼈
+    Find no place to turn
+    無家可歸
+    To find that God, yes, God Himself
+    要找到上帝，是的，活⽣⽣的上帝
+    Walks there
+    ⾛去那裡
+
 ## Ideas
+
+### 如果思考需要語言 那麼靈感是甚麼？ 圖像思考是甚麼？
+
+### Concision thinking is hard. Not very one live consciously
+
+### Customer first design
+
+    Talk about pain point, not solutions.
 
 ### 我們的限制來自於我們的工具 工具 限制 我們的想像力
 
@@ -81,7 +140,7 @@
 
 [QSIS Web Site](https://smartsensors.earth.sinica.edu.tw/)
 
-### Life create boundary 
+### Life create boundary
 
     Let the university unable to see
     It is not saying inside the cell physics not apply.
@@ -98,3 +157,19 @@
     魚頭人吞下所有的小魚 
     小魚游到魚頭人的頭內 繼續生活
     小魚繼承前魚頭人的智慧
+
+### 人類的大腦建構一個我們願意為它犧牲生命的Idea
+
+### 活在當下 就是實踐自我
+
+### Our world view is model by our creations.
+
+### 不需要試圖說服別人 順著別人的口氣吧@@
+
+### 渴望尋找時 容易陷入陷阱
+
+### 粘菌使用自己留下的痕跡當成記憶 
+
+### company can only claim dominance
+
+    History has shown us that one company can only claim dominance over that technology for so long — and the bigger it gets, the more energy it takes to maintain it.
