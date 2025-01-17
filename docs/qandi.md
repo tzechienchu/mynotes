@@ -106,6 +106,12 @@
     Walks there
     ⾛去那裡
 
+## 第歐根尼
+
+[第歐根尼 baidu](https://baike.baidu.hk/item/%E7%AC%AC%E6%AD%90%E6%A0%B9%E5%B0%BC/655374)
+
+[第歐根尼 Wiki](https://zh.wikipedia.org/wiki/%E9%94%A1%E8%AF%BA%E6%99%AE%E7%9A%84%E7%AC%AC%E6%AC%A7%E6%A0%B9%E5%B0%BC)
+
 ## Ideas
 
 ### 來自新竹的所謂高知識份子都這樣嗎？
@@ -118,6 +124,7 @@
     然後問他就是一直拿一樣的理由出來盧 
     我現在的想法是 
     來自新竹的所謂高知識份子都這樣嗎？
+
 ### language is a thinking tools why i want to subcontract to others?
 
 ### Human consume information, Information is like food to us
@@ -192,4 +199,81 @@
     and the bigger it gets, 
     the more energy it takes to maintain it.
 
-### Find the essential information is a computation.
+### Find the essential information is a computation
+
+### 為何不立刻買 降低多巴胺
+
+### 無知 不寬容
+
+### We cannot teach child differential equations even it has the same brain  after 30 years
+
+### Boring is Good
+
+    Boring is Good
+    Let people found their own joy
+    Creative joy is more satisfy then given joy.
+
+### 台語
+
+    大跤 大角
+    亭仔跤 騎樓
+    逐工 每天
+    下晡 下午
+    一寡 一些
+    骨力 努力 認真
+    蓋濟 很多
+    閣來 再來
+    愛閣 需要
+
+    足少 很少
+    尚重要 很重要
+    愛去 要去
+    啥物貨 什麼東西 什麼
+    會使 可以
+    咱這馬 現在
+    綴 對
+    鬥相共 一起幫忙
+    無啥物貨 沒有什麼
+    感覺講 感覺上 感覺到
+    緊 快
+    彼準 那時
+    這馬 現在
+
+    工課 工作
+    轉來 回來
+
+    司奶 撒嬌
+
+    二擺 二次
+    鞋仔 鞋子
+
+    呷腥騷  吃好料
+    掠狂 抓狂
+    予人 給人
+    刁工 故意
+
+    雄雄 忽然
+    後壁 後面
+    擋仔 煞車
+
+    海墘仔 海邊
+    趁 賺
+    上大 最大
+
+    曲去 死去
+    沓沓仔 慢慢的
+
+    鬥相共  互相幫忙
+    拄著  遇到
+
+    拍拼 打拼
+
+### 醜小鴨創業投資顧問公司
+
+    創業者都希望在初期就能夠獲得資金的挹注
+    然而創業投資人在一片創業家之中 
+    如何挑選出會變天鵝的醜小鴨呢
+    （至於 獨角獸 我沒有興趣 因為那是神話中的東西）
+    在我個人的工作經驗中
+    醜小鴨有沒有天鵝基因是有方法可以依循的
+    肯定不是透過所謂的比賽了

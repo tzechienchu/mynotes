@@ -11,6 +11,8 @@
 
 ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
+[getting-started-with-litex](https://sourcesup.renater.fr/www/mic-sec-2022/labs/getting-started-with-litex.html)
+
 ## Verilog
 
 [https://verilogguide.readthedocs.io/en/latest/](https://verilogguide.readthedocs.io/en/latest/)
@@ -30,6 +32,14 @@ Linuxとpthreadsによる マルチスレッドプログラミング入門｜サ
 
 Tutorial 1
 [https://linux-kernel-labs.github.io/refs/heads/master/#](https://linux-kernel-labs.github.io/refs/heads/master/#)
+
+## PICO
+
+### RP2040 PICO DMA
+
+[RP2040 PICO DMA](https://mcuoneclipse.com/2023/04/02/rp2040-with-pio-and-dma-to-address-ws2812b-leds/)
+
+[RP2040 PICO DAC DMA](https://vanhunteradams.com/Pico/DAC/DMA_DAC.html)
 
 ## Python
 
