@@ -39,7 +39,7 @@ Mob Programming Example
 
 ### Close Loop
 
-[Open Ephys Close Loop Delay Test ](subtitles/close_loop_delay.md)
+[Open Ephys Close Loop Delay Test ](subtitles/close_loop_experiment.md)
 
 ### SYZYGY Interface
 

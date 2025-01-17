@@ -277,3 +277,8 @@
     在我個人的工作經驗中
     醜小鴨有沒有天鵝基因是有方法可以依循的
     肯定不是透過所謂的比賽了
+
+### Brain generate image and sound
+
+    Brain generate image and sound to evoke us taking actions
+    Why take these actions ?
