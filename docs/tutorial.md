@@ -1,10 +1,6 @@
 
 # Tutorial
 
-## Close Loop
-
-[Close Loop Delay](subtitles/close_loop_delay.md)
-
 ## Litex
 
 [fjullien migen_litex_tutorials](https://github.com/fjullien/migen_litex_tutorials).

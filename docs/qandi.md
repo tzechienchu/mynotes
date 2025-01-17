@@ -108,6 +108,20 @@
 
 ## Ideas
 
+### 來自新竹的所謂高知識份子都這樣嗎？
+
+    最近工作上遇到三個來自新竹科學園區的 “資深工程師” 
+    剛開始覺得好像很厲害 一陣子交不出東西之後 就開始找理由 
+    也覺得好像某些原因也是沒錯 只是總是要想辦法 
+    問題是他們也不打算改變策略或是設計 然後就是一種態度  
+    “我都沒錯 都是別人造成的” 
+    然後問他就是一直拿一樣的理由出來盧 
+    我現在的想法是 
+    來自新竹的所謂高知識份子都這樣嗎？
+### language is a thinking tools why i want to subcontract to others?
+
+### Human consume information, Information is like food to us
+
 ### 如果思考需要語言 那麼靈感是甚麼？ 圖像思考是甚麼？
 
 ### Concision thinking is hard. Not very one live consciously

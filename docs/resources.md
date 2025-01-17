@@ -1,5 +1,12 @@
 # Resources
 
+## Tools to Solve Complex Engineering Problem
+
+1. Clean Code / Gaphics
+2. Mob Programming
+3. Git / Github
+4. Modulization / Standard Connector
+
 ## Software Engineering
 
 ### Mob Programming
@@ -30,6 +37,10 @@ Mob Programming Example
 
 ## FPGA
 
+### Close Loop
+
+[Open Ephys Close Loop Delay Test ](subtitles/close_loop_delay.md)
+
 ### SYZYGY Interface
 
 SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
@@ -43,6 +54,10 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 [https://github.com/acri-room/hls-challenge-labs](https://github.com/acri-room/hls-challenge-labs)
 
 [https://acri-vhls-challenge.web.app/](https://acri-vhls-challenge.web.app/)
+
+### Manta: A Configurable and Approachable Tool for FPGA Debugging and Rapid Prototyping
+
+[https://fischermoseley.github.io/manta/](https://fischermoseley.github.io/manta/)
 
 ## DAQ
 
