@@ -3,7 +3,7 @@
 
 ## Litex
 
-[fjullien migen_litex_tutorials](https://github.com/fjullien/migen_litex_tutorials).
+[fjullien migen_litex_tutorials](https://github.com/fjullien/migen_litex_tutorials) <-- Best Litex tutorial
 
 [officail litx wiki](https://github.com/enjoy-digital/litex/wiki).
 
@@ -12,6 +12,14 @@
 ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
 [getting-started-with-litex](https://sourcesup.renater.fr/www/mic-sec-2022/labs/getting-started-with-litex.html)
+
+## Chisel FPGA開発日記
+
+[https://msyksphinz.hatenablog.com/](https://msyksphinz.hatenablog.com/)
+
+[https://www.hatena.ne.jp/](https://www.hatena.ne.jp/)
+
+[https://hatenablog.com/](https://hatenablog.com/)
 
 ## Verilog
 

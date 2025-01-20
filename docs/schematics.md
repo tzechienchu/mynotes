@@ -45,6 +45,10 @@ USB3 Support CrossLinkU-NX
 
 [https://github.com/tinyvision-ai-inc/pico-ice-sdk/](https://github.com/tinyvision-ai-inc/pico-ice-sdk/)
 
+### PICO Wave Gen
+
+[PICO Wave Gen](https://github.com/wasspaul/sig_gen)
+
 ## Open Ephys
 
 ### ONIX Schematics

@@ -23,7 +23,29 @@ Mob Programming Example
 
 [Youtube Video](https://www.youtube.com/watch?v=rG4rC5oLx7Y&t=1s)
 
-## RIffa
+### Design circuit boards with code
+
+    Design circuit boards with code! 
+    ✨ Get software-like design reuse 🚀, 
+    validation, version control and 
+    collaboration in hardware; 
+    starting with electronics ⚡️
+
+[Design circuit boards with code!](https://github.com/atopile/atopile)
+
+### No RTOS
+
+[ANTIRTOS](https://github.com/WeSpeakEnglish/ANTIRTOS)
+
+### Yes RTOS
+
+1. FreeRTOS
+2. Zephyr
+3. RT-Thread
+
+## FPGA
+
+### Riffa
 
 [RIFFA_A_Reusable_Integration_Framework_for_FPGA_Accelerators](https://www.researchgate.net/publication/261396774_RIFFA_A_Reusable_Integration_Framework_for_FPGA_Accelerators)
 
@@ -35,17 +57,27 @@ Mob Programming Example
 
 [Some Riffa User](https://gitlab.in2p3.fr/csantos/apc/WA105/ml605-parisroc-wa105-firmware/-/tree/master/src)
 
-## FPGA
+[Riffa as Vivado IP](https://github.com/briansune/Artix-7-PCIE-Riffa)
+
+### XDMA
+
+[Xilinx XDMA](https://ebics.net/xilinx-xdma/)
 
 ### Close Loop
 
-[Open Ephys Close Loop Delay Test ](subtitles/close_loop_experiment.md)
+[Close Loop Related Paper](subtitles/close_loop_experiment.md)
 
 ### SYZYGY Interface
 
 SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 
 ![Opal Kelly](images/2025/syzygy-brain-peripherals_jpg_md-xl.jpg)
+
+![Opal Kelly Example Board](images/2025/Screenshot from 2025-01-16 17-34-06.png)
+
+![Digilent USB104 A7](images/2025/Screenshot from 2025-01-17 12-25-53.png)
+
+![Digilent ECLYPSE Z7](images/2025/Screenshot from 2025-01-17 12-26-39.png)
 
 ### HLS
 
@@ -79,4 +111,6 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 
 [Wireless Headstage](https://github.com/allenyin/allen_wireless)
 
+### Bead Usage
 
+[errite-beads-common-applications-and-considerations](https://greatpcb.com/zh-TW/ferrite-beads-common-applications-and-considerations-in-circuit-design/)
