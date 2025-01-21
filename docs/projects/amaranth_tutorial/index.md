@@ -15,5 +15,11 @@
 11. Output /LED
 
 12. IO to PC (UART)
- 
+
 13. IO to PC (USB)
+
+## Reference
+
+[Official Read Me](https://amaranth-lang.org/docs/amaranth/latest/index.html)
+
+[Google Examples](https://cfu-playground.readthedocs.io/en/latest/index.html)

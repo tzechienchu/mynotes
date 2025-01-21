@@ -93,6 +93,10 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 
 ## DAQ
 
+### Intan
+
+[RHX Impedence Measure](https://github.com/MatsumotoJ/Tetroplater)
+
 ### Use hdmi video capture as data input
 
 [HDMI Output as Data to PC](https://github.com/steve-m/hsdaoh)
@@ -114,3 +118,11 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 ### Bead Usage
 
 [errite-beads-common-applications-and-considerations](https://greatpcb.com/zh-TW/ferrite-beads-common-applications-and-considerations-in-circuit-design/)
+
+## JP Books Site
+
+[https://gihyo.jp/dp](https://gihyo.jp/dp)
+
+[https://honto.jp/](https://honto.jp/)
+
+[https://cc.cqpub.co.jp/lib/](https://cc.cqpub.co.jp/lib/)

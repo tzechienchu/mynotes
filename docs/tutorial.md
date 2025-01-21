@@ -21,6 +21,8 @@ ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
 [https://hatenablog.com/](https://hatenablog.com/)
 
+[Chisel Course](https://classes.soe.ucsc.edu/cse293/Winter22/)
+
 ## Verilog
 
 [https://verilogguide.readthedocs.io/en/latest/](https://verilogguide.readthedocs.io/en/latest/)
