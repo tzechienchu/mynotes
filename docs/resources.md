@@ -23,6 +23,8 @@ Mob Programming Example
 
 [Youtube Video](https://www.youtube.com/watch?v=rG4rC5oLx7Y&t=1s)
 
+## Embedded System
+
 ### Design circuit boards with code
 
     Design circuit boards with code! 
@@ -42,6 +44,18 @@ Mob Programming Example
 1. FreeRTOS
 2. Zephyr
 3. RT-Thread
+
+### PICO Images
+
+Debug Probe
+[debug probe download](images/2025/debugprobe.uf2)
+
+Nuke Flash
+[Nuke All download](images/2025/flash_nuke.uf2)
+
+### Bead Usage
+
+[errite-beads-common-applications-and-considerations](https://greatpcb.com/zh-TW/ferrite-beads-common-applications-and-considerations-in-circuit-design/)
 
 ## FPGA
 
@@ -91,7 +105,7 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 
 [https://fischermoseley.github.io/manta/](https://fischermoseley.github.io/manta/)
 
-### Fast Serial IO Serdes-LVDS 
+### Fast Serial IO Serdes-LVDS
 
 [Fast Serial IO](papers/2025/serialio.pdf)
 
@@ -117,15 +131,16 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 
 ### ONIX DAQ
 
-![Onix Head Stage](images/2025/)
+Onix Head Stage
+![Onix Head Stage](images/2025/Screenshot%20from%202024-08-27%2011-19-19.png)
+
+Onix FPGA Block Diagram
+![Onix FPGA Block Diagram](images/2025/Screenshot%20from%202024-08-26%2018-16-11.png)
 
 ### Wireless Headstage
 
 [Wireless Headstage](https://github.com/allenyin/allen_wireless)
 
-### Bead Usage
-
-[errite-beads-common-applications-and-considerations](https://greatpcb.com/zh-TW/ferrite-beads-common-applications-and-considerations-in-circuit-design/)
 
 ## Math
 
