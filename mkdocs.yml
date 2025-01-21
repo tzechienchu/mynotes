@@ -13,8 +13,7 @@ nav:
   - 'Papers': 'papers.md'
   - 'Facts': 'facts.md'
   - 'Projects': 'projects.md'
-  - 'Firmware Spec Template': 'firmware_spec.md'
-  - 'Board Spec Template': 'board_spec.md'
+  - 'Templates': 'templates.md'
 
 markdown_extensions:
   - attr_list
