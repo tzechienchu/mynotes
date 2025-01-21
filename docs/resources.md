@@ -91,6 +91,10 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 
 [https://fischermoseley.github.io/manta/](https://fischermoseley.github.io/manta/)
 
+### Fast Serial IO Serdes-LVDS 
+
+[Fast Serial IO](papers/2025/serialio.pdf)
+
 ## DAQ
 
 ### Intan
