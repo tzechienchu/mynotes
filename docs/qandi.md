@@ -114,21 +114,6 @@
 
 ## Ideas
 
-### 身心障礙
-
-    面對身心障礙者的困難
-    身心障礙者生活服務
-    身心障礙畫廊
-    日本 身心障礙者 電玩 ePara https://epara.jp/about/
-    身心障礙教具中心
-    學習障礙學習中心
-    身心障礙教計算機
-        時鐘日期
-        打折
-        分配
-    身障旅行
-    用牙齒咬着筆 誘發快樂
-
 ### 來自新竹的所謂高知識份子都這樣嗎？
 
     最近工作上遇到三個來自新竹科學園區的 “資深工程師” 
@@ -299,10 +284,3 @@
 
     Brain generate image and sound to evoke us taking actions
     Why take these actions ?
-
-### 急難食物與用品
-
-    米
-    罐頭
-    鳳梨罐頭
-    藥品

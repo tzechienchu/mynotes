@@ -115,6 +115,10 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 
 [data-acquisition-synchronisation](https://dewesoft.com/blog/data-acquisition-synchronisation)
 
+### ONIX DAQ
+
+![Onix Head Stage](images/2025/)
+
 ### Wireless Headstage
 
 [Wireless Headstage](https://github.com/allenyin/allen_wireless)
@@ -122,6 +126,14 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 ### Bead Usage
 
 [errite-beads-common-applications-and-considerations](https://greatpcb.com/zh-TW/ferrite-beads-common-applications-and-considerations-in-circuit-design/)
+
+## Math
+
+### Probabilistic numerics
+
+[Probabilistic numerics](https://en.wikipedia.org/wiki/Probabilistic_numerics)
+
+[https://www.probabilistic-numerics.org/](https://www.probabilistic-numerics.org/)
 
 ## JP Books Site
 
