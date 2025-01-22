@@ -34,7 +34,7 @@ pip install mkdocs-material
 
 ![Image](images/2025/Screenshot%20from%202025-01-13%2009-45-40.png)
 
-    ![Image](images/2025/Screenshot%20from%202025-01-13%2009-45-40.png)
+    ![Image](images/2025/Screenshot%20from%202025-01-13%2009-45-40.png){: style="height:300px"}
 
 Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 

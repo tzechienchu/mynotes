@@ -70,3 +70,13 @@ Other Solution
 ## Chromebook
 
 Install Desktop GUI in chromebook [chromebookDesktop.md](subtitles/chromebookDesktop.md)
+
+## DSP
+
+### Wavelet
+
+[Wavelet_101](./subtitles/wavelet_101.md)
+
+## Neuro Science
+
+[Neuroscience exploration Video](https://www.youtube.com/playlist?list=PLgtmMKe4spCMzkiVa4-eSHVk-N4SC8r9K)

@@ -57,6 +57,14 @@ Nuke Flash
 
 [errite-beads-common-applications-and-considerations](https://greatpcb.com/zh-TW/ferrite-beads-common-applications-and-considerations-in-circuit-design/)
 
+### Fast Serial IO Serdes-LVDS
+
+[Fast Serial IO](papers/2025/serialio.pdf)
+
+### High Speed PCB Design
+
+[High Speed PCB Design](papers/2025/High-Speed%20PCB%20Design%20Guide.pdf)
+
 ## FPGA
 
 ### Riffa
@@ -105,10 +113,6 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 
 [https://fischermoseley.github.io/manta/](https://fischermoseley.github.io/manta/)
 
-### Fast Serial IO Serdes-LVDS
-
-[Fast Serial IO](papers/2025/serialio.pdf)
-
 ## DAQ
 
 ### Intan
@@ -140,7 +144,6 @@ Onix FPGA Block Diagram
 ### Wireless Headstage
 
 [Wireless Headstage](https://github.com/allenyin/allen_wireless)
-
 
 ## Math
 
