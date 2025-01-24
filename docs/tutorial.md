@@ -45,6 +45,12 @@ Tutorial 1
 
 ## PICO
 
+### PICO PIO Programming
+
+[PICO PIO url](https://circuitcellar.com/research-design-hub/basics-of-design/programmable-io-programming/)
+
+[Youtube Video](https://www.youtube.com/playlist?list=PLiRALtgGsxmZs_LXGkh09Zr2NUmk_mtEI)
+
 ### RP2040 PICO DMA
 
 [RP2040 PICO DMA](https://mcuoneclipse.com/2023/04/02/rp2040-with-pio-and-dma-to-address-ws2812b-leds/)

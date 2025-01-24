@@ -287,4 +287,4 @@
 
 ### Disable People's Keyboard use Arithematic Coding DASHER
 
-### 常識革命 The Rise of Idiot
+### 常識革命 The Rise of Idiot , Dawn of Dark Age

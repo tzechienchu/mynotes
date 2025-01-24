@@ -24,9 +24,17 @@ ReptiLearn: An automated home cage system for behavioral experiments in reptiles
 
 [reptiLearn github url](https://github.com/EvolutionaryNeuralCodingLab/reptiLearn/tree/master)
 
-[PreyTouch: a touchscreen-based closed-loop system for studying predator-prey interactions](https://www.nature.com/articles/s42003-024-07345-5)
+### PreyTouch
 
-### Open Ephys
+[PreyTouch: a touchscreen-based closed-loop system for studying predator-prey interactions url](https://www.nature.com/articles/s42003-024-07345-5)
+
+[PreyTouch: a touchscreen-based closed-loop system for studying predator-prey interactions local pdf](./papers/2025/PreyTouch-2024.pdf)
+
+[PreyTouch Github](https://github.com/EvolutionaryNeuralCodingLab/PreyTouch)
+
+[Overall latency](./images/2025/Screenshot%20from%202025-01-24%2016-31-14.png)
+
+### Open Ephys Close Loop
 
 Open_Ephys_electroencephalography_Open_Ephys_EEG_A_modular_low-cost_open-source_solution_to_human_neural_recording [Paper url](https://www.researchgate.net/publication/314305186_Open_Ephys_electroencephalography_Open_Ephys_EEG_A_modular_low-cost_open-source_solution_to_human_neural_recording)
 
