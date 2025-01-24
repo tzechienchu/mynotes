@@ -284,3 +284,7 @@
 
     Brain generate image and sound to evoke us taking actions
     Why take these actions ?
+
+### Disable People's Keyboard use Arithematic Coding DASHER
+
+### 常識革命 The Rise of Idiot

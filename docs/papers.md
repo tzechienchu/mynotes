@@ -24,6 +24,7 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 
 [How are Concepts Created in the Brain?](https://sapienlabs.org/lab-talk/how-are-concepts-created-in-the-brain/)
 
+[The log-dynamic brain: How skewed distributions affect network operations](./papers/2025/BuzsakiMizusekiNRN.pdf)
 
 ### Intan RHX
 

@@ -51,6 +51,12 @@ Tutorial 1
 
 [RP2040 PICO DAC DMA](https://vanhunteradams.com/Pico/DAC/DMA_DAC.html)
 
+### RP2040 LVGL
+
+[http://bbs.eeworld.com.cn/thread-1227666-1-1.html](http://bbs.eeworld.com.cn/thread-1227666-1-1.html)
+
+[RT-Thread and LVGL](https://rt-thread.medium.com/get-raspberry-pi-pico-running-on-rt-thread-rtos-with-an-opensource-light-versatile-graphics-library-c1f708882bff)
+
 ## Python
 
 ### PySerial
@@ -63,6 +69,8 @@ PySerial Example Code [pyserial_sample.md](subtitles/pyserial_sample.md)
 python3 -m venv virtkv
 source ./virtkv/bin/activate
 ```
+
+[Pyenv](https://sdwh.dev/posts/2021/08/Python-Pyenv/)
 
 Other Solution
 [https://python-poetry.org/](https://python-poetry.org/)
@@ -80,3 +88,5 @@ Install Desktop GUI in chromebook [chromebookDesktop.md](subtitles/chromebookDes
 ## Neuro Science
 
 [Neuroscience exploration Video](https://www.youtube.com/playlist?list=PLgtmMKe4spCMzkiVa4-eSHVk-N4SC8r9K)
+
+[Topological Data Analysis (TDA)](https://www.youtube.com/playlist?list=PLz-ep5RbHosVi8Qoyqvz1MEiYrz35Zb7F)
