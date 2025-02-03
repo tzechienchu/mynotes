@@ -6,7 +6,7 @@
 
 [RIFFA_A_Reusable_Integration_Framework_for_FPGA_Accelerators url](https://www.researchgate.net/publication/261396774_RIFFA_A_Reusable_Integration_Framework_for_FPGA_Accelerators)
 
-[https://kastner.ucsd.edu/wp-content/uploads/2014/04/admin/fpl-riffa2.pdf](https://kastner.ucsd.edu/wp-content/uploads/2014/04/admin/fpl-riffa2.pdf)
+[https://kastner.ucsd.edu/wp-content/uploads/2014/04/admin/fpl-riffa2.pdf url](https://kastner.ucsd.edu/wp-content/uploads/2014/04/admin/fpl-riffa2.pdf)
 
 ## Neuro Science
 
@@ -32,7 +32,7 @@ ReptiLearn: An automated home cage system for behavioral experiments in reptiles
 
 [PreyTouch Github](https://github.com/EvolutionaryNeuralCodingLab/PreyTouch)
 
-[Overall latency](./images/2025/Screenshot%20from%202025-01-24%2016-31-14.png)
+![Overall latency](./images/2025/Screenshot%20from%202025-01-24%2016-31-14.png)
 
 ### Open Ephys Close Loop
 
