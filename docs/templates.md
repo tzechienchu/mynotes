@@ -4,4 +4,6 @@
 
 [Board Specification](doc_templates/board_spec.md)
 
+[App Specification](doc_templates/app_spec.md)
+
 [Software Doc](doc_templates/software_doc.md)
