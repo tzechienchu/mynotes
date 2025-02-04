@@ -14,21 +14,31 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 
 ## Block Diagrams
 
+### Wireless
+
 Wireless.dio
 
 ![Wireless](../diagrams/2025/Wireless.png)
+
+### DAQ2DAQ
 
 DAQ2DAQ.dio
 
 ![DAQ2DAQ](../diagrams/2025/DAQ2DAQ.png)
 
+### Sync Distribution
+
 SyncDistribution.dio
 
 ![SyncDistribution](../diagrams/2025/SyncDistribution.png)
 
+### Trigger 
+
 Trigger.dio
 
 ![Trigger](../diagrams/2025/Trigger.png)
+
+### Examples
 
 Open Ephys Trigger & Sync Exampls
 
@@ -39,6 +49,8 @@ NeuroLynx Trigger & Sync Exampls
 ![NL](../images/2025/Screenshot%20from%202025-01-10%2017-26-43.jpg)
 
 ![NL](../images/2025/Screenshot%20from%202025-01-13%2011-26-11.png)
+
+### Digital and Analog Sub System
 
 Digital_Analog Subsystem
 
