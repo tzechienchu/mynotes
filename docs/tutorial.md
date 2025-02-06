@@ -21,7 +21,15 @@ ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
 [https://hatenablog.com/](https://hatenablog.com/)
 
-[Chisel Course](https://classes.soe.ucsc.edu/cse293/Winter22/)
+[Agile Hardware Design Video 2024](https://www.youtube.com/playlist?list=PLfrN7RIcMe6g2LBRJLTHTdhyj5s8ag0Rg)
+
+![Chip Alliance](../images/2025/Screenshot%20from%202025-02-04%2016-58-19.png)
+
+[Chip Alliance](https://www.chipsalliance.org/)
+
+## Amaranth
+
+[Amaranth HDL Document](https://amaranth-lang.org/docs/amaranth/v0.5.4/)
 
 ## Verilog
 
@@ -49,7 +57,13 @@ Tutorial 1
 
 [PICO PIO url](https://circuitcellar.com/research-design-hub/basics-of-design/programmable-io-programming/)
 
-[Youtube Video](https://www.youtube.com/playlist?list=PLiRALtgGsxmZs_LXGkh09Zr2NUmk_mtEI)
+[PICO PIO Programming Youtube Video](https://www.youtube.com/playlist?list=PLiRALtgGsxmZs_LXGkh09Zr2NUmk_mtEI)
+
+[A Practical Look at PIO on the Raspberry Pi Pico URL](https://blues.com/blog/raspberry-pi-pico-pio/)
+
+[Introduction to the PIO (Programmable Input Output) of the RP2040](https://tutoduino.fr/en/pio-rp2040-en/)
+
+[programmable-io-programming @ circuitcellar URL](https://circuitcellar.com/research-design-hub/basics-of-design/programmable-io-programming/)
 
 ### RP2040 PICO DMA
 
@@ -68,6 +82,21 @@ Tutorial 1
 ### PySerial
 
 PySerial Example Code [pyserial_sample.md](subtitles/pyserial_sample.md)
+
+### Python FTDI for SPI
+
+[Python FTDI for SPI](https://www.alexallmont.com/spi-refresher/)
+
+``` py
+from pyftdi.ftdi import Ftdi
+Ftdi.show_devices()
+from pyftdi.spi import SpiController
+
+spi.configure('ftdi://ftdi:2232h:1:7b/1')
+slave = spi.get_port(cs=1, freq=10E6, mode=2)
+write_buf = b'\x01\x02\x03'
+read_buf = slave.exchange(write_buf, duplex=True)
+```
 
 ### Virtual Enviroment
 

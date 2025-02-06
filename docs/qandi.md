@@ -117,18 +117,15 @@
 
 [第歐根尼 Wiki](https://zh.wikipedia.org/wiki/%E9%94%A1%E8%AF%BA%E6%99%AE%E7%9A%84%E7%AC%AC%E6%AC%A7%E6%A0%B9%E5%B0%BC)
 
+## 天行健 君子當自強不息
+
 ## Ideas
 
-### 來自新竹的所謂高知識份子都這樣嗎？
+### Language to Action
 
-    最近工作上遇到三個來自新竹科學園區的 “資深工程師” 
-    剛開始覺得好像很厲害 一陣子交不出東西之後 就開始找理由 
-    也覺得好像某些原因也是沒錯 只是總是要想辦法 
-    問題是他們也不打算改變策略或是設計 然後就是一種態度  
-    “我都沒錯 都是別人造成的” 
-    然後問他就是一直拿一樣的理由出來盧 
-    我現在的想法是 
-    來自新竹的所謂高知識份子都這樣嗎？
+### Disable People's Keyboard use Arithematic Coding DASHER
+
+### 常識革命 The Rise of Idiot , Dawn of Dark Age
 
 ### language is a thinking tools why i want to subcontract to others?
 
@@ -290,6 +287,13 @@
     Brain generate image and sound to evoke us taking actions
     Why take these actions ?
 
-### Disable People's Keyboard use Arithematic Coding DASHER
+### 來自新竹的所謂高知識份子都這樣嗎？
 
-### 常識革命 The Rise of Idiot , Dawn of Dark Age
+    最近工作上遇到三個來自新竹科學園區的 “資深工程師” 
+    剛開始覺得好像很厲害 一陣子交不出東西之後 就開始找理由 
+    也覺得好像某些原因也是沒錯 只是總是要想辦法 
+    問題是他們也不打算改變策略或是設計 然後就是一種態度  
+    “我都沒錯 都是別人造成的” 
+    然後問他就是一直拿一樣的理由出來盧 
+    我現在的想法是 
+    來自新竹的所謂高知識份子都這樣嗎？
