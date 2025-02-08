@@ -121,6 +121,8 @@
 
 ## Ideas
 
+### 一個無法提供建議 解釋的預測 沒有意義
+
 ### Language to Action
 
 ### Disable People's Keyboard use Arithematic Coding DASHER

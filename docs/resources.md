@@ -139,7 +139,6 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 
 ![](images/2025/nereid-callouts.png)
 
-
 ## DAQ
 
 ### Intan
@@ -160,9 +159,9 @@ SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)
 
 [data-acquisition-synchronisation](https://dewesoft.com/blog/data-acquisition-synchronisation)
 
-### Wireless Headstage
+### Wireless Headstages
 
-[Wireless Headstage](https://github.com/allenyin/allen_wireless)
+[Wireless Headstage](./subtitles/wireless_hs.md)
 
 ## Math
 

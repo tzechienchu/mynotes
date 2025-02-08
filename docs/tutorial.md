@@ -23,7 +23,7 @@ ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
 [Agile Hardware Design Video 2024](https://www.youtube.com/playlist?list=PLfrN7RIcMe6g2LBRJLTHTdhyj5s8ag0Rg)
 
-![Chip Alliance](../images/2025/Screenshot%20from%202025-02-04%2016-58-19.png)
+![Chip Alliance](images/2025/Screenshot%20from%202025-02-04%2016-58-19.png)
 
 [Chip Alliance](https://www.chipsalliance.org/)
 
