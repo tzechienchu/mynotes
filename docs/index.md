@@ -32,13 +32,18 @@ pip install mkdocs-material
 
 ### Link Example
 
-![Image](images/2025/Screenshot%20from%202025-01-13%2009-45-40.png)
+![Image](images/2025/Screenshot%20from%202025-01-13%2009-45-40.png){: style="height:150px"}
 
-    ![Image](images/2025/Screenshot%20from%202025-01-13%2009-45-40.png){: style="height:300px"}
+    ![Image](images/2025/Screenshot%20from%202025-01-13%2009-45-40.png){: style="height:150px"}
+
+[![Image](images/2025/Screenshot%20from%202025-01-13%2009-45-40.png 'tips'){: style="height:150px"} evolutionaryneuralcodinglab](https://www.evolutionaryneuralcodinglab.sites.tau.ac.il/)
+
+    [![Image](images/2025/Screenshot%20from%202025-01-13%2009-45-40.png 'tips'){: style="height:150px"} evolutionaryneuralcodinglab](https://www.evolutionaryneuralcodinglab.sites.tau.ac.il/)
 
 Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 
     Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
+
 
 ### Table Example
 
@@ -53,3 +58,7 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 | col 1 is |  left-aligned | $1600 |
 | col 2 is |    centered   |   $12 |
 | col 3 is | right-aligned |    $1 |
+
+### More Help
+
+[Markdown Doc from codecademy](https://www.codecademy.com/resources/docs/markdown)
