@@ -59,6 +59,14 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 | col 2 is |    centered   |   $12 |
 | col 3 is | right-aligned |    $1 |
 
+### Comment
+
+    <!---
+    These are Comments
+    Line 1
+    Line 2 
+    --->
+
 ### More Help
 
 [Markdown Doc from codecademy](https://www.codecademy.com/resources/docs/markdown)
