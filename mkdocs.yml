@@ -14,8 +14,8 @@ nav:
   - 'Facts': 'facts.md'
   - 'Projects': 'projects.md'
   - 'Templates': 'templates.md'
-  - 'Quotes & Ideas': 'qandi.md'
-  - 'Personal': 'personal.md'
+  #- 'Quotes & Ideas': 'qandi.md'
+  #- 'Personal': 'personal.md'
 
 markdown_extensions:
   - attr_list
@@ -27,8 +27,11 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
 
+# theme: readthedocs
+
 theme:
   name: material
   features:
     - content.code.select
     - content.code.copy
+

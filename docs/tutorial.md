@@ -129,3 +129,7 @@ Install Desktop GUI in chromebook [chromebookDesktop.md](subtitles/chromebookDes
 [Neuroscience exploration Video](https://www.youtube.com/playlist?list=PLgtmMKe4spCMzkiVa4-eSHVk-N4SC8r9K)
 
 [Topological Data Analysis (TDA)](https://www.youtube.com/playlist?list=PLz-ep5RbHosVi8Qoyqvz1MEiYrz35Zb7F)
+
+## VSCode
+
+[VSCode and Docker](https://mcuoneclipse.com/2025/02/08/optimizing-embedded-development-with-vs-code-and-devcontainer/)
