@@ -10,6 +10,13 @@
 
 ## Neuro Science
 
+### Falcon
+
+[![Falcon Core doc](./images/2025/Screenshot%20from%202025-02-11%2012-45-35.png) Falcon Core](https://falcon-core.readthedocs.io/en/latest/#)
+
+[Falcon Paper](./papers/2025/Falcon_a_highly_flexible_open-source_software_for_.pdf)
+
+
 ### ReptiLearn
 
 ReptiLearn: An automated home cage system for behavioral experiments in reptiles without human intervention [Paper url](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002411) or  [Local Pdf](./papers/2025/ReptiLearn.pdf)
@@ -36,24 +43,22 @@ ReptiLearn: An automated home cage system for behavioral experiments in reptiles
 
 ### Syntalos
 
-![Syntalos](../images/2025/Screenshot%20from%202025-02-06%2016-59-16.png)
+![Syntalos](./images/2025/Screenshot%20from%202025-02-06%2016-59-16.png)
 
 [Syntalos Github](https://github.com/syntalos/syntalos)
 
 [Syntalos: a software for precise
 synchronization of simultaneous multi-
 modal data acquisition and closed-loop
-interventions](../papers/2025/s41467-025-56081-9.pdf)
+interventions](./papers/2025/s41467-025-56081-9.pdf)
 
-[Supplementary Information](../papers/2025/41467_2025_56081_MOESM1_ESM.pdf)
+[Supplementary Information](./papers/2025/41467_2025_56081_MOESM1_ESM.pdf)
 
-![](../images/2025/Screenshot%20from%202025-02-06%2017-06-03.png)
+![](./images/2025/Screenshot%20from%202025-02-06%2017-06-03.png)
 
-![](../images/2025/Screenshot%20from%202025-02-06%2017-34-56.png)
+![](./images/2025/Screenshot%20from%202025-02-06%2017-34-56.png)
 
-### Close Loop
-
-#### Open Ephys
+###  Open Ephys Close Loop
 
 Open_Ephys_electroencephalography_Open_Ephys_EEG_A_modular_low-cost_open-source_solution_to_human_neural_recording [Paper url](https://www.researchgate.net/publication/314305186_Open_Ephys_electroencephalography_Open_Ephys_EEG_A_modular_low-cost_open-source_solution_to_human_neural_recording)
 
