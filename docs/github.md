@@ -6,6 +6,10 @@
 
 [hardcore-functional-architecture](https://github.com/FrontendMasters/hardcore-functional-architecture)
 
+### hardcore-functional-js-v2
+
+[hardcore-functional-js-v2](https://github.com/FrontendMasters/hardcore-functional-js-v2)
+
 ### Probabilistic programming for the web
 
 [Probabilistic programming for the web](https://github.com/probmods/webppl)
@@ -22,6 +26,10 @@
 
 [Nodejs stream handbook](https://github.com/Raynos/stream-handbook)
 
+### Internet of Streams use Rust
+
+[Internet of Streams use Rust](https://github.com/jamesmunns/internet-of-streams)
+
 ## Embedded
 
 ### Logic Analyer use Pico
@@ -35,6 +43,10 @@
 ### FlashDB
 
 [FlashDB](https://github.com/armink/FlashDB)
+
+### async.h
+
+[async.h](https://github.com/naasking/async.h)
 
 ## FPGA
 
@@ -53,6 +65,10 @@
 ### Kintex-7-OV13850-Verilog
 
 [Kintex-7-OV13850-Verilog](https://github.com/briansune/Kintex-7-OV13850-Verilog)
+
+### fpga-hash-table
+
+[fpga-hash-table](https://github.com/johan92/fpga-hash-table)
 
 ### RIFFA_Builder
 
