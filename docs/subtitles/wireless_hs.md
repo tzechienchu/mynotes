@@ -34,7 +34,7 @@
 
 ![TBSI Wireless Headstage](./images/Screenshot%20from%202025-02-08%2016-10-08.png)
 
-<!--
+<!-- Local PDF
 [TBSI Wireless Headstage](./pdf/TBSI_WIreless_Heastage_Systems.pdf)
 -->
 

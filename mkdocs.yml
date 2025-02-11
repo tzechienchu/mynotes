@@ -14,8 +14,8 @@ nav:
   - 'Facts': 'facts.md'
   - 'Projects': 'projects.md'
   - 'Templates': 'templates.md'
-  #- 'Quotes & Ideas': 'qandi.md'
-  #- 'Personal': 'personal.md'
+  - 'Quotes & Ideas': 'qandi.md'
+  - 'Personal': 'personal.md'
 
 markdown_extensions:
   - attr_list
