@@ -34,11 +34,32 @@ ReptiLearn: An automated home cage system for behavioral experiments in reptiles
 
 ![Overall latency](./images/2025/Screenshot%20from%202025-01-24%2016-31-14.png)
 
-### Open Ephys Close Loop
+### Syntalos
+
+![Syntalos](../images/2025/Screenshot%20from%202025-02-06%2016-59-16.png)
+
+[Syntalos Github](https://github.com/syntalos/syntalos)
+
+[Syntalos: a software for precise
+synchronization of simultaneous multi-
+modal data acquisition and closed-loop
+interventions](../papers/2025/s41467-025-56081-9.pdf)
+
+[Supplementary Information](../papers/2025/41467_2025_56081_MOESM1_ESM.pdf)
+
+![](../images/2025/Screenshot%20from%202025-02-06%2017-06-03.png)
+
+![](../images/2025/Screenshot%20from%202025-02-06%2017-34-56.png)
+
+### Close Loop
+
+#### Open Ephys
 
 Open_Ephys_electroencephalography_Open_Ephys_EEG_A_modular_low-cost_open-source_solution_to_human_neural_recording [Paper url](https://www.researchgate.net/publication/314305186_Open_Ephys_electroencephalography_Open_Ephys_EEG_A_modular_low-cost_open-source_solution_to_human_neural_recording)
 
 Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous_machine_decision-making [Paper url](https://www.researchgate.net/publication/360954933_Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous_machine_decision-making)
+
+[Open Ephys Close Loop Calculation](subtitles/close_loop_experiment.md)
 
 ### Brain
 

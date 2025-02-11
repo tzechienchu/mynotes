@@ -85,10 +85,6 @@ Nuke Flash
 
 [Xilinx XDMA](https://ebics.net/xilinx-xdma/)
 
-### Close Loop
-
-[Close Loop Related Paper](subtitles/close_loop_experiment.md)
-
 ### SYZYGY Interface
 
 SYZYGY Interface [syzygyfpga.io](https://syzygyfpga.io/)

@@ -8,6 +8,3 @@
 
 [submillisecond-latency-closed-loop-feedback-with-pcie-prototype-system](https://open-ephys.org/blog/2016/5/6/submillisecond-latency-closed-loop-feedback-with-pcie-prototype-system)
 
-## Papers
-
-ReptiLearn: An automated home cage system for behavioral experiments in reptiles without human intervention [Paper Link](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002411)
