@@ -1,5 +1,15 @@
 # Github
 
+## Linux
+
+### pciutils
+
+[pciutils](https://github.com/pciutils/pciutils)
+
+### TkDocs Examples
+
+[TkDocs Examples](https://github.com/roseman/tkdocs)
+
 ## Web
 
 ### hardcore-functional-architecture
@@ -50,6 +60,14 @@
 
 ## FPGA
 
+### Xilinx bitstream analizing tool 
+
+[Xilinx bitstream analizing tool ](https://github.com/khoapham/bitman)
+
+### OH! Open Hardware for Chip Designers
+
+[OH! Open Hardware for Chip Designers](https://github.com/aolofsson/oh)
+
 ### ThunderScope
 
 [ThunderScope](https://github.com/EEVengers/ThunderScope)
@@ -61,6 +79,10 @@
 ### icesugar
 
 [icesugar](https://github.com/wuxx/icesugar)
+
+### ice40_ultraplus_examples
+
+[ice40_ultraplus_examples](https://github.com/damdoy/ice40_ultraplus_examples)
 
 ### Kintex-7-OV13850-Verilog
 
