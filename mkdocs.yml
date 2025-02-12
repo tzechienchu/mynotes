@@ -28,13 +28,13 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
 
-theme: readthedocs
-
-#theme:
-#  name: material
-#  features:
-#    - content.code.select
-#    - content.code.copy
+theme:
+  name: material
+  features:
+    #- navigation.tabs
+    - toc.integrate
+    - content.code.select
+    - content.code.copy
 
 #plugins:
 #  - pdf-export
