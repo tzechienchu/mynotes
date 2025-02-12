@@ -2,14 +2,18 @@
 
 ## Serdes HeadStage
 
+### Block Diagram
+
 ![Serdes HeadStage](../diagrams/2025/Serdes_HS.png)
+
+### FPGA
 
 | FPGA        | Power        | EEPROM       |
 |:------------|:-------------|:-------------|
 | Intel Max10 | 3.3V         | Embedded     |
 | efinix T8   | 1.1V Core <br>  3.3V IO | External   |
 
-## Pin Requirements
+### Pin Requirements
 
 | Block       | Pin Number   | Description       |
 |:------------|:-------------|:------------------|
