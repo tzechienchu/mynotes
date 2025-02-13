@@ -25,5 +25,13 @@
 ### Pi 5 Mode
 
     Pi 5 Mode:
-    Same as Zynq, except use Pi 5
-    Develop Linux App is more easy on Pi
+    1.Same as Zynq, except use Pi 5
+    2.Develop Linux App is more easy on Pi
+
+### Price Table
+
+| Board                     | FPGA     | FT601    | AD7980   | AD5662    |
+|:--------------------------|:---------|:---------|:---------|:----------|
+| Mode 1 (efinix Ti60F100 ) | 40USD    | 8USD     |          |           |
+| Zynq    XME0715           | 160USD   | X        |          |           |
+| Artix 7 XME0712           | 135USD   | (8USD)   |          |           |

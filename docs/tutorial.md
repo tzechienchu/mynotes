@@ -37,6 +37,14 @@ ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
 [https://www.chipverify.com/](https://www.chipverify.com/)
 
+## The Art of FPGA Design - element14 Community
+
+[The Art of FPGA Design - element14 Community](https://community.element14.com/technologies/fpga-group/b/blog/posts/the-art-of-fpga-design)
+
+## Digital Signal Processing, from Algorithm to FPGA Bitstream - element14 Community
+
+[Digital Signal Processing, from Algorithm to FPGA Bitstream](https://community.element14.com/technologies/fpga-group/b/blog/posts/the-art-of-fpga-design-season-2---digital-signal-processing-from-algorithm-to-fpga-bitstream)
+
 ## Programming
 
 ### Linux Thread
