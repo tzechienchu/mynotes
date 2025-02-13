@@ -1,0 +1,37 @@
+<mxfile host="65bd71144e">
+    <diagram id="DVdLPLOCHXZMlxz3WQpZ" name="Page-1">
+        <mxGraphModel dx="687" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Digital and Analog&lt;br&gt;SubSystem" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Port Number&lt;br&gt;Resolution&lt;br&gt;Sample Rate&lt;br&gt;Voltage Range&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="160" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Upstream &lt;br&gt;Data format" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="160" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Downstream&lt;br&gt;Data format" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="260" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="DI&lt;br&gt;TI:TXU0104&lt;br&gt;1.2V to 5V" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="390" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="DO?" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Analog Input:&lt;br&gt;AD7616&lt;br&gt;16Bits&lt;br&gt;16 Channel&lt;br&gt;1Mbps&lt;br&gt;&lt;br&gt;Input Voltage Range&lt;br&gt;+-10&lt;br&gt;+-5&lt;br&gt;+-2.5" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="390" width="120" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Analog Output:&lt;br&gt;AD5766&lt;br&gt;16Bits&lt;br&gt;16 Channel&lt;br&gt;1Mbps&lt;br&gt;&lt;br&gt;Output Voltage Range&lt;br&gt;Multiple" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="390" width="120" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="DAQ2DAQ&lt;br&gt;Data Interface&lt;br&gt;Litex&lt;br&gt;Chip2Chip&lt;br&gt;LVDS" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="401" y="160" width="120" height="160" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
