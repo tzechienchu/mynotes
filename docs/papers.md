@@ -8,6 +8,8 @@
 
 [https://kastner.ucsd.edu/wp-content/uploads/2014/04/admin/fpl-riffa2.pdf url](https://kastner.ucsd.edu/wp-content/uploads/2014/04/admin/fpl-riffa2.pdf)
 
+---
+
 ## Neuro Science
 
 ### Falcon
@@ -16,6 +18,7 @@
 
 [Falcon Paper](./papers/2025/Falcon_a_highly_flexible_open-source_software_for_.pdf)
 
+---
 
 ### ReptiLearn
 
@@ -41,6 +44,8 @@ ReptiLearn: An automated home cage system for behavioral experiments in reptiles
 
 ![Overall latency](./images/2025/Screenshot%20from%202025-01-24%2016-31-14.png)
 
+---
+
 ### Syntalos
 
 ![Syntalos](./images/2025/Screenshot%20from%202025-02-06%2016-59-16.png)
@@ -58,6 +63,14 @@ interventions](./papers/2025/s41467-025-56081-9.pdf)
 
 ![](./images/2025/Screenshot%20from%202025-02-06%2017-34-56.png)
 
+[Experiment Directory Layout](https://edl.readthedocs.io/latest/index.html)
+
+    The Experiment Directory Layout (EDL) is a specification for a storage layout for data from
+    scientific experiments, with primary focus on neuroscientific data. It was originally
+    developed for the Syntalos DAQ system, but can be used elsewhere.
+
+---
+
 ###  Open Ephys Close Loop
 
 Open_Ephys_electroencephalography_Open_Ephys_EEG_A_modular_low-cost_open-source_solution_to_human_neural_recording [Paper url](https://www.researchgate.net/publication/314305186_Open_Ephys_electroencephalography_Open_Ephys_EEG_A_modular_low-cost_open-source_solution_to_human_neural_recording)
@@ -66,14 +79,20 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 
 [Open Ephys Close Loop Calculation](subtitles/close_loop_experiment.md)
 
+---
+
 ### Brain
 
 [How are Concepts Created in the Brain? url](https://sapienlabs.org/lab-talk/how-are-concepts-created-in-the-brain/)
 
 [The log-dynamic brain: How skewed distributions affect network operations (local pdf)](./papers/2025/BuzsakiMizusekiNRN.pdf)
 
+---
+
 ### Intan RHX
 
 [Intan ADC Missing Code and Missing Decison Level (local pdf)](papers/2025/Barth_2024_J._Neural_Eng._21_044001.pdf)
 
 [Fix SAR ADC Issues (local pdf)](papers/2025/2012_JETTA_SARADC.pdf)
+
+---

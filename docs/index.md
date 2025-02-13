@@ -1,6 +1,6 @@
-# Welcome to MkDocs
+# Welcome to Frank's Notebook
 
-## Doc Links
+## Markdown Doc Links
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
@@ -8,7 +8,7 @@ Markdown Guide Visit [markdownguide.org](https://www.markdownguide.org/basic-syn
 
 Material Mkdocs [mkdocs-material](https://squidfunk.github.io/mkdocs-material/getting-started/).
 
-## Install
+## Install mkdocs-material
 
 ``` sh
 pip install mkdocs-material
@@ -67,6 +67,10 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
     Line 2 
     --->
 
-### More Help
+### Markdown Help
 
 [Markdown Doc from codecademy](https://www.codecademy.com/resources/docs/markdown)
+
+## Tze-Chien Chu Blog
+
+[Tze-Chien Chu Blog](https://tzechienchu.typepad.com/tc_chus_point/)
