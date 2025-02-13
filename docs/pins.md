@@ -59,3 +59,7 @@ read_buf = slave.exchange(write_buf, duplex=True)
 ### Nexy A7 PMod
 
 ![PMod](pins/NexyA7PMod.png)
+
+### Efinix T20 
+
+![Efinix:T20](./images/2025/Screenshot%20from%202025-02-13%2012-16-33.png)

@@ -29,7 +29,7 @@ ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
 ## Amaranth
 
-[Amaranth HDL Document](https://amaranth-lang.org/docs/amaranth/v0.5.4/)
+[Amaranth HDL Document](https://amaranth-lang.org/docs/amaranth/latest/)
 
 ## Verilog
 
