@@ -10,6 +10,22 @@
 
 ---
 
+#### USB3 FIFO Interface for DAQ use FT60X and Cypress FX3
+
+[USB3 FIFO Interface for DAQ](./papers/2025/Mroczek_an_universal_MAM_12_2016.pdf)
+
+---
+
+## DAQ Related
+
+### Intan RHX
+
+[Intan ADC Missing Code and Missing Decison Level (local pdf)](papers/2025/Barth_2024_J._Neural_Eng._21_044001.pdf)
+
+[Fix SAR ADC Issues (local pdf)](papers/2025/2012_JETTA_SARADC.pdf)
+
+---
+
 ## Neuro Science Experiement
 
 ### Falcon
@@ -79,7 +95,7 @@ interventions](./papers/2025/s41467-025-56081-9.pdf)
     electrophysiology, videography, and audio
     recordings using a custom-made pulse
     generator
-    
+
 ---
 
 ### Open Ephys Close Loop
@@ -97,18 +113,6 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 [How are Concepts Created in the Brain? url](https://sapienlabs.org/lab-talk/how-are-concepts-created-in-the-brain/)
 
 [The log-dynamic brain: How skewed distributions affect network operations (local pdf)](./papers/2025/BuzsakiMizusekiNRN.pdf)
-
----
-
-## Hardware Related
-
----
-
-### Intan RHX
-
-[Intan ADC Missing Code and Missing Decison Level (local pdf)](papers/2025/Barth_2024_J._Neural_Eng._21_044001.pdf)
-
-[Fix SAR ADC Issues (local pdf)](papers/2025/2012_JETTA_SARADC.pdf)
 
 ---
 
