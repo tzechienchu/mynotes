@@ -96,6 +96,10 @@ interventions](./papers/2025/s41467-025-56081-9.pdf)
     recordings using a custom-made pulse
     generator
 
+### Any-Maze
+
+[any-maze](https://www.any-maze.com/)
+
 ---
 
 ### Open Ephys Close Loop
