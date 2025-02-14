@@ -45,7 +45,7 @@ ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
 [Digital Signal Processing, from Algorithm to FPGA Bitstream](https://community.element14.com/technologies/fpga-group/b/blog/posts/the-art-of-fpga-design-season-2---digital-signal-processing-from-algorithm-to-fpga-bitstream)
 
-## Programming
+## Linux and Programming
 
 ### Linux Thread
 
@@ -58,6 +58,11 @@ Linuxとpthreadsによる マルチスレッドプログラミング入門｜サ
 
 Tutorial 1
 [https://linux-kernel-labs.github.io/refs/heads/master/#](https://linux-kernel-labs.github.io/refs/heads/master/#)
+
+### SSH Turnnel
+
+    ssh -f -N -L 127.0.0.1:8888:127.0.0.1:8888 -i pemKey  user@ipaddress
+    For Jupyter notebook
 
 ## PICO
 

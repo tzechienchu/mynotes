@@ -67,6 +67,10 @@ Nuke Flash
 
 ## FPGA
 
+### Generates Makefiles for FPGA EDA
+
+[Generates Makefiles for FPGA EDA](https://github.com/cambridgehackers/fpgamake)
+
 ### Riffa
 
 [RIFFA_A_Reusable_Integration_Framework_for_FPGA_Accelerators](https://www.researchgate.net/publication/261396774_RIFFA_A_Reusable_Integration_Framework_for_FPGA_Accelerators)
@@ -109,11 +113,19 @@ Nuke Flash
 
 [7 Series Compare](./subtitles/Artix7vsKintex.md)
 
+### Valid Ready Handshake use Verilog
+
+[Valid-Ready Handshake](https://blog.csdn.net/maowang1234588/article/details/100065072)
+
 ### USB3 DAQ
 
 #### USB3 FIFO Interface for DAQ use FT60X and Cypress FX3
 
 [USB3 FIFO Interface for DAQ](./papers/2025/Mroczek_an_universal_MAM_12_2016.pdf)
+
+#### Korean Blog about FT601
+
+[Korean Blog about FT601](https://blog.naver.com/acidc/223321211341)
 
 ## ONIX
 

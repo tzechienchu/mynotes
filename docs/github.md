@@ -34,6 +34,10 @@
 
 [Protothread Implementation](https://github.com/zserge/pt)
 
+### Linux_Driver_Tutorial from Johannes4Linux
+
+[Linux_Driver_Tutorial](https://github.com/Johannes4Linux/Linux_Driver_Tutorial)
+
 ## Web
 
 ### hardcore-functional-architecture
@@ -245,3 +249,19 @@
 ### Propeller_1_Design
 
 [Propeller_1_Design](https://github.com/parallaxinc/Propeller_1_Design)
+
+### Verilog modules for OV7670 camera (DCMI Reader)
+
+[OV7670-Verilog](https://github.com/westonb/OV7670-Verilog)
+
+### spispy: Open source flash emulation
+
+[Open source flash emulation](https://trmm.net/Spispy/)
+
+### FTDI FT245 Style Synchronous/Asynchronous FIFO Bridge
+
+[FTDI FT245 Bridge](https://github.com/ultraembedded/core_ftdi_bridge)
+
+### FPGA-ftdi245fifo
+
+[FPGA-ftdi245fifo](https://github.com/WangXuan95/FPGA-ftdi245fifo)
