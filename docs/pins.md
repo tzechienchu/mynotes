@@ -10,6 +10,10 @@
     5.NRST
     6.SW_O
 
+## PyBoard STM32F405
+
+![PyBoard](./images/2025/pybv11-pinout.jpg)
+
 ## FT2232
 
 ### FT245 Fifo

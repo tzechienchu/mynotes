@@ -10,7 +10,7 @@
 
 ---
 
-## Neuro Science
+## Neuro Science Experiement
 
 ### Falcon
 
@@ -71,7 +71,18 @@ interventions](./papers/2025/s41467-025-56081-9.pdf)
 
 ---
 
-###  Open Ephys Close Loop
+### Star Protocol
+
+[Star Protocol](./papers/2025/StarProtocol.pdf)
+
+    Protocol for precise signal synchronization of
+    electrophysiology, videography, and audio
+    recordings using a custom-made pulse
+    generator
+    
+---
+
+### Open Ephys Close Loop
 
 Open_Ephys_electroencephalography_Open_Ephys_EEG_A_modular_low-cost_open-source_solution_to_human_neural_recording [Paper url](https://www.researchgate.net/publication/314305186_Open_Ephys_electroencephalography_Open_Ephys_EEG_A_modular_low-cost_open-source_solution_to_human_neural_recording)
 
@@ -81,11 +92,15 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 
 ---
 
-### Brain
+## Brain
 
 [How are Concepts Created in the Brain? url](https://sapienlabs.org/lab-talk/how-are-concepts-created-in-the-brain/)
 
 [The log-dynamic brain: How skewed distributions affect network operations (local pdf)](./papers/2025/BuzsakiMizusekiNRN.pdf)
+
+---
+
+## Hardware Related
 
 ---
 
@@ -96,3 +111,9 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 [Fix SAR ADC Issues (local pdf)](papers/2025/2012_JETTA_SARADC.pdf)
 
 ---
+
+## System Model and Simulation
+
+### PySD: System Dynamics Modeling in Python
+
+[PySD: System Dynamics Modeling in Python](./papers/2025/PySD%20System%20Dynamics%20Modeling%20in%20Python.pdf)
