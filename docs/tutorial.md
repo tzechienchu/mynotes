@@ -1,4 +1,3 @@
-
 # Tutorial
 
 ## Litex
@@ -142,6 +141,56 @@ buf = array('H', 2048 + int(2047 * math.sin(2 * math.pi * i / 128)) for i in ran
 # output the sine-wave at 400Hz
 dac = DAC(1, bits=12)
 dac.write_timed(buf, 400 * len(buf), mode=DAC.CIRCULAR)
+```
+
+### Micropython Debounce
+
+```py
+import pyb
+
+def wait_pin_change(pin):
+    # wait for pin to change value
+    # it needs to be stable for a continuous 20ms
+    cur_value = pin.value()
+    active = 0
+    while active < 20:
+        if pin.value() != cur_value:
+            active += 1
+        else:
+            active = 0
+        pyb.delay(1)
+
+pin_x1 = pyb.Pin('X1', pyb.Pin.IN, pyb.Pin.PULL_DOWN)
+while True:
+    wait_pin_change(pin_x1)
+    pyb.LED(4).toggle()
+    
+```
+
+### Micropython json
+
+```py
+import ujson
+parsed = ujson.loads("""{"name":"John"}""")
+print(parsed)
+```
+
+### Micropython USB UART Passthrough
+
+```py
+import pyb
+import select
+
+def pass_through(usb, uart):
+    usb.setinterrupt(-1)
+    while True:
+        select.select([usb, uart], [], [])
+        if usb.any():
+            uart.write(usb.read(256))
+        if uart.any():
+            usb.write(uart.read(256))
+
+pass_through(pyb.USB_VCP(), pyb.UART(1, 9600, timeout=0))
 ```
 
 ## Chromebook
