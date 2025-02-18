@@ -128,6 +128,59 @@ Other Solution
 
 ## Micropython
 
+### Pyboard Sleep and Wakeup
+
+[lowpower.py](https://gist.github.com/dpgeorge/bf477eb883b6d189eae9)
+
+```py
+import pyb, stm
+from pyb import Pin
+
+    # wakeup callback
+    wakeup = False
+    def cb(exti):
+        nonlocal wakeup
+        wakeup = True
+
+    # configure switch to generate interrupt on press
+    sw = pyb.Switch()
+    sw.callback(lambda:cb(0))
+
+    # function to flash an LED
+    def flash(led):
+        led.on()
+        pyb.delay(100)
+        led.off()
+
+    while True:
+        # standby (need to exit by pressing RST, or wait 15s)
+        if stm.mem32[stm.RTC + stm.RTC_BKP1R] == 0:
+            flash(led1)
+            stm.mem32[stm.RTC + stm.RTC_BKP1R] = 1
+            rtc.wakeup(15000, cb)
+            pyb.standby()
+        else:
+            stm.mem32[stm.RTC + stm.RTC_BKP1R] = 0
+
+        # stop
+        flash(led2)
+        led_off()
+        pyb.stop()
+        led_on()
+
+        # idle
+        flash(led3)
+        wakeup = False
+        while not wakeup:
+            pyb.wfi()
+
+        # run
+        flash(led4)
+        wakeup = False
+        while not wakeup:
+            pass
+```
+
 ### Micropython pyBoard DAC use DMA
 
 ```py

@@ -1,5 +1,11 @@
 # Github
 
+## Neuro Science
+
+### Neuromorphic-Computing-Guide
+
+[Neuromorphic-Computing-Guide](https://github.com/mikeroyal/Neuromorphic-Computing-Guide)
+
 ## Linux
 
 ### pciutils
@@ -97,6 +103,14 @@
 ### STM32 UART use DMA
 
 [STM32 UART use DMA](https://github.com/tzechienchu/stm32-usart-uart-dma-rx-tx)
+
+### raspberrypi-pico
+
+[raspberrypi-pico](https://github.com/stechiez/raspberrypi-pico)
+
+### Pico Flashloader
+
+[Pico Flashloader](https://github.com/rhulme/pico-flashloader)
 
 ## FPGA
 
@@ -265,3 +279,63 @@
 ### FPGA-ftdi245fifo
 
 [FPGA-ftdi245fifo](https://github.com/WangXuan95/FPGA-ftdi245fifo)
+
+### GOWIN LittleBeeなどの小規模FPGA向けのサンプルやライブラリ
+
+[FPGA Samples](https://github.com/ciniml/fpga_samples)
+
+### PERFECT utilities for working with Chisel3
+
+[perfect-chisel](https://github.com/IBM/perfect-chisel)
+
+### SystemVerilog library for common math operations
+
+[SystemVerilog for Math](https://github.com/s-okai/sv-math)
+
+### Learning FPGA, yosys, nextpnr, and RISC-V
+
+[Learn FPGA](https://github.com/BrunoLevy/learn-fpga)
+
+### Chisel-wavetable
+
+[Chisel-wavetable](https://github.com/deanm1278/Chisel-wavetable)
+
+### Chiselを始めたい人に読んでほしい本のサンプルソースプロジェクト
+
+[introductory-guide-to-chisel](https://github.com/diningyo/introductory-guide-to-chisel)
+
+### icebreaker-litex-examples
+
+[icebreaker-litex-examples](https://github.com/icebreaker-fpga/icebreaker-litex-examples)
+
+### chisel uart
+
+[chisel-uart](https://github.com/nyuichi/chisel-uart)
+
+### chisel_i2c
+
+[chisel_i2c](https://github.com/ciniml/chisel_i2c)
+
+### A collection of AXI4 interface definitions and simple peripherals in Chisel
+
+[A collection of AXI4 interface definitions and simple peripherals in Chisel.](https://github.com/maltanar/axi-in-chisel)
+
+### FPGA Readings
+
+[FPGA Readings](https://github.com/lastweek/fpga_readings)
+
+### FPGA Implement Pico PIO
+
+[FPGA Implement Pico PIO](https://github.com/lawrie/fpga_pio)
+
+### Completed projects from "FPGA Prototyping by Verilog Examples" book by Pong P. Chu
+
+[FPGA_Book_Experiments](https://github.com/AngeloJacobo/FPGA_Book_Experiments)
+
+### Parallel Programming for FPGAs
+
+[Parallel Programming for FPGAs](https://github.com/KastnerRG/pp4fpgas)
+
+### Mersenne-Twister-HLS
+
+[Mersenne-Twister-HLS](https://github.com/wfedorko/Mersenne-Twister-HLS)

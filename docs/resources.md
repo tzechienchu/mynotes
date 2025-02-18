@@ -155,6 +155,10 @@ Nuke Flash
 
 [Wireless Headstage](./subtitles/wireless_hs.md)
 
+### AD5940 Collections
+
+[AD5940.md](./subtitles/AD5940.md)
+
 ## Math
 
 ### Probabilistic numerics
