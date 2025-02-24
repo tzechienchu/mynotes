@@ -39,6 +39,12 @@ USB3 Support CrossLinkU-NX
 
 [tinyCLUNX33 Kit](https://tinyclunx33.tinyvision.ai/)
 
+## Efinix
+
+### T20 Kit
+
+![](./images/2025/Screenshot%20from%202025-02-24%2015-52-11.png)
+
 ### PICO + ICE40
 
 [pico-ice RP2040 plus Lattice iCE40UP5K FPGA](https://www.tindie.com/products/tinyvision_ai/pico-ice-rp2040-plus-lattice-ice40up5k-fpga/)
