@@ -71,6 +71,10 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 
 [Markdown Doc from codecademy](https://www.codecademy.com/resources/docs/markdown)
 
+### Pay Attention 
+
+#### Don't put large file 
+
 ## Tze-Chien Chu Blog
 
 [Tze-Chien Chu Blog](https://tzechienchu.typepad.com/tc_chus_point/)
