@@ -339,3 +339,7 @@
 ### Mersenne-Twister-HLS
 
 [Mersenne-Twister-HLS](https://github.com/wfedorko/Mersenne-Twister-HLS)
+
+### Clash6502 Haskell
+
+[Clash6502](https://github.com/polygonhell/Clash6502)
