@@ -71,9 +71,17 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 
 [Markdown Doc from codecademy](https://www.codecademy.com/resources/docs/markdown)
 
-### WaveDOM Help
+### Markdown Preview
+
+Control-Shift-V
+
+### WaveDROM Help
 
 [WaveDOM Help](https://wavedrom.com/tutorial.html)
+
+### WaveDROM Preview
+
+Control-Shift-P
 
 ### Pay Attention 
 
