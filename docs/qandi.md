@@ -3,6 +3,34 @@
 
 ## Quotes
 
+### 赤字迷思
+
+    “撙節就是沒有想像力：
+    不知道怎麼想像我們如何能同時改善生活水準，
+    投資國家的未來，維持健康的經濟，並管理通貨膨脹；
+    貿易戰也是沒有想像力：
+    無法想像我們如何才能同時維持國內的充分就業，
+    幫助貧窮國家永續發展，降低我們的碳排放量，
+    並繼續享受貿易帶來的好處；
+    剝削自然生態更是想像力的失敗：
+    我們未能想像如何同時改善生活品質，
+    維持繁榮的經濟，轉移人類活動，
+    進而保護人類和地球”
+
+### Suggestion from 70 to 50
+
+    1.Money-Time-Health Triangle
+    2.Time: Career Relationship Recovery
+    3.Say "No" more
+    4.Time >> Money
+    5.Buy other's time.
+    6.Health and Mental Health has priority
+    7.Don't Play Status Game
+    8.Rent before you buy
+    9.Track your expense
+    A.Strengthen your connection
+    B.Retire for a Purpose.
+    
 ### 大數據時代的「不傷害」誓言
         大數據時代的「不傷害」誓言
 		本人宣誓，盡我所能，遵守此約：
