@@ -15,9 +15,10 @@ nav:
   - 'Github Collection': 'github.md'
   - 'Templates': 'templates.md'
   - 'Magazins (Local)': 'mags.md'
-  #- 'Projects': 'projects.md'
-  #- 'Quotes & Ideas': 'qandi.md'
-  #- 'Personal': 'personal.md'
+  - 'Peoples' : './private/peoples.md'
+  - 'Projects': './private/projects.md'
+  - 'Quotes & Ideas': './private/qandi.md'
+  - 'Personal': './private/personal.md'
 
 markdown_extensions:
   - attr_list
