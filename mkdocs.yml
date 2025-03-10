@@ -14,7 +14,7 @@ nav:
   - 'Facts': 'facts.md'
   - 'Github Collection': 'github.md'
   - 'Templates': 'templates.md'
-  - 'Magazins (Local)': 'mags.md'
+  - 'Magazins (Local)': './mags/index.md'
   - 'Peoples' : './private/peoples.md'
   - 'Projects': './private/projects.md'
   - 'Quotes & Ideas': './private/qandi.md'
