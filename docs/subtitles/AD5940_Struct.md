@@ -761,3 +761,29 @@ typedef struct
 }FreqParams_Type;
 
 ```
+
+## Sequencer Generator
+
+```c
+typedef struct
+{
+  uint32_t RegAddr  :8;   /**< 8bit address is enough for sequencer */
+  uint32_t RegValue :24;  /**< Reg data is limited to 24bit by sequencer  */
+}SEQGenRegInfo_Type;
+
+/**
+ * Sequencer generator data base.
+*/
+struct
+{
+  BoolFlag EngineStart;         /**< Flag to mark start of the generator */
+  uint32_t BufferSize;          /**< Total buffer size */
+
+  uint32_t *pSeqBuff;           /**< The buffer for sequence generator(both sequences and RegInfo) */
+  uint32_t SeqLen;              /**< Generated sequence length till now */
+  SEQGenRegInfo_Type *pRegInfo; /**< Pointer to buffer where stores register info */
+  uint32_t RegCount;            /**< The count of register info available in buffer *pRegInfo. */
+  AD5940Err LastError;          /**< The last error message. */
+}SeqGenDB;  /* Data base of Seq Generator */
+
+```
