@@ -68,3 +68,23 @@ Open Ephys Breakout Board [breakout_schematic.pdf](schematics/breakout_schematic
 ### MicroMod
 
 Sprkfun [MicroMod_ATP_Carrier_Board_Schematic.pdf](schematics/MicroMod_ATP_Carrier_Board_Schematic.pdf)
+
+## Nano-Z and Tetroplater
+
+### Nano Z 
+
+![](./subtitles/AD5940/Screenshot%20from%202025-03-26%2012-55-26.png)
+
+### Tetroplater (Open Source)
+
+![](./subtitles/AD5940/Screenshot%20from%202025-03-26%2016-49-46.png)
+
+![](./subtitles/AD5940/Screenshot%20from%202025-03-26%2016-49-56.png)
+
+![](./subtitles/AD5940/Screenshot%20from%202025-03-26%2016-50-08.png)
+
+![](./subtitles/AD5940/Screenshot%20from%202025-03-26%2016-50-17.png)
+
+![](./subtitles/AD5940/Screenshot%20from%202025-03-26%2016-50-28.png)
+
+![](./subtitles/AD5940/Screenshot%20from%202025-03-26%2016-50-38.png)
