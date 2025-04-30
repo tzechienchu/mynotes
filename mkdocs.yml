@@ -3,8 +3,8 @@ theme:
   name: material
 nav:
   - 'Help': 'index.md'
+  - '2025-05': 'Y2025/Y2025-05.md'
   - '2025-04': 'Y2025/Y2025-04.md'
-  - '2025-03': 'Y2025/Y2025-03.md'
   - '2025': 'Y2025/Y2025.md'
   - '2024': 'Y2024.md'
   - 'Schematics': 'schematics.md'
