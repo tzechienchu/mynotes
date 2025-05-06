@@ -4,6 +4,8 @@
 
 [fjullien migen_litex_tutorials](https://github.com/fjullien/migen_litex_tutorials) <-- Best Litex tutorial
 
+[Local migen_litex_tutorials](./subtitles/migen_litex_tutorials.md)
+
 [officail litx wiki](https://github.com/enjoy-digital/litex/wiki).
 
 [Litex MIPI CSI](https://github.com/gatecat/litex-nexus-mipi)
@@ -11,6 +13,7 @@
 ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
 [getting-started-with-litex](https://sourcesup.renater.fr/www/mic-sec-2022/labs/getting-started-with-litex.html)
+
 
 ## Chisel FPGA開発日記
 

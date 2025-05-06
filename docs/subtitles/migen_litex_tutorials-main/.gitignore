@@ -1,0 +1,5 @@
+gateware/
+__pycache__/
+*.vcd
+build/
+*.csv
