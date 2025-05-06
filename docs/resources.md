@@ -151,6 +151,10 @@ Nuke Flash
 
 [data-acquisition-synchronisation](https://dewesoft.com/blog/data-acquisition-synchronisation)
 
+### Sync Expander and Sync Hub
+
+[Sync Expander and Sync Hub](./subtitles/SyncExpander.md)
+
 ### Wireless Headstages
 
 [Wireless Headstage](./subtitles/wireless_hs.md)
