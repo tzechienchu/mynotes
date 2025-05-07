@@ -14,6 +14,29 @@ ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
 [getting-started-with-litex](https://sourcesup.renater.fr/www/mic-sec-2022/labs/getting-started-with-litex.html)
 
+## Migen Simulation
+
+### Counter
+
+``` py
+from migen import *
+
+class DPLL(Module):
+    def __init__(self):
+        self.count = Signal(4)
+
+        self.sync += self.count.eq(self.count + 1)
+
+def dpll_test(dut):
+    for i in range(20):
+         print((yield dut.count))
+         yield
+
+if __name__ == "__main__":
+    dut = DPLL()
+    run_simulation(dut, dpll_test(dut), vcd_name="dpll.vcd")
+
+```
 
 ## Chisel FPGA開発日記
 
@@ -97,6 +120,12 @@ Web Reference :
 [RT-Thread and LVGL](https://rt-thread.medium.com/get-raspberry-pi-pico-running-on-rt-thread-rtos-with-an-opensource-light-versatile-graphics-library-c1f708882bff)
 
 ## Python
+
+### 使用 uv 管理 Python 環境
+
+[使用 uv 管理 Python 環境](https://docs.astral.sh/uv/)
+
+[UV Commands](https://docs.astral.sh/uv/getting-started/features/)
 
 ### PySerial
 
