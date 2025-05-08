@@ -6,19 +6,36 @@
 
 ## Design Consideration
 
+### Reference
+
+[time-and-synchronization-v24.pdf](./SyncExpander/time-and-synchronization-v24.pdf)
+
 ### DAQ Distance Consideration
 
     If DAQ Distance between each other > 100M , Time Base Sync is better (PTP)
     Otherwise, Signal Base Sync is OK.
+
+![](./SyncExpander/Screenshot%20from%202025-05-08%2015-05-30.png)
 
 ### Disconnect Possibility
 
     If Signal between DAQ will lost, DPLL will be needed.
     Otherwise, use the Signal as Clock is OK.
 
-## Sync Hub Specification 
+### TimeStamp Bits Number
 
-### MCU + FPGA or Not
+    1KHz   Clock : 32Bits = 2^32/1000/86400 = 49.7 Days  1000us
+    10KHz  Clock : 32Bits = 2^32/10000/86400 = 4.97 Days  100us
+    50KHz  Clock : 32Bits = 2^32/50000/86400 = 0.99 Days   20us
+    100KHz Clock : 32Bits = 2^32/100K/86400  = 0.49 Days   10us
+
+![](./SyncExpander/Screenshot%20from%202025-05-08%2015-15-38.png)
+
+![](./SyncExpander/Screenshot%20from%202025-05-08%2015-19-02.png)
+
+## Sync Hub Specification
+
+### MCU Or FPGA
 
     USB Power and Data
     CK_IN for External Clock Source.
@@ -61,7 +78,21 @@
     Stop : Output to DAQ
     Ready : DAQ to Sync Expander
 
-## Test Bus Board
+## Bus Test Board
 
 ![](./SyncExpander/bus.png)
 
+## Test Board
+
+### Master
+
+    MCU Send SPI CLOCK/DATA
+    MCU Send TX
+    MCU Receive RX from Loop Back on Slave Board
+
+### Slave
+
+    MCU Received SPI Clock/Data
+    MCU RX Date from Master
+    MCU TX Send Data from MCU RX Data
+    MCU TX Enable ?
