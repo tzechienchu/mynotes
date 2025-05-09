@@ -131,6 +131,10 @@ Nuke Flash
 
 [Open Ephys: Onix](./subtitles/onix.md)
 
+## Onix Breakout Board Github 
+
+[README.md](./subtitles/onix-breakout-main/README.md)
+
 ## DAQ
 
 ### Intan

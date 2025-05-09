@@ -1,4 +1,7 @@
 # ONIX Breakout Board
+
+## README
+ 
 This board allows bench access to the IO provided by the [ONIX FMC Host
 Board](https://github.com/open-ephys/onix-fmc-host). It features:
 
@@ -19,3 +22,14 @@ Board](https://github.com/open-ephys/onix-fmc-host). It features:
   [yosys](http://www.clifford.at/yosys/) & [nextpnr](https://github.com/YosysHQ/nextpnr)
 
 ![ONIX Breakout Board revision 1.5](./resources/breakout_edited_callouts.jpg)
+
+## Gateware Source Code (Frank)
+
+- [breakout.v](./gateware/breakout.v)
+    - [breakout_to_host.v](./gateware/breakout_to_host.v)
+        - [lvds_8b10b_send.v](./gateware/lvds_8b10b_send.v)
+            - [encode8b10b.v](./gateware/encode8b10b.v)
+    - [host_to_breakout.v]()
+        - [lvds_8b10b_receive.v]()
+            - [decode8b10.v]()
+
