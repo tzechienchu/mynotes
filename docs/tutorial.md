@@ -107,6 +107,8 @@ Web Reference :
 
 [programmable-io-programming @ circuitcellar URL](https://circuitcellar.com/research-design-hub/basics-of-design/programmable-io-programming/)
 
+[playing-with-the-pico](https://gregchadwick.co.uk/blog/playing-with-the-pico-pt1/)
+
 ### RP2040 PICO DMA
 
 [RP2040 PICO DMA](https://mcuoneclipse.com/2023/04/02/rp2040-with-pio-and-dma-to-address-ws2812b-leds/)

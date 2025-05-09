@@ -10,6 +10,8 @@
 
 [time-and-synchronization-v24.pdf](./SyncExpander/time-and-synchronization-v24.pdf)
 
+#### TDMS HDMI LVDS Speed 250MHz
+
 ### DAQ Distance Consideration
 
     If DAQ Distance between each other > 100M , Time Base Sync is better (PTP)
