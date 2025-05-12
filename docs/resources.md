@@ -131,9 +131,9 @@ Nuke Flash
 
 [Open Ephys: Onix](./subtitles/onix.md)
 
-## Onix Breakout Board Github 
+## Onix Breakout Board Github
 
-[README.md](./subtitles/onix-breakout-main/README.md)
+[Github Source Code](./subtitles/onix-breakout-main/README.md)
 
 ## DAQ
 
@@ -158,6 +158,10 @@ Nuke Flash
 ### Sync Expander and Sync Hub
 
 [Sync Expander and Sync Hub](./subtitles/SyncExpander.md)
+
+### Harp on Pico
+
+[Harp Core Pico Github Source](./subtitles/harp.core.pico-main/README.md)
 
 ### Wireless Headstages
 
