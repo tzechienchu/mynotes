@@ -2,7 +2,9 @@
 
 ## Block 1
 
-![](./SyncExpander/syncexpander.png)
+![](./SyncExpander/syncexpander_hub.png)
+
+![](./SyncExpander/xdaq_syncexpander.png)
 
 ## Design Consideration
 

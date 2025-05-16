@@ -38,6 +38,56 @@ if __name__ == "__main__":
 
 ```
 
+### Migen Selection of Signal from Signal as Index
+
+```py
+        shiftout = Array({} for i in range(REG_Number))
+
+        for i in range(16):
+            shiftout[0][i] = [self.spi_miso1.eq(Regsiters[0][i] & ~self.spi_cs)]
+            shiftout[1][i] = [self.spi_miso2.eq(Regsiters[1][i] & ~self.spi_cs)]
+
+        for i in range(REG_Number):
+            self.comb += [
+                Case(shift_count, shiftout[i])
+            ]
+```
+
+## IceStorm toolset for ICE40 FPGA
+
+```makefile
+# Project setup
+PROJ      = blinky
+BUILD     = ./build
+DEVICE    = 8k
+FOOTPRINT = ct256
+
+# Files
+FILES = top.v
+
+.PHONY: all clean burn timing
+
+all $(BUILD)/$(PROJ).asc $(BUILD)/$(PROJ).bin:
+	# if build folder doesn't exist, create it
+	mkdir -p $(BUILD)
+	# synthesize using Yosys
+	yosys -p "synth_ice40 -top top -blif $(BUILD)/$(PROJ).blif -json $(BUILD)/$(PROJ).json" $(FILES)
+	# Place and route using arachne
+	#arachne-pnr -d $(DEVICE) -P $(FOOTPRINT) -o $(BUILD)/$(PROJ).asc -p pinmap.pcf $(BUILD)/$(PROJ).blif
+	nextpnr-ice40 --hx$(DEVICE) --json build/$(PROJ).json --pcf pinmap.pcf --asc build/$(PROJ).asc
+	# Convert to bitstream using IcePack
+	icepack $(BUILD)/$(PROJ).asc $(BUILD)/$(PROJ).bin
+
+burn: $(BUILD)/$(PROJ).bin
+	iceprog $(BUILD)/$(PROJ).bin
+
+timing: $(BUILD)/$(PROJ).asc
+	icetime -tmd hx$(DEVICE) $(BUILD)/$(PROJ).asc
+
+clean:
+	rm build/*
+```
+
 ## Chisel FPGA開発日記
 
 [https://msyksphinz.hatenablog.com/](https://msyksphinz.hatenablog.com/)
@@ -299,3 +349,9 @@ Install Desktop GUI in chromebook [chromebookDesktop.md](subtitles/chromebookDes
 ## VSCode
 
 [VSCode and Docker](https://mcuoneclipse.com/2025/02/08/optimizing-embedded-development-with-vs-code-and-devcontainer/)
+
+## LTSpice Tutorial
+
+[LTspice Tutorial](https://www.youtube.com/playlist?list=PLT84nve2j1g_wgGcm0Bv3K4RSl2Jdjsey)
+
+[LTSpice Tutorial](https://www.youtube.com/playlist?list=PLGtyXSn57qnKRiIqfpVK3ZtzOD8eb_2ro)
