@@ -1,5 +1,13 @@
 # Sync Expander  and Sync Hub Specification
 
+## Top Block
+
+![](./SyncExpander/bus2.png)
+
+## MiniDAQ use Sync Box can function as Event Controller
+
+![](./SyncExpander/miniDAQ.png)
+
 ## Block 1
 
 ![](./SyncExpander/syncexpander_hub.png)
@@ -98,5 +106,40 @@
 
 - MCU Received SPI Clock/Data
 - MCU RX Date from Master
-- MCU TX Send Data from MCU RX Data
-- MCU TX Enable ?
+- MCU TX Send Data fro
+
+## LFSR use Python
+
+```py
+#https://en.wikipedia.org/wiki/Linear-feedback_shift_register
+class LFSR():
+    def __init__(self, c=None, a=None, lenc=0):
+        if a is None:
+            a = []
+        if c is None:
+            c = []
+        self.a = a
+        self.c = c
+        self.lenc = lenc
+        lena = len(a)
+        
+    def LeftShift(self):
+        #print(self.a)
+        lastb = 0
+        lenc = self.lenc
+        for i in range(lenc):
+            lastb = lastb ^(self.a[i] & self.c[i])
+        b = self.a[1:]
+        b.append(lastb)
+        outp = self.a[0]
+        self.a = b
+        return outp
+
+
+c = [1,1,0,0,0,0] #x^6+x^5+1
+a = [1,1,0,0,0,0] #0x30
+lfsr1 = LFSR([1,1,0,0,0,0],a,6)
+        
+for i in range(65536):
+    lfsr1.LeftShift()
+```
