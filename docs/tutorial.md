@@ -330,6 +330,54 @@ def pass_through(usb, uart):
 pass_through(pyb.USB_VCP(), pyb.UART(1, 9600, timeout=0))
 ```
 
+### Micropython GPIO IRQ
+
+```py
+# Rui Santos & Sara Santos - Random Nerd Tutorials
+# Complete project details at https://RandomNerdTutorials.com/raspberry-pi-pico-interrupts-micropython/
+
+from machine import Pin
+
+button = Pin(21, Pin.IN, Pin.PULL_DOWN)
+
+def button_pressed(pin):
+    print("Button Pressed!")
+
+# Attach the interrupt to the button's rising edge
+button.irq(trigger=Pin.IRQ_RISING, handler=button_pressed)
+```
+
+### Micropython Timer IRQ
+
+```py
+# Rui Santos & Sara Santos - Random Nerd Tutorials
+# Complete project details at https://RandomNerdTutorials.com/raspberry-pi-pico-interrupts-micropython/
+
+from machine import Pin, Timer
+from time import sleep
+
+# LED pin
+led_pin = 20
+led = Pin(led_pin, Pin.OUT)
+
+# Callback function for the timer
+def toggle_led(timer):
+    led.value(not led.value())  # Toggle the LED state (ON/OFF)
+
+# Create a periodic timer
+blink_timer = Timer()
+blink_timer.init(mode=Timer.PERIODIC, period=500, callback=toggle_led)  # Timer repeats every half second
+
+# Main loop (optional)
+while True:
+    print('Main Loop is running')
+    sleep(2)
+```
+
+### Micrpython IRQ
+
+[raspberry-pi-pico-interrupts-micropython](https://randomnerdtutorials.com/raspberry-pi-pico-interrupts-micropython/)
+
 ## Chromebook
 
 Install Desktop GUI in chromebook [chromebookDesktop.md](subtitles/chromebookDesktop.md)
