@@ -67,6 +67,25 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
     Line 2 
     --->
 
+### List
+
+- First item
+- Second item
+- Third item
+  - Indented item
+  - Indented item
+- Fourth item
+
+```
+- First item
+- Second item
+- Third item
+  - Indented item
+  - Indented item
+- Fourth item
+```
+
+
 ### Markdown Help
 
 [Markdown Doc from codecademy](https://www.codecademy.com/resources/docs/markdown)
