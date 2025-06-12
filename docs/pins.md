@@ -10,6 +10,10 @@
     5.NRST
     6.SW_O
 
+## Pico
+
+![Pico Pinout](./images/2025/Screenshot%20from%202025-06-10%2016-09-10.png)
+
 ## PyBoard STM32F405
 
 ![PyBoard](./images/2025/pybv11-pinout.jpg)

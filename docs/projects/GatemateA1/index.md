@@ -1,8 +1,13 @@
 # Gatemate A1 EVB Tutorial
 
+
 ## Board Specification
 
 ![](../GatemateA1/image/GateMateA1-EVB-1.jpg)
+
+[Olimex GatemateA1-EVB Product](https://www.olimex.com/Products/FPGA/GateMate/GateMateA1-EVB/open-source-hardware)
+
+[Olimex GatemateA1-EVB Github Pages](https://github.com/OLIMEX/GateMateA1-EVB)
 
 - CCGM1A1 FPGA with 20480 logic cells
 - PSRAM 64Mbit
@@ -19,3 +24,7 @@
 - User LED
 - 4 sections configuration slide switch
 - Dimensions: 120 x 80 mm
+
+## Tool Installation
+
+## Hello World

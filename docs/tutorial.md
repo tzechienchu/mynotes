@@ -171,6 +171,60 @@ Web Reference :
 
 [RT-Thread and LVGL](https://rt-thread.medium.com/get-raspberry-pi-pico-running-on-rt-thread-rtos-with-an-opensource-light-versatile-graphics-library-c1f708882bff)
 
+### RP2040 Arduino How to Make 2 PWM Start at the same time
+
+```c
+
+#define _PWM_LOGLEVEL_        0
+#include "RP2040_PWM.h"
+
+//creates pwm instance
+RP2040_PWM* PWM_Instance1;
+RP2040_PWM* PWM_Instance2;
+
+#define FREQ1  2000000
+#define FREQ2  2000000
+
+int updated = 0;
+
+void setup() {
+  Serial.begin(115200);
+
+  PWM_Instance1 = new RP2040_PWM(10, FREQ1, 0);
+  PWM_Instance1->setPWM(10, FREQ1, 0);
+  turn_on_pwm1();
+}
+
+void turn_on_pwm1()
+{
+  rp2040.fifo.push(1);
+  PWM_Instance1->setPWM(10, FREQ1, 50);  
+}
+void turn_on_pwm2()
+{
+  while(1) {
+    if (rp2040.fifo.available()) {
+        PWM_Instance2->setPWM(12, FREQ2, 50);
+        rp2040.fifo.pop();
+        return;
+    }
+  }
+}
+
+void setup1() {
+  PWM_Instance2 = new RP2040_PWM(12, FREQ2, 0);
+  PWM_Instance2->setPWM(12, FREQ2, 0);
+  turn_on_pwm2();
+}
+void loop() {
+  delay(1000);
+}
+void loop1() {
+
+  delay(1000);
+}
+```
+
 ## Python
 
 ### 使用 uv 管理 Python 環境
