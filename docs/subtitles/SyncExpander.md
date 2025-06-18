@@ -143,3 +143,27 @@ lfsr1 = LFSR([1,1,0,0,0,0],a,6)
 for i in range(65536):
     lfsr1.LeftShift()
 ```
+
+## SyncBox_Slave Block Diagram
+
+![](./SyncExpander/SyncBox_Slave.png)
+
+## SyncBox Command
+
+- Reset, n
+- SendCK, X
+- ReadST, id
+- SyncStart
+
+## Sync-Slave Box
+
+- CKIn to FPGA
+- TX
+- TX_En
+- RX
+
+- Reset    to   FPGA
+- Start    to   FPGA
+- Zero     from FPGA
+- AtNumber from FPGA
+
