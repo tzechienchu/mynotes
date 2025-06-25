@@ -18,6 +18,7 @@ pip install mkdocs-material
 
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs serve -a 0.0.0.0:8000` - Start the live-reloading docs server over network.
 * `mkdocs build` - Build the documentation site.
 * `mkdocs -h` - Print help message and exit.
 
