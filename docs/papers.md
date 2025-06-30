@@ -129,3 +129,7 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 ### PySD: System Dynamics Modeling in Python
 
 [PySD: System Dynamics Modeling in Python](./papers/2025/PySD%20System%20Dynamics%20Modeling%20in%20Python.pdf)
+
+## ExoSkeleton
+
+[OpenExo](./papers/2025/OpenExo:%20An%20open-­source%20modular%20exoskeleton%20to%20augment%20human%20function.pdf)
