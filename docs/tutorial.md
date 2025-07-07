@@ -264,6 +264,36 @@ source ./virtkv/bin/activate
 Other Solution
 [https://python-poetry.org/](https://python-poetry.org/)
 
+### Makefile for Python
+
+# Makefile for Python project
+
+```
+# 預設目標，當直接執行 make 時會執行的目標
+.PHONY: all
+all: install test build
+
+# 安裝相依性
+.PHONY: install
+install:
+	pip install -r requirements.txt
+
+# 執行測試
+.PHONY: test
+test:
+	python -m unittest discover tests
+
+# 打包程式碼 (使用 setuptools)
+.PHONY: build
+build:
+	python setup.py sdist bdist_wheel
+
+# 清理
+.PHONY: clean
+clean:
+	rm -rf build dist *.egg-info
+```
+
 ## Micropython
 
 ### Pyboard Sleep and Wakeup
