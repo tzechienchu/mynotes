@@ -58,6 +58,10 @@ ISR(TCD0_OVF_vect, ISR_NAKED)
 
 ![](./timing.png)
 
+### Timing use PICO Emulation
+
+![](./20250730_121315.jpg)
+
 ### Harp Device need for Test
 
 ![](./AISelect_20250729_183401_Chrome.jpg)
