@@ -1,7 +1,7 @@
 { signal: [
-  { name: "clk",         wave: "p.....|..." },
-  { name: "Data",        wave: "x.345x|=.x", data: ["head", "body", "tail", "data"] },
-  { name: "Request",     wave: "0.1..0|1.0" },
+  { name: "PPS", wave: "010.........1000" },
   {},
-  { name: "Acknowledge", wave: "1.....|01." }
+  { name: "TX",  wave: "1134567111811345", data: ["0xAA", "0xAF", "T0", "T1", "T2", "T3","0xAA", "0xAF", "T0"] },
+  { name: "PPS", wave: "010.........1000" },
+
 ]}

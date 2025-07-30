@@ -2,6 +2,12 @@
 
 ## Function Description
 
+    A Clock distribution system use RJ45 wire.
+    It can deliver 2 clock. 
+    1MHz fast clock for XDAQ
+    1KHz slow clock for MCU
+    1 UART for Control Start/Stop and Reset
+
     Generate Clock1(1MHz) Clock2(<1KHz) to remote XDaq for Sync
     Suport max 16/32(??) SyncBox Slave.
 
