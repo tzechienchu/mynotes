@@ -62,6 +62,12 @@ ISR(TCD0_OVF_vect, ISR_NAKED)
 
 ![](./20250730_121315.jpg)
 
+### Physical Connection Schematics 
+
+![](./Screenshot%20from%202025-07-30%2015-02-30.png)
+
+![](./Screenshot%20from%202025-07-30%2015-02-39.png)
+
 ### Harp Device need for Test
 
 ![](./AISelect_20250729_183401_Chrome.jpg)

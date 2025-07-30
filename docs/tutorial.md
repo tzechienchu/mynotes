@@ -53,6 +53,32 @@ if __name__ == "__main__":
             ]
 ```
 
+### Migen Case
+
+```py
+        self.comb += Case(word_cound,{
+            0: self.uart_tx.eq(start_b0),
+            1: self.uart_tx.eq(start_b1),
+            2: self.uart_tx.eq(timestamp_b0),
+            3: self.uart_tx.eq(timestamp_b1),
+            4: self.uart_tx.eq(timestamp_b2),
+            5: self.uart_tx.eq(timestamp_b3),
+            "default": self.uart_tx.eq(0),
+        })
+
+```
+
+### Migen Module
+
+```py
+        encoder = Encoder8b10b()
+        decoder = Decoder8b10b()
+
+        self.submodules += [
+            encoder, decoder
+        ]
+```
+
 ## IceStorm toolset for ICE40 FPGA
 
 ```makefile
