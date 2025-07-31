@@ -320,6 +320,19 @@ clean:
 	rm -rf build dist *.egg-info
 ```
 
+### Python Import Module from Parent Folder
+
+```py
+
+import os
+import sys
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.join(current_dir, '..')
+sys.path.append(os.path.abspath(parent_dir))
+
+```
+
 ## Micropython
 
 ### Pyboard Sleep and Wakeup
