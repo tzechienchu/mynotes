@@ -14,6 +14,14 @@
 
 ![Pico Pinout](./images/2025/Screenshot%20from%202025-06-10%2016-09-10.png)
 
+### Pico SWD IO Port
+
+![](./images/2025/Screenshot%20from%202025-08-01%2018-03-49.png)
+
+![](./images/2025/Screenshot%20from%202025-08-01%2018-04-18.png)
+
+[Debug Probe](https://www.raspberrypi.com/documentation/microcontrollers/debug-probe.html)
+
 ## PyBoard STM32F405
 
 ![PyBoard](./images/2025/pybv11-pinout.jpg)

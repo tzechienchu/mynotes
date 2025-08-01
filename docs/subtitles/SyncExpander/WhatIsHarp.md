@@ -74,6 +74,40 @@ ISR(TCD0_OVF_vect, ISR_NAKED)
 
 [Harp from OE](https://open-ephys.org/harp)
 
+### What are the limitations of increasing the frequency beyond 1Hz for PPS signals
+
+The limitations of increasing the frequency beyond 1 Hz for PPS signals primarily relate to signal shape, timing accuracy, propagation effects, hardware complexity, and pulse distortion:
+
+- **Pulse shape and duty cycle ambiguity:** PPS signals at 1 Hz are usually short pulses with sharply defined edges to precisely mark second boundaries. Increasing frequency means pulse widths and separation shrink, possibly turning the signal into something closer to a square wave or continuous periodic waveform, which can blur the definition of distinct timing edges important for synchronization[^1].
+- **Increased pulse distortion and rise time issues:** Higher frequency pulses have faster rise times and shorter durations, making them more susceptible to distortions when transmitted over cables. Dispersion, attenuation, impedance mismatches, and cable length affect the pulse shape and timing delay more severely at higher frequencies, thus degrading timing precision[^4].
+- **Measurement and detection uncertainty:** Timing devices rely on clear, stable pulse edges to trigger time measurements. Faster pulses from higher frequency signals increase uncertainties in detection due to limited bandwidth, noise, and trigger thresholds, worsening jitter and reducing synchronization quality[^4].
+- **Hardware and distribution challenges:** Generating and distributing high-frequency pulses with ultra-low jitter and minimal distortion over long distances requires expensive, specialized hardware and careful design. 1 Hz PPS signals are simpler and more robust for typical synchronization scenarios[^2][^3].
+- **Loss of well-defined absolute timing boundaries:** The main advantage of 1 Hz PPS is that each pulse corresponds to an exact whole second boundary, facilitating phase alignment of clocks. At higher frequencies, while more timing points may be generated, the direct correlation with absolute second boundaries becomes less clear, complicating protocols that rely on these markers.
+
+In essence, increasing frequency beyond 1 Hz for PPS-type signals tends to increase system complexity, degrade pulse integrity and timing accuracy, and reduce the clarity of the timing reference that makes 1 PPS signals highly effective for synchronization applications such as GPS timing, network clocks, and telecom networks[^1][^4].
+
+If needed, systems requiring finer resolution within each second typically use a combination of stable local high-frequency clocks disciplined by the 1 Hz PPS signal rather than replacing PPS with higher frequency pulses directly[^2][^3].
+
+<div style="text-align: center">⁂</div>
+
+[^1]: https://electronics.stackexchange.com/questions/666907/is-a-1-hz-signal-the-same-as-1-pps-one
+
+[^2]: https://www.euramet.org/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA4ODI2OTQsImV4cCI6MTc3MjUwNTA5NCwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJNZWRpYS9kb2NzL1B1YmxpY2F0aW9ucy90ZWNoZ3VpZGVzL0ktVEVDLUdVSV8wMDNfVXNlX29mX0dQU19EaXNjaXBsaW5lZF9Pc2NpbGxhdG9yc193ZWIucGRmIiwicGFnZSI6OTk3fQ.cYjpYB1KkVD-o586hmGQu64_oJBsZBumZiWaBZqePOY/I-TEC-GUI_003_Use_of_GPS_Disciplined_Oscillators_web.pdf
+
+[^3]: http://ip-flow.dit.unitn.it/files/msc-gasparini.pdf
+
+[^4]: https://tf.nist.gov/general/pdf/2852.pdf
+
+[^5]: https://portal.u-blox.com/s/question/0D52p0000BfFr1FCQS/does-the-pps-signal-of-a-ublox-device-always-occur-in-whole-seconds-if-i-set-the-frequency-as-1hz
+
+[^6]: http://essay.utwente.nl/94988/1/aanen_MA_EEMCS.pdf
+
+[^7]: https://www.gps.gov/technical/ps/2007-PPS-performance-standard.pdf
+
+[^8]: https://www.ucalgary.ca/engo_webdocs/MEC/04.20199.SMDeshpande.pdf
+
+[^9]: https://www.zhaw.ch/storage/engineering/institute-zentren/ines/forschung-und-entwicklung/time-synchronisation/precision-time-protocol-for-spectroscope-synchronization.pdf
+
 <!-- ### Example Verilog from Breakout Box
 
 ```verilog
