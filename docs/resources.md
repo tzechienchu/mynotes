@@ -53,6 +53,10 @@ Debug Probe
 Nuke Flash
 [Nuke All download](images/2025/flash_nuke.uf2)
 
+### Raspberry Pi Documentation
+
+[Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/)
+
 ### Bead Usage
 
 [errite-beads-common-applications-and-considerations](https://greatpcb.com/zh-TW/ferrite-beads-common-applications-and-considerations-in-circuit-design/)
