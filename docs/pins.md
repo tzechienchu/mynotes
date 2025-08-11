@@ -70,6 +70,8 @@ read_buf = slave.exchange(write_buf, duplex=True)
 
 ![RPI IO](pins/RPI4PinOut.png)
 
+[The Raspberry Pi GPIO pinout guide](https://pinout.xyz/)
+
 ## FPGA
 
 ### Nexy A7 PMod
