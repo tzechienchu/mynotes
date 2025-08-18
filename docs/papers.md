@@ -114,6 +114,10 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 
 [Open Ephys Close Loop Calculation](subtitles/close_loop_experiment.md)
 
+### NeuroChip Close Loop
+
+[](./papers/2025/Neurochip3.pdf)
+
 ---
 
 ## Brain
