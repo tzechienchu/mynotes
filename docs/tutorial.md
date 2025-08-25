@@ -501,6 +501,33 @@ while True:
 
 [raspberry-pi-pico-interrupts-micropython](https://randomnerdtutorials.com/raspberry-pi-pico-interrupts-micropython/)
 
+## Arduino Pico
+
+### UART to USB Passthrough as FT232
+
+```c
+void setup() {
+  // Initialize USB Serial communication (to computer)
+  Serial.begin(115200); 
+  while (!Serial); // Wait for Serial Monitor to open (optional)
+
+  // Initialize hardware UART (e.g., UART0 on Pico, connected to external device)
+  Serial1.begin(115200); 
+}
+
+void loop() {
+  // Read from hardware UART and send to USB Serial
+  if (Serial1.available()) {
+    Serial.write(Serial1.read());
+  }
+
+  // Read from USB Serial and send to hardware UART
+  if (Serial.available()) {
+    Serial1.write(Serial.read());
+  }
+}
+```
+
 ## Chromebook
 
 Install Desktop GUI in chromebook [chromebookDesktop.md](subtitles/chromebookDesktop.md)

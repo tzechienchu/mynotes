@@ -26,11 +26,13 @@
 | Start Button | Kick start everything              |  I          |
 | Ext CK1      | OSC Input                          |  I          |
 | Ext CK2      | OSC Input                          |  I          |
+| Ext CK1      | OSC Output                         |  O          |
+| Ext CK2      | OSC Output                         |  O          |
 | Power LED    | Indicate Power On                  |  O          |
 | Status LED1  | Indicate Slave Status              |  O          |
 | Status LED2  | Indicate Slave Status              |  O          |
 | RJ45         | 8 Ports                            |  I/O        |
-| RJ45 to Slave| VDD/VSS/CKA/CKB/TX2/RX2            |  I/O        |
+| RJ45 to Slave| VDD/VSS/TX2/RX2                    |  I/O        |
 | Ext IO       | 8Pins/8 VSS/                       |  I/O        |
 
 ## SyncSlave IO Define
@@ -47,7 +49,9 @@
 | RJ45         | 1 Ports                            |  I/O        |
 | Ext IO       | 8Pins/8 VSS/                       |  I/O        |
 
-## Detail Block
+## Case View
+
+![](./board_spec1_block.png)
 
 ### Power
 
