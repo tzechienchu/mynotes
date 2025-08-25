@@ -74,6 +74,10 @@ ISR(TCD0_OVF_vect, ISR_NAKED)
 
 ![](../../images/2025/20250822_171610.jpg)
 
+### Addon for DAQ
+
+![](./AddonToDaq.png)
+
 ### Harp Device need for Test
 
 ![](./AISelect_20250729_183401_Chrome.jpg)
