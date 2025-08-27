@@ -292,7 +292,7 @@ Other Solution
 
 ### Makefile for Python
 
-# Makefile for Python project
+### Makefile for Python project
 
 ```
 # 預設目標，當直接執行 make 時會執行的目標
@@ -331,6 +331,30 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.join(current_dir, '..')
 sys.path.append(os.path.abspath(parent_dir))
 
+```
+
+### Python for PDF
+
+```py
+    from pypdf import PdfReader, PdfWriter
+
+    reader = PdfReader("input.pdf")
+    writer = PdfWriter()
+
+    for page in reader.pages:
+        # Define new crop box coordinates (adjust as needed)
+        # Example: crop 10 units from each side
+        left = page.mediabox.left + 10
+        bottom = page.mediabox.bottom + 10
+        right = page.mediabox.right - 10
+        top = page.mediabox.top - 10
+
+        page.mediabox.lower_left = (left, bottom)
+        page.mediabox.upper_right = (right, top)
+        writer.add_page(page)
+
+    with open("output_cropped.pdf", "wb") as fp:
+        writer.write(fp)
 ```
 
 ## Micropython
