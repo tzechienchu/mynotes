@@ -7,6 +7,7 @@ nav:
   - '2025-07': 'Y2025/Y2025-07.md'
   - '2025': 'Y2025/Y2025.md'
   - '2024': 'Y2024.md'
+  - 'Books': './books/books.md'
   - 'Schematics': './private/schematics.md'
   - 'Pins': 'pins.md'
   - 'Tutorial': 'tutorial.md'
