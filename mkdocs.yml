@@ -1,10 +1,10 @@
-site_name: Frank's Notes
+site_name: 朱子建 Tze-Chien Chu (Frank) Notes
 theme:
   name: material
 nav:
   - 'Help': 'index.md'
+  - '2025-09': 'Y2025/Y2025-09.md'
   - '2025-08': 'Y2025/Y2025-08.md'
-  - '2025-07': 'Y2025/Y2025-07.md'
   - '2025': 'Y2025/Y2025.md'
   - '2024': 'Y2024.md'
   - 'Books': './books/books.md'
