@@ -109,4 +109,5 @@ Control-Shift-P
 
 ## Tze-Chien Chu Blog
 
-[Tze-Chien Chu Blog](https://tzechienchu.typepad.com/tc_chus_point/)
+[Tze-Chien Chu Blog (till 2025-09-31)](https://tzechienchu.typepad.com/tc_chus_point/)
+
