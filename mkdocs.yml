@@ -19,7 +19,7 @@ nav:
   - 'Magazins (Local)': './mags/index.md'
   - 'Peoples' : './private/peoples.md'
   - 'Projects': './private/projects.md'
-  - 'Quotes & Ideas': './private/qandi.md'
+  - 'Quotes & Ideas': './qandi.md'
   - 'Personal': './private/personal.md'
   - 'Source (Local)': './private/local_source.md'
 

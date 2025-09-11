@@ -2,6 +2,20 @@
 
 ## 2025
 
+### Dark and Magic Places
+
+![](./images/IMG_0240.jpg)
+
+2025-94
+
+### 死亡不是問題 衰老才是
+
+![](./images/IMG_0239.jpg)
+
+2025-93
+
+非常幽默的散文
+
 ### Networks of the Brain
 
 ![](./images/IMG_0238.jpg)
