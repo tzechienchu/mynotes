@@ -2,11 +2,31 @@
 
 ## 2025
 
+### 不馴的異端 A Book Forged in Hell
+
+![](./images/IMG_0250.jpg)
+
+2025-96
+
+史賓諾薩是我最喜歡的哲學家
+
+### A Brief history of Intelligence
+
+![](./images/IMG_0248.jpg)
+
+2025-95
+
+Cool book. 5 Star
+
+---
+
 ### Dark and Magic Places
 
 ![](./images/IMG_0240.jpg)
 
 2025-94
+
+---
 
 ### 死亡不是問題 衰老才是
 
@@ -15,6 +35,8 @@
 2025-93
 
 非常幽默的散文
+
+---
 
 ### Networks of the Brain
 
