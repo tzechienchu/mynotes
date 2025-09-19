@@ -3,6 +3,14 @@
 
 ## Quotes
 
+### Japanese Room
+
+    Everything have a place
+    Honer Empty Space
+    Cleaning is Daily ritual
+    Less furniture More flow
+    Season rotation
+
 ### TypePad 要關門大吉了
 
     Typepad is going to close at 2025/9/30

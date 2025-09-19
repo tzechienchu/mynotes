@@ -2,6 +2,16 @@
 
 ## 2025
 
+### Your Brain is a Time Machine
+
+![](./images/IMG_0252.jpg)
+
+2025-97
+
+前半跟大腦相關 後半就無聊了
+
+---
+
 ### 不馴的異端 A Book Forged in Hell
 
 ![](./images/IMG_0250.jpg)
@@ -9,6 +19,8 @@
 2025-96
 
 史賓諾薩是我最喜歡的哲學家
+
+---
 
 ### A Brief history of Intelligence
 
