@@ -175,6 +175,24 @@ Nuke Flash
 
 [AD5940.md](./subtitles/AD5940.md)
 
+## Design Review
+
+### PCB Review
+
+    supply voltage
+    logic level
+    gpio fn
+    pull up , pull down
+    protection ckt
+    power budget
+    battery low condition
+    race condition
+    connectors 
+    unused pin check
+    termination
+    tx rx check
+    reset 
+
 ## Math
 
 ### Probabilistic numerics

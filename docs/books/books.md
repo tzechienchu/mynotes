@@ -2,6 +2,36 @@
 
 ## 2025
 
+### Other Minds
+
+![](./images/IMG_0255.jpg)
+
+2025-100
+
+最讓人驚訝的是 原來章魚 這些頭足類的只能活兩年左右
+
+---
+
+### 老派東京
+
+![](./images/Screenshot_20250920_093629_Kobo.jpg)
+
+2025-99
+
+---
+
+### The Cortex and The Critical Point
+
+![](./images/IMG_0253.jpg)
+
+2025-98
+
+    搞上動態系統 除非有數學式 不然一切都很空
+    只認真看了前三章 就看不下去了 還好是下載的 哈哈哈
+    跟之前的 Networks of the Brain 有點像
+
+---
+
 ### Your Brain is a Time Machine
 
 ![](./images/IMG_0252.jpg)
