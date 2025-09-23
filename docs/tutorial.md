@@ -79,6 +79,16 @@ if __name__ == "__main__":
         ]
 ```
 
+### Migen Reset FSM
+
+```python
+        fsm   = FSM(reset_state="WAIT")
+        fsm   = ClockDomainsRenamer("icap")(fsm)
+        fsm   = ResetInserter()(fsm)
+        self.submodules += fsm
+        self.comb += fsm.reset.eq(~(self.write | self.read))
+```
+
 ## IceStorm toolset for ICE40 FPGA
 
 ```makefile
