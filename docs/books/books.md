@@ -2,6 +2,14 @@
 
 ## 2025
 
+### Entangled Life
+
+![](./images/IMG_0256.jpg)
+
+2025-101
+
+Fungus is my favorite life form
+
 ### Other Minds
 
 ![](./images/IMG_0255.jpg)
