@@ -2,6 +2,30 @@
 
 ## 2025
 
+### On the Nature of Time & What is ChatGPT Doing
+
+![](./images/IMG_0260.jpg)
+
+![](./images/IMG_0261.jpg)
+
+2025-104
+
+### Writing to Learn
+
+![](./images/IMG_0259.jpg)
+
+2025-103
+
+---
+
+### 自私的藝術
+
+![](./images/IMG_0257.jpg)
+
+2025-102
+
+---
+
 ### Entangled Life
 
 ![](./images/IMG_0256.jpg)
@@ -9,6 +33,8 @@
 2025-101
 
 Fungus is my favorite life form
+
+---
 
 ### Other Minds
 

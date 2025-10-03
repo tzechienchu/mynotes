@@ -32,6 +32,10 @@
 
 ## Neuro Science Experiement
 
+### Could a Neuroscientist Understand a Microprocessor
+
+[Could a Neuroscientist Understand a Microprocessor](./papers/2025/Could%20a%20Neuroscientist%20Understand%20a%20Microprocessor.pdf)
+
 ### Falcon
 
 [![Falcon Core doc](./images/2025/Screenshot%20from%202025-02-11%2012-45-35.png) Falcon Core](https://falcon-core.readthedocs.io/en/latest/#)
@@ -116,7 +120,15 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 
 ### NeuroChip Close Loop
 
-[](./papers/2025/Neurochip3.pdf)
+[Neurochip3](./papers/2025/Neurochip3.pdf)
+
+---
+
+### MEA
+
+![](./images/2025/Screenshot%20from%202025-10-01%2010-09-41.png)
+
+[512 Electrode MEA](./papers/2025/MEA2010_512-electrodeMEASystemForSpatio-TemporalDistributedSimulation.pdf)
 
 ---
 
