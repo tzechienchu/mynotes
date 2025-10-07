@@ -2,6 +2,22 @@
 
 ## 2025
 
+### Caregiver's Guide to Dementia
+
+![](./images/IMG_0264.jpg)
+
+2025-106
+
+---
+
+### 製造診斷的時代
+
+![](./images/IMG_0262.jpg)
+
+2025-105
+
+---
+
 ### On the Nature of Time & What is ChatGPT Doing
 
 ![](./images/IMG_0260.jpg)
@@ -9,6 +25,8 @@
 ![](./images/IMG_0261.jpg)
 
 2025-104
+
+---
 
 ### Writing to Learn
 
@@ -63,6 +81,10 @@ Fungus is my favorite life form
     搞上動態系統 除非有數學式 不然一切都很空
     只認真看了前三章 就看不下去了 還好是下載的 哈哈哈
     跟之前的 Networks of the Brain 有點像
+
+[by Dr. Dante R. Chialv Everything you wish to know about critical brain dynamics but are afraid to ask](https://www.youtube.com/watch?v=XFuI9BEeJlI&list=WL&index=13)
+
+專家還是比較會 (Dr. Dante R. Chiaial)
 
 ---
 
