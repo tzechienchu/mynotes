@@ -2,6 +2,14 @@
 
 ## 2025
 
+### 人間值得
+
+![](./images/IMG_0269.jpg)
+
+2025-110
+
+---
+
 ### The Catalyst
 
 ![](./images/IMG_0267.jpg)
