@@ -2,6 +2,22 @@
 
 ## 2025
 
+### Bogatin's practical guide to best measurement practices for digital oscilloscopes
+
+![](./images/IMG_0321.jpg)
+
+2025-113
+
+---
+
+### 我在荷蘭做都更說客
+
+![](./images/IMG_0294.jpg)
+
+2025-112
+
+---
+
 ### 心理磨擦力
 
 ![](./images/IMG_0272.jpg)
