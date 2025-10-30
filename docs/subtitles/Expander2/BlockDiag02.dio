@@ -100,6 +100,21 @@
                 <mxCell id="40" value="FPGA Block" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
                     <mxGeometry x="40" y="40" width="120" height="40" as="geometry"/>
                 </mxCell>
+                <mxCell id="43" value="Preamble" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="880" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="Header" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="880" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="Length" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="880" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="Data" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="880" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="Cap" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="880" width="120" height="40" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
