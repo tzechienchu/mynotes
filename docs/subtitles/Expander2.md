@@ -8,7 +8,7 @@
 
 ![](./Expander2/BlockDiag02.png)
 
-## Onix Client Box
+## ONIX Breakout Board
 
 ![](./Expander2/Screenshot%20from%202025-10-29%2018-05-29.png)
 
