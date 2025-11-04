@@ -138,6 +138,7 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 
 [The log-dynamic brain: How skewed distributions affect network operations (local pdf)](./papers/2025/BuzsakiMizusekiNRN.pdf)
 
+[A Novel Approach of Neural Model](./papers/2025/SKETCH%20OF%20A%20NOVEL%20APPROACH%20TO%20A%20NEURAL%20MODEL.pdf)
 ---
 
 ## System Model and Simulation
