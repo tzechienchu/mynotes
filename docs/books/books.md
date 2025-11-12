@@ -2,6 +2,12 @@
 
 ## 2025
 
+### Digital Minimalism
+
+![](../books/images/IMG_0357A.jpg)
+
+2025-119
+
 ### 時之輪 大狩獵 上
 
 ![](../books/images/IMG_0358.jpg)
