@@ -2,11 +2,21 @@
 
 ## 2025
 
+### 時之輪 大狩獵 下
+
+![](../books/images/IMG_0359.jpg)
+
+2025-120
+
+---
+
 ### Digital Minimalism
 
 ![](../books/images/IMG_0357A.jpg)
 
 2025-119
+
+---
 
 ### 時之輪 大狩獵 上
 
@@ -14,11 +24,15 @@
 
 2025-118
 
+---
+
 ### 時之輪 世界之眼 下
 
 ![](../books/images/IMG_0357.jpg)
 
 2025-117
+
+---
 
 ### Memristor:From Material to Device
 
