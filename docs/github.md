@@ -222,15 +222,21 @@
 
 ### HLS Librarty
 
-[HLS Librarty](https://github.com/definelicht/hlslib)_
+[HLS Librarty](https://github.com/definelicht/hlslib)
 
 ### HLx Examples
 
 [HLx Examples](https://github.com/weshu/HLx_Examples)
 
-### Twister HSL
+### Twister HLS
 
 [Twister HSL](https://github.com/wfedorko/Mersenne-Twister-HLS)
+
+### dynamatic HLS
+
+[https://dynamatic.epfl.ch/](https://dynamatic.epfl.ch/)
+
+[https://dynamo.ethz.ch/research/](https://dynamo.ethz.ch/research/)
 
 ### i2c Contolllrt wothout Camera
 
