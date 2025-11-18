@@ -177,13 +177,23 @@ Tutorial 1
 
 ## PICO
 
+### PICO Programming Tutorial
+
+[Digital Systems Design Using Microcontrollers - V. Hunter Adams](https://ece4760.github.io/)
+
+[Raspberry Pi Pico Lectures 2025 YT](https://www.youtube.com/playlist?list=PLDqMkB5cbBA4GisLzRSqw5x5G38M4zlkr)
+
+### RP2040 + FPGA RISC-V AXIS Communication
+
+[YouTube from FPGA Zealot](https://www.youtube.com/watch?v=a7hFD_DbAdk&t=2441s)
+
 ### PICO PIO Programming
 
 [PICO PIO Programming Youtube Video](https://www.youtube.com/playlist?list=PLiRALtgGsxmZs_LXGkh09Zr2NUmk_mtEI)
 
 [PICO PIO Programming Youtube Video Github Code](https://github.com/LifeWithDavid/Raspberry-Pi-Pico-PIO)
 
-Web Reference :
+#### Web Reference
 
 [PICO PIO url](https://circuitcellar.com/research-design-hub/basics-of-design/programmable-io-programming/)
 
@@ -200,6 +210,8 @@ Web Reference :
 [RP2040 PICO DMA](https://mcuoneclipse.com/2023/04/02/rp2040-with-pio-and-dma-to-address-ws2812b-leds/)
 
 [RP2040 PICO DAC DMA](https://vanhunteradams.com/Pico/DAC/DMA_DAC.html)
+
+[Playing with the Pico Part 4 - Getting Acquainted with PIO](https://gregchadwick.co.uk/blog/playing-with-the-pico-pt4/)
 
 ### RP2040 LVGL
 
