@@ -2,6 +2,24 @@
 
 ## 2025
 
+### Slow Productivity
+
+![](../books/images/IMG_0372.jpg)
+
+2025-123
+
+---
+
+### 時之輪 真龍轉生 下
+
+![](../books/images/IMG_0364.jpg)
+
+2025-122
+
+終於知道為何Amazon WOT 會被砍了 因為真的是亂搞
+
+---
+
 ### 時之輪 真龍轉生 上
 
 ![](../books/images/IMG_0363.jpg)
