@@ -2,6 +2,14 @@
 
 ## 2025
 
+### Miding My Mitochondria
+
+![](../books/images/IMG_0377.jpg)
+
+2025-127
+
+---
+
 ### 時之輪 闇影漸起 下
 
 ![](../books/images/IMG_0369.jpg)
