@@ -3,10 +3,10 @@ theme:
   name: material
 nav:
   - 'Help': 'index.md'
+  - '2025-12': 'Y2025/Y2025-12.md'
   - '2025-11': 'Y2025/Y2025-11.md'
-  - '2025-10': 'Y2025/Y2025-10.md'
   - '2025': 'Y2025/Y2025.md'
-  - '2024': 'Y2024.md'
+  - 'History': 'History.md'
   - 'Books': './books/books.md'
   - 'Schematics': './private/schematics.md'
   - 'Pins': 'pins.md'
