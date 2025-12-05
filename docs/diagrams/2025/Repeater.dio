@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="nREXdlpMuIxZnQJADBao" name="Page-1">
-        <mxGraphModel dx="751" dy="320" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1502" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -88,8 +88,68 @@
                 <mxCell id="26" value="Bypass Mode OK" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#d5e8d4;strokeColor=#82b366;position2=0.5;" parent="1" vertex="1">
                     <mxGeometry x="350" y="20" width="150" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="28" value="Boot Sequence:&lt;div&gt;Pico Get Headstage Type&lt;/div&gt;&lt;div&gt;Set Des-H&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(255, 51, 51);&quot;&gt;Cannot Set Ser-F&lt;/font&gt;&lt;/div&gt;&lt;div&gt;Set to bypass Mode&lt;/div&gt;&lt;div&gt;-------&lt;/div&gt;&lt;div&gt;FPGA can set Ser-H&lt;/div&gt;&lt;div&gt;and Des-F&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
-                    <mxGeometry x="50" y="430" width="160" height="140" as="geometry"/>
+                <mxCell id="31" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="32" target="37">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="Ser-H" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="550" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="37" target="45">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="290" y="710"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="34" value="Down Stream" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="33">
+                    <mxGeometry x="0.3876" y="2" relative="1" as="geometry">
+                        <mxPoint y="-8" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;shape=link;" edge="1" parent="1" source="37" target="40">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="Des-H" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="550" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="40" target="42">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="Ser-F" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="550" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="42" target="48">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="Des-F" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="650" y="550" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="45" target="40">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="530" y="710"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="44" value="I2C" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="43">
+                    <mxGeometry x="-0.5749" y="-3" relative="1" as="geometry">
+                        <mxPoint x="16" y="-3" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="PICO" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="670" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="47" target="32">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="HeadStage" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="670" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="FPGA" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="650" y="670" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Work as Virtual HeadStage&lt;div&gt;because&lt;/div&gt;&lt;div&gt;Bypass cannot match I2C Timing&lt;/div&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;direction=west;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="750" width="165" height="100" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
