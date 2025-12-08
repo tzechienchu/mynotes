@@ -22,8 +22,10 @@ nav:
   - 'Quotes & Ideas': './qandi.md'
   - 'Personal': './private/personal.md'
   - 'Source (Local)': './private/local_source.md'
+  - 'TWOT': './TWOT/twot.md'
 
 markdown_extensions:
+  - abbr
   - attr_list
   - pymdownx.highlight:
       anchor_linenums: true

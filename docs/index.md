@@ -86,6 +86,12 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 - Fourth item
 ```
 
+### Local Link
+
+```
+[Local Page Link to ## Examples](#examples)
+```
+[Local Page Link to ## Examples](#examples)
 
 ### Markdown Help
 
