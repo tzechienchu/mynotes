@@ -17,12 +17,12 @@ nav:
   - 'Facts': 'facts.md'
   - 'Github Collection': 'github.md'
   - 'Templates': 'templates.md'
-  - 'Magazins (Local)': './mags/index.md'
-  - 'Peoples' : './private/peoples.md'
-  - 'Projects': './private/projects.md'
+  - '*Magazins (Local)': './mags/index.md'
+  - '*Peoples' : './private/peoples.md'
+  - '*Projects': './private/projects.md'
   - 'Quotes & Ideas': './qandi.md'
-  - 'Personal': './private/personal.md'
-  - 'Source (Local)': './private/local_source.md'
+  - '*Personal': './private/personal.md'
+  - '*Source (Local)': './private/local_source.md'
   - 'TWOT': './TWOT/twot.md'
 
 markdown_extensions:
@@ -39,8 +39,8 @@ markdown_extensions:
 theme:
   name: material
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
+    #- navigation.tabs
+    #- navigation.tabs.sticky
     #- toc.integrate
     - content.code.select
     - content.code.copy
