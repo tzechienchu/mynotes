@@ -2,11 +2,12 @@ site_name: 朱子建 Tze-Chien Chu (Frank) Notes
 theme:
   name: material
 nav:
-  - 'Help': 'index.md'
-  - '2025-12': 'Y2025/Y2025-12.md'
-  - '2025-11': 'Y2025/Y2025-11.md'
-  - '2025': 'Y2025/Y2025.md'
-  - 'History': 'History.md'
+  - 'Index': 'index.md'
+  - 'Help' : 'Help.md'
+  # - '2025-12': 'Y2025/Y2025-12.md'
+  # - '2025-11': 'Y2025/Y2025-11.md'
+  # - '2025': 'Y2025/Y2025.md'
+  # - 'History': 'History.md'
   - 'Books': './books/books.md'
   - 'Schematics': './private/schematics.md'
   - 'Pins': 'pins.md'
