@@ -39,8 +39,9 @@ markdown_extensions:
 theme:
   name: material
   features:
-    #- navigation.tabs
-    - toc.integrate
+    - navigation.tabs
+    - navigation.tabs.sticky
+    #- toc.integrate
     - content.code.select
     - content.code.copy
 
