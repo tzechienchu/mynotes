@@ -150,3 +150,11 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 ## ExoSkeleton
 
 [OpenExo](./papers/2025/OpenExo:%20An%20open-­source%20modular%20exoskeleton%20to%20augment%20human%20function.pdf)
+
+## Hyperdimensional Computing
+
+### Tutorial on Hyperdimensional Computing
+
+[Tutorial on Hyperdimensional Computing](https://michielstock.github.io/posts/2022/2022-10-04-HDVtutorial/)
+
+[Hyperdimensional computing: A fast, robust, and interpretable paradigm for biological data](../papers/2025/journal.pcbi.1012426.pdf)

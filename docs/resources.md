@@ -193,6 +193,58 @@ Nuke Flash
     tx rx check
     reset 
 
+### Mistakes People Make When Designing Prototype PCBs
+
+3. Designing for Production:
+• Design the first PCB expecting it to fail, focusing on functionality testing.
+• Size and shape considerations can come later; prioritize testing various features.
+
+4. No Test Points:
+• Lack of test points hinders debugging and fixing mistakes.
+• Test pads for common functionalities reduce the risk of blocking progress.
+
+5. No Power or Diagnostic LEDs:
+• Diagnostic lights for voltage levels and operations save time in identifying simple mistakes.
+
+6. Overcrowding Components:
+• Avoid packing components tightly during prototyping; leave space for adjustments.
+• Keep passives relatively large for easier removal during testing.
+
+7. Underutilizing Silk Screen:
+• Clearly label components on the silk screen for easy assembly and orientation.
+• Ensure markings are readable on the smallest boards.
+
+8. Not Using Isolation Jumpers:
+• Incorporate zero-ohm resistors or cutable jumpers for easy isolation during testing.
+• Facilitates methodical bring-ups and simplifies troubleshooting.
+
+9. Not Breaking Out Unused GPIOs:
+• Break out additional GPIOs for testing and fixing mistakes without ordering a new PCB.
+• Adds flexibility for rewiring components or integrating external modules.
+
+10. UART Mixups:
+• Ensure correct pairing of transmit and receive pins in UART components.
+• Use jumpers or specific designs to easily correct mistakes.
+
+11. Locking Into I2C Addresses:
+• Provide options to change I2C addresses using resistors for flexibility.
+• Prevents the need for a new PCB revision due to address conflicts.
+
+12. Separate Power PCB:
+• Consider splitting the design into multiple boards, especially separating power.
+• Enables testing power solutions independently without scrapping the entire PCB.
+
+13. Choosing Labeled Surface Mount Resistors:
+• Opt for labeled surface mount resistors for easier visual inspection and testing.
+
+14. Verify Footprints:
+• Check dimensions on the data sheet against PCB footprints in your design software.
+• Prevents ordering the wrong footprint for components.
+
+15. Check Parts Availability:
+• Consider part availability before designing the circuit.
+• Speculatively order critical parts before PCB production to mitigate shortages.
+
 ## Math
 
 ### Probabilistic numerics
