@@ -26,6 +26,7 @@ nav:
   - 'TWOT': './TWOT/twot.md'
 
 markdown_extensions:
+  - footnotes
   - abbr
   - attr_list
   - pymdownx.highlight:

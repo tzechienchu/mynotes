@@ -93,9 +93,35 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 ```
 [Local Page Link to ## Examples](#examples)
 
+### Footnote
+
+Footnotes are a great addition to documentation.[^note] They provide extra context without interrupting the main reading flow.[^2]
+
+[^note]: This is the first note.
+
+[^2]: And this is another note with a slightly different identifier.
+
+```
+Footnotes are a great addition to documentation.[^note] They provide extra context without interrupting the main reading flow.[^2]
+
+[^note]: This is the first note.
+
+[^2]: And this is another note with a slightly different identifier.
+```
+
+### Block Quote
+
+> This is a quote
+
+```
+> This is a quote
+```
+
 ### Markdown Help
 
 [Markdown Doc from codecademy](https://www.codecademy.com/resources/docs/markdown)
+
+[mkdocs-material reference](https://squidfunk.github.io/mkdocs-material/reference/)
 
 ### Markdown Preview
 

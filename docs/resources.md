@@ -121,6 +121,19 @@ Nuke Flash
 
 [Valid-Ready Handshake](https://blog.csdn.net/maowang1234588/article/details/100065072)
 
+### Verilog Signal Naming Guide
+
+|Type of Signal     |Suffix	Prefix (optional)  |  Example           |
+|-------------------|:------------------------:|-------------------:|
+|Clock signals      | clk or _ck               | sys_clk, clk       |
+|Reset signals      | _rst or _reset           | cpu_reset, rst     |
+|Active-low signals | _n or _x                 | reset_n, enable_x  |
+|Enable signals     | _en                      | write_en           |
+|Input ports        | _i or _in i_ or in_      | data_in, i_valid   |
+|Output ports       | _o or _out o_ or out_    | data_out, o_ready  |
+|Registered signals | _reg o _r                | count_reg, state_r |
+|Next state signals | n_                       | n_state            | 
+
 ### USB3 DAQ
 
 #### USB3 FIFO Interface for DAQ use FT60X and Cypress FX3
@@ -130,6 +143,12 @@ Nuke Flash
 #### Korean Blog about FT601
 
 [Korean Blog about FT601](https://blog.naver.com/acidc/223321211341)
+
+#### USB3.2 Interface for DAQ Cypress FX20
+
+![](../images/2025/Screenshot_20251207_110013_Chrome.jpg)
+
+![](../images/2025/Screenshot_20251207_110222_Chrome.jpg)
 
 ## ONIX
 
@@ -174,6 +193,8 @@ Nuke Flash
 ### AD5940 Collections
 
 [AD5940.md](./subtitles/AD5940.md)
+
+### RJ45 has No Ground without Transformer Coupling
 
 ## Design Review
 
@@ -244,6 +265,8 @@ Nuke Flash
 15. Check Parts Availability:
 • Consider part availability before designing the circuit.
 • Speculatively order critical parts before PCB production to mitigate shortages.
+
+![](../images/2025/Screenshot%20from%202025-12-17%2016-53-54.png)
 
 ## Math
 

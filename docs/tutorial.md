@@ -138,15 +138,23 @@ clean:
 
 [Chip Alliance](https://www.chipsalliance.org/)
 
+---
+
 ## Amaranth
 
 [Amaranth HDL Document](https://amaranth-lang.org/docs/amaranth/latest/)
+
+---
 
 ## Verilog
 
 [https://verilogguide.readthedocs.io/en/latest/](https://verilogguide.readthedocs.io/en/latest/)
 
 [https://www.chipverify.com/](https://www.chipverify.com/)
+
+[Verilog Tutorial](https://www.asic-world.com/verilog/index.html)
+
+---
 
 ## The Art of FPGA Design - element14 Community
 
@@ -155,6 +163,8 @@ clean:
 ## Digital Signal Processing, from Algorithm to FPGA Bitstream - element14 Community
 
 [Digital Signal Processing, from Algorithm to FPGA Bitstream](https://community.element14.com/technologies/fpga-group/b/blog/posts/the-art-of-fpga-design-season-2---digital-signal-processing-from-algorithm-to-fpga-bitstream)
+
+---
 
 ## Linux and Programming
 
@@ -174,6 +184,8 @@ Tutorial 1
 
     ssh -f -N -L 127.0.0.1:8888:127.0.0.1:8888 -i pemKey  user@ipaddress
     For Jupyter notebook
+
+---
 
 ## PICO
 
@@ -367,6 +379,9 @@ void loop1() {
 }
 
 ```
+
+---
+
 ## Python
 
 ### 使用 uv 管理 Python 環境
