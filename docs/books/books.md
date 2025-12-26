@@ -2,6 +2,38 @@
 
 ## 2025
 
+### 時之輪14 光明回憶 下
+
+![](../books/images/2025/IMG_0407.jpg)
+
+    最後兩本讀的比較詳細 一本約7-8小時
+    其他的 一本約4-5小時
+    因此共約 150小時
+    感覺跟玩第一輪 薩爾達曠野之息 差不多
+    剛剛開始時 完全不知道這是個什麽世界
+    等到最後 沈浸在裡面了 已經要結束了
+    不過 總是可以再讀一次 這次就能夠慢慢讀了
+
+---
+
+### 時之輪14 光明回憶 上
+
+![](../books/images/2025/IMG_0406.jpg)
+
+---
+
+### 時之輪13 闇夜之塔 下
+
+![](../books/images/2025/IMG_0405.jpg)
+
+---
+
+### 時之輪13 闇夜之塔 上
+
+![](../books/images/2025/IMG_0404.jpg)
+
+---
+
 ### 時之輪12 末日風暴 下
 
 ![](../books/images/2025/IMG_0403.jpg)
@@ -230,7 +262,7 @@
 
 ### Memristor:From Material to Device
 
-![](./images/IMG_0356.jpg)
+![](../books/images/2025//IMG_0356.jpg)
 
 2025-116
 
@@ -285,7 +317,7 @@
 
 ### Computer that change the world
 
-![](./images/IMG_0342.jpg)
+![](../books/images/2025//IMG_0342.jpg)
 
 2025-114
 
@@ -295,7 +327,7 @@ It is memory that drive the computer architecture.
 
 ### Bogatin's practical guide to best measurement practices for digital oscilloscopes
 
-![](./images/IMG_0321.jpg)
+![](../books/images/2025//IMG_0321.jpg)
 
 2025-113
 
@@ -303,7 +335,7 @@ It is memory that drive the computer architecture.
 
 ### 我在荷蘭做都更說客
 
-![](./images/IMG_0294.jpg)
+![](../books/images/2025//IMG_0294.jpg)
 
 2025-112
 
@@ -311,7 +343,7 @@ It is memory that drive the computer architecture.
 
 ### 心理磨擦力
 
-![](./images/IMG_0272.jpg)
+![](../books/images/2025//IMG_0272.jpg)
 
 2025-111
 
@@ -319,7 +351,7 @@ It is memory that drive the computer architecture.
 
 ### 人間值得
 
-![](./images/IMG_0269.jpg)
+![](../books/images/2025//IMG_0269.jpg)
 
 2025-110
 
@@ -327,7 +359,7 @@ It is memory that drive the computer architecture.
 
 ### The Catalyst
 
-![](./images/IMG_0267.jpg)
+![](../books/images/2025//IMG_0267.jpg)
 
 2025-109
 
@@ -335,7 +367,7 @@ It is memory that drive the computer architecture.
 
 ### 螞蟻螞蟻
 
-![](./images/IMG_0266.jpg)
+![](../books/images/2025//IMG_0266.jpg)
 
 2025-108
 
@@ -343,7 +375,7 @@ It is memory that drive the computer architecture.
 
 ### This is for Everyone (The unifinished story of the WWW)
 
-![](./images/IMG_0265.jpg)
+![](../books/images/2025//IMG_0265.jpg)
 
 2025-107
 
@@ -351,7 +383,7 @@ It is memory that drive the computer architecture.
 
 ### Caregiver's Guide to Dementia
 
-![](./images/IMG_0264.jpg)
+![](../books/images/2025//IMG_0264.jpg)
 
 2025-106
 
@@ -359,7 +391,7 @@ It is memory that drive the computer architecture.
 
 ### 製造診斷的時代
 
-![](./images/IMG_0262.jpg)
+![](../books/images/2025//IMG_0262.jpg)
 
 2025-105
 
@@ -367,9 +399,9 @@ It is memory that drive the computer architecture.
 
 ### On the Nature of Time & What is ChatGPT Doing
 
-![](./images/IMG_0260.jpg)
+![](../books/images/2025//IMG_0260.jpg)
 
-![](./images/IMG_0261.jpg)
+![](../books/images/2025//IMG_0261.jpg)
 
 2025-104
 
@@ -377,7 +409,7 @@ It is memory that drive the computer architecture.
 
 ### Writing to Learn
 
-![](./images/IMG_0259.jpg)
+![](../books/images/2025//IMG_0259.jpg)
 
 2025-103
 
@@ -385,7 +417,7 @@ It is memory that drive the computer architecture.
 
 ### 自私的藝術
 
-![](./images/IMG_0257.jpg)
+![](../books/images/2025//IMG_0257.jpg)
 
 2025-102
 
@@ -393,7 +425,7 @@ It is memory that drive the computer architecture.
 
 ### Entangled Life
 
-![](./images/IMG_0256.jpg)
+![](../books/images/2025//IMG_0256.jpg)
 
 2025-101
 
@@ -403,7 +435,7 @@ Fungus is my favorite life form
 
 ### Other Minds
 
-![](./images/IMG_0255.jpg)
+![](../books/images/2025//IMG_0255.jpg)
 
 2025-100
 
@@ -413,7 +445,7 @@ Fungus is my favorite life form
 
 ### 老派東京
 
-![](./images/Screenshot_20250920_093629_Kobo.jpg)
+![](../books/images/2025//Screenshot_20250920_093629_Kobo.jpg)
 
 2025-99
 
@@ -421,7 +453,7 @@ Fungus is my favorite life form
 
 ### The Cortex and The Critical Point
 
-![](./images/IMG_0253.jpg)
+![](../books/images/2025//IMG_0253.jpg)
 
 2025-98
 
@@ -437,7 +469,7 @@ Fungus is my favorite life form
 
 ### Your Brain is a Time Machine
 
-![](./images/IMG_0252.jpg)
+![](../books/images/2025//IMG_0252.jpg)
 
 2025-97
 
@@ -447,7 +479,7 @@ Fungus is my favorite life form
 
 ### 不馴的異端 A Book Forged in Hell
 
-![](./images/IMG_0250.jpg)
+![](../books/images/2025//IMG_0250.jpg)
 
 2025-96
 
@@ -457,7 +489,7 @@ Fungus is my favorite life form
 
 ### A Brief history of Intelligence
 
-![](./images/IMG_0248.jpg)
+![](../books/images/2025//IMG_0248.jpg)
 
 2025-95
 
@@ -467,7 +499,7 @@ Cool book. 5 Star
 
 ### Dark and Magic Places
 
-![](./images/IMG_0240.jpg)
+![](../books/images/2025//IMG_0240.jpg)
 
 2025-94
 
@@ -475,7 +507,7 @@ Cool book. 5 Star
 
 ### 死亡不是問題 衰老才是
 
-![](./images/IMG_0239.jpg)
+![](../books/images/2025//IMG_0239.jpg)
 
 2025-93
 
@@ -485,7 +517,7 @@ Cool book. 5 Star
 
 ### Networks of the Brain
 
-![](./images/IMG_0238.jpg)
+![](../books/images/2025//IMG_0238.jpg)
 
 2025-92
 
@@ -495,7 +527,7 @@ Cool book. 5 Star
 
 ### 找不到病因 搞定迷走神經就對了
 
-![](./images/IMG_0229.jpg)
+![](../books/images/2025//IMG_0229.jpg)
 
 2025-91
 
@@ -503,7 +535,7 @@ Cool book. 5 Star
 
 ### 非虛構寫作指南
 
-![](./images/IMG_0228.jpg)
+![](../books/images/2025//IMG_0228.jpg)
 
 2025-90
 
@@ -511,6 +543,6 @@ Cool book. 5 Star
 
 ### The Strange New Mind
 
-![](./images/IMG_0186.jpg)
+![](../books/images/2025//IMG_0186.jpg)
 
 2025-89
