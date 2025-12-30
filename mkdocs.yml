@@ -14,12 +14,12 @@ nav:
   - 'Github Collection': 'github.md'
   - 'Templates': 'templates.md'
   - 'Quotes & Ideas': './qandi.md'
-  - '*Magazins (Local)': './mags/index.md'
-  - '*Peoples' : './private/peoples.md'
-  - '*Projects': './private/projects.md'
-  - '*Personal': './private/personal.md'
-  - '*Source (Local)': './private/local_source.md'
-  - 'TWOT': './TWOT/twot.md'
+  #- '*Magazins (Local)': './mags/index.md'
+  #- '*Peoples' : './private/peoples.md'
+  #- '*Projects': './private/projects.md'
+  #- '*Personal': './private/personal.md'
+  #- '*Source (Local)': './private/local_source.md'
+  #- 'TWOT': './TWOT/twot.md'
   - 'Help' : 'Help.md'
 
 markdown_extensions:
