@@ -2,6 +2,16 @@
 
 ## 2025
 
+### Wonder Works : Literary Invention and The Science of Stories
+
+![](../books/images/2025/IMG_0412.jpg)
+
+2025-151
+
+Book to the rescure.
+
+---
+
 ### Verilog flash back
 
 ![](../books/images/2025/IMG_0401.jpg)
