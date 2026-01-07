@@ -240,6 +240,7 @@ void loop1() {
 // For the RP2040 processor define the SPI port channel used (default 0 if undefined)
 //#define TFT_SPI_PORT 1 // Set to 0 if SPI0 pins are used, or 1 if spi1 pins used
 #define RP2040_PIO_SPI 
+//Due to the CS is not in righ PIN
 
 #define SPI_FREQUENCY       20000000
 #define SPI_READ_FREQUENCY  20000000

@@ -260,6 +260,12 @@ Mob Programming Example
 
 ![](../images/2025/Screenshot%20from%202025-12-17%2016-53-54.png)
 
+### Digilent Analog Discovery 2 Schematics
+
+[Digilent Analog Discovery 2 Schematics](https://digilent.com/reference/test-and-measurement/analog-discovery-2/hardware-design-guide?srsltid=AfmBOopvdmBdjPj54B-BKPZd-laQ4OiJSQnNHrf0MrcLWDgZMCemvK6Q)
+
+---
+
 ## Math
 
 ### Probabilistic numerics
