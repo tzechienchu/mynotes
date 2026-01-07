@@ -3,6 +3,8 @@
 
 ## Quotes
 
+### The past is never dead, It's not even pass
+
 ### 禱告 寧靜禱文
 
     親愛的上帝，

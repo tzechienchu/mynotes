@@ -45,14 +45,6 @@ Mob Programming Example
 2. Zephyr
 3. RT-Thread
 
-### PICO Images
-
-Debug Probe
-[debug probe download](images/2025/debugprobe.uf2)
-
-Nuke Flash
-[Nuke All download](images/2025/flash_nuke.uf2)
-
 ### Raspberry Pi Documentation
 
 [Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/)
