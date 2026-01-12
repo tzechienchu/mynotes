@@ -158,3 +158,13 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 [Tutorial on Hyperdimensional Computing](https://michielstock.github.io/posts/2022/2022-10-04-HDVtutorial/)
 
 [Hyperdimensional computing: A fast, robust, and interpretable paradigm for biological data](../papers/2025/journal.pcbi.1012426.pdf)
+
+## Optical
+
+### Open-source, cost-effective system for low-light in vivo fiber photometry
+
+[Open-source, cost-effective system for low-light in vivo fiber photometry](../docs/papers/2026/Open-source%20cost-effective%20system%20for%20low-light%20in%20vivo%20fiber%20photometry.pdf)
+
+[Silicon Photomultiplier-based Low-light in vivo Fiber Photometry](../papers/2026/Silicon%20Photomultiplier-based%20Low-light%20in%20vivo%20Fiber%20Photometry.pdf)
+
+[SiPM-based Fiber Photometry and EIS for Cortisol Detection](../papers/2026/SiPM-based%20Fiber%20Photometry%20and%20EIS%20for%20Cortisol%20Detection.pdf)
