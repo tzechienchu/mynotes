@@ -2,6 +2,14 @@
 
 ## 2026
 
+### Creative Thinking Field Guide
+
+![](../books/images/2026/IMG_0416.jpg)
+
+2026-003
+
+---
+
 ### Kluge
 
 ![](../books/images/2026/IMG_0415.jpg)
