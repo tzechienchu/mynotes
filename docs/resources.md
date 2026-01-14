@@ -7,7 +7,7 @@
 3. Git / Github
 4. Modulization / Standard Connector
 
-## Software Engineering
+## Software Engineering 🌐 🎬 💾 📚 📑
 
 ### Mob Programming
 
@@ -61,7 +61,15 @@ Mob Programming Example
 
 [High Speed PCB Design](papers/2025/High-Speed%20PCB%20Design%20Guide.pdf)
 
-## FPGA
+## FPGA 🌐 🎬 💾 📚 📑
+
+### FPGA DFX
+
+📚[Dynamic Function eXchange Licensing](https://docs.amd.com/r/en-US/ug909-vivado-partial-reconfiguration/Dynamic-Function-eXchange-Licensing)
+
+### FPGA Tandem
+
+📚[UltraScale+ Devices Integrated Block for PCI Express Product Guide (PG213)](https://docs.amd.com/r/en-US/pg213-pcie4-ultrascale-plus/Tandem-PROM/PCIe-Resource-Restrictions)
 
 ### Generates Makefiles for FPGA EDA
 
