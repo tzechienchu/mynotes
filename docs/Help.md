@@ -117,6 +117,18 @@ Footnotes are a great addition to documentation.[^note] They provide extra conte
 > This is a quote
 ```
 
+### Emoji
+
+🌐[emojidb.org](https://emojidb.org/)
+
+- Web : 🌐
+
+- Film : 🎬 🎥
+
+- Code : 💾
+
+- Document : 📚 📑
+
 ### Markdown Help
 
 [Markdown Doc from codecademy](https://www.codecademy.com/resources/docs/markdown)
