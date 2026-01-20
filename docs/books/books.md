@@ -2,6 +2,14 @@
 
 ## 2026
 
+### The Little Book of Stoicism
+
+![](../books/images/2026/IMG_0420.jpg)
+
+2026-004
+
+---
+
 ### Creative Thinking Field Guide
 
 ![](../books/images/2026/IMG_0416.jpg)
