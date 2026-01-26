@@ -2,6 +2,14 @@
 
 ## 2026
 
+### Synaptic Self
+
+![](../books/images/2026/81TYVNYVZGL._SL1500.jpg)
+
+2026-005
+
+---
+
 ### The Little Book of Stoicism
 
 ![](../books/images/2026/IMG_0420.jpg)
