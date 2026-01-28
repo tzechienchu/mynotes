@@ -15,6 +15,7 @@ nav:
   - 'Templates': 'templates.md'
   - 'Quotes': './quotes.md'
   - 'Ideas': './ideas.md'
+  - 'About Me': './about.md'
   #- 'Schematics': './private/schematics.md'
   #- '*Magazins (Local)': './mags/index.md'
   #- '*Peoples' : './private/peoples.md'
