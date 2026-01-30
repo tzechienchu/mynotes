@@ -8,11 +8,15 @@ Markdown Guide Visit [markdownguide.org](https://www.markdownguide.org/basic-syn
 
 Material Mkdocs [mkdocs-material](https://squidfunk.github.io/mkdocs-material/getting-started/).
 
+---
+
 ## Install mkdocs-material
 
 ``` sh
 pip install mkdocs-material
 ```
+
+---
 
 ## Commands
 
@@ -22,12 +26,16 @@ pip install mkdocs-material
 * `mkdocs build` - Build the documentation site.
 * `mkdocs -h` - Print help message and exit.
 
+---
+
 ## Project layout
 
     mkdocs.yml    # The configuration file.
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+---
 
 ## Examples
 
@@ -45,6 +53,7 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 
     Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 
+---
 
 ### Table Example
 
@@ -60,6 +69,8 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 | col 2 is |    centered   |   $12 |
 | col 3 is | right-aligned |    $1 |
 
+---
+
 ### Comment
 
     <!---
@@ -67,6 +78,8 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
     Line 1
     Line 2 
     --->
+
+---
 
 ### List
 
@@ -86,12 +99,16 @@ Github [URL](https://github.com/EvolutionaryNeuralCodingLab)
 - Fourth item
 ```
 
+---
+
 ### Local Link
 
 ```
 [Local Page Link to ## Examples](#examples)
 ```
 [Local Page Link to ## Examples](#examples)
+
+---
 
 ### Footnote
 
@@ -109,6 +126,8 @@ Footnotes are a great addition to documentation.[^note] They provide extra conte
 [^2]: And this is another note with a slightly different identifier.
 ```
 
+---
+
 ### Block Quote
 
 > This is a quote
@@ -116,6 +135,107 @@ Footnotes are a great addition to documentation.[^note] They provide extra conte
 ```
 > This is a quote
 ```
+
+---
+
+### Extentions
+
+!!! info "The [`site_url`][mkdocs.site_url] setting must be set"
+
+    Note that you must set [`site_url`][mkdocs.site_url] when using instant
+    navigation, as instant navigation relies on the generated `sitemap.xml`
+    which will be empty if this setting is omitted. Example:
+
+    ``` yaml
+    site_url: https://example.com
+    ```
+
+```
+
+!!! info "The [`site_url`][mkdocs.site_url] setting must be set"
+
+    Note that you must set [`site_url`][mkdocs.site_url] when using instant
+    navigation, as instant navigation relies on the generated `sitemap.xml`
+    which will be empty if this setting is omitted. Example:
+
+    ``` yaml
+    site_url: https://example.com
+    ```
+```
+
+---
+
+???+ warning
+
+    The Docker container is intended for local previewing purposes only and
+    is not suitable for deployment. This is because the web server used by
+    MkDocs for live previews is not designed for production use and may have
+    security vulnerabilities.
+
+```
+
+???+ warning
+
+    The Docker container is intended for local previewing purposes only and
+    is not suitable for deployment. This is because the web server used by
+    MkDocs for live previews is not designed for production use and may have
+    security vulnerabilities.
+```
+
+---
+
+=== "Latest"
+
+    ``` sh
+    pip install mkdocs-material
+    ```
+
+=== "9.x"
+
+    ``` sh
+    pip install mkdocs-material=="9.*" # (1)!
+    ```
+
+```
+
+=== "Latest"
+
+    ``` sh
+    pip install mkdocs-material
+    ```
+
+=== "9.x"
+
+    ``` sh
+    pip install mkdocs-material=="9.*" # (1)!
+    ```
+
+```
+
+---
+
+### In mkdocs.yml
+
+```
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+```
+
+---
 
 ### Emoji
 
@@ -129,23 +249,33 @@ Footnotes are a great addition to documentation.[^note] They provide extra conte
 
 - Document : 📚 📑
 
+---
+
 ### Markdown Help
 
 [Markdown Doc from codecademy](https://www.codecademy.com/resources/docs/markdown)
 
 [mkdocs-material reference](https://squidfunk.github.io/mkdocs-material/reference/)
 
+---
+
 ### Markdown Preview
 
 Control-Shift-V
+
+---
 
 ### WaveDROM Help
 
 [WaveDOM Help](https://wavedrom.com/tutorial.html)
 
+---
+
 ### WaveDROM Preview
 
 Control-Shift-P
+
+---
 
 ### Pay Attention 
 

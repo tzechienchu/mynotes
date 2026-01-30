@@ -2,6 +2,22 @@
 
 ## 2026
 
+### Nanoseconds C++
+
+![](../books/images/2026/IMG_0427.jpg)
+
+2026-006
+
+---
+
+### FPGA for Developers
+
+![](../books/images/2026/IMG_0428.jpg)
+
+2026-006
+
+---
+
 ### Synaptic Self
 
 ![](../books/images/2026/81TYVNYVZGL._SL1500.jpg)

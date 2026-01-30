@@ -8,7 +8,8 @@ nav:
   - 'Pins': 'pins.md'
   - 'Tutorial': 'tutorial.md'
   - 'Resources': 'resources.md'
-  - 'PICO': 'PICO_Resources.md'
+  - 'Pico': 'PICO_Resources.md'
+  - 'Python': 'Python_Resources.md'  
   - 'Papers': 'papers.md'
   - 'Facts': 'facts.md'
   - 'Github Collection': 'github.md'
@@ -32,9 +33,13 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - admonition
+  - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 
 theme:
   name: material
