@@ -249,6 +249,8 @@ markdown_extensions:
 
 - Document : 📚 📑
 
+- Lab : 🔬🦠🧪
+
 ---
 
 ### Markdown Help
