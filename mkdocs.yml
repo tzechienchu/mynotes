@@ -18,7 +18,7 @@ nav:
   - 'Ideas': './ideas.md'
   - 'About Me': './about.md'
   #- 'Schematics': './private/schematics.md'
-  #- '*Magazins (Local)': './mags/index.md'
+  - '*Magazins (Local)': './mags/index.md'
   #- '*Peoples' : './private/peoples.md'
   #- '*Projects': './private/projects.md'
   #- '*Personal': './private/personal.md'

@@ -210,6 +210,51 @@ sys.path.append(os.path.abspath(parent_dir))
         writer.write(fp)
 ```
 
+## OpenCV
+### Python Precision Delay
+
+```py
+start_time_ns = time.perf_counter_ns()
+time_elapsed_ns = time.perf_counter_ns() - start_time_ns
+while(time_elapsed_ns < gap_us*1000):
+    time_elapsed_ns = time.perf_counter_ns() - start_time_ns
+```
+
+### UVC camera exposure timing in OpenCV
+
+```py
+
+ExpoTime_ms = 5
+
+fourcc = cv2.VideoWriter_fourcc('M','J','P','G')
+#camera.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25) On
+camera.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.75)
+
+camera.set(cv2.CAP_PROP_FOURCC, fourcc)
+camera.set(cv2.CAP_PROP_FRAME_WIDTH, 800)
+camera.set(cv2.CAP_PROP_FRAME_HEIGHT,600)
+camera.set(cv2.CAP_PROP_FPS, 120) # Must after CAP_PROP_FOURCC
+camera.set(cv2.CAP_PROP_EXPOSURE, ExpoTime_ms*10)
+
+```
+
+### OpenCV Camera Caputer and Display
+
+```py
+ret, frame = camera.read()
+    
+ret = camera.grab()
+ret, frame = camera.retrieve()
+
+cv2.imshow("image1", frame)
+
+if cv2.waitKey(1) & 0xff == ord('q'):
+    print("exit")
+    break
+```
+
+---
+
 ## Micropython
 
 ### Pyboard Sleep and Wakeup

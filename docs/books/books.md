@@ -2,11 +2,35 @@
 
 ## 2026
 
-### Nanoseconds C++
+### High Level Sythesis Make Easy
 
-![](../books/images/2026/IMG_0427.jpg)
+![](../books/images/2026/5107E4oAQaL.jpg)
 
-2026-006
+2026-010
+
+---
+
+### Master Embedded Linux Development
+
+![](../books/images/2026/IMG_0434.jpg)
+
+2026-009
+
+---
+
+### C++23 Coroutines
+
+![](../books/images/2026/IMG_0433.jpg)
+
+2026-008
+
+---
+
+### The MicroZed Chronicles
+
+![](../books/images/2026/IMG_0432.jpg)
+
+2026-007
 
 ---
 
