@@ -2,6 +2,24 @@
 
 ## 2026
 
+### Mental Models for Critical Thining
+
+![](../books/images/2026/IMG_0437.jpg)
+
+2026-012
+
+---
+
+### The Idea Factory
+
+![](../books/images/2026/IMG_0436.jpg)
+
+2026-011
+
+沒有 Bell Lab 我大概在台東種田
+
+---
+
 ### High Level Sythesis Make Easy
 
 ![](../books/images/2026/5107E4oAQaL.jpg)

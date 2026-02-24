@@ -1,7 +1,19 @@
 
 # Quotes
 
+### 「成為美國的敵人或許很危險，但做美國的朋友卻是致命」（"It may be dangerous to be America's enemy, but to be America's friend is fatal"）據說是 季辛吉說的（有爭議）
+
+---
+
+### 確信是寬容的死敵 from Movie Convlave
+
+🌐[Convlave](https://zh.wikipedia.org/zh-tw/%E6%95%99%E5%AE%97%E9%81%B8%E6%88%B0)
+
+---
+
 ### Hope is not a Strategy
+
+---
 
 ### 美國實業家與圖書收藏家A·愛德華·牛頓曾於1921年這樣寫道[10]：
 
