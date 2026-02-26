@@ -1,5 +1,11 @@
 # Ideas
 
+## Computer's primitive operation is Boolean logic. (And, Or, Not) 
+
+## What's Nuron's primitive operaion ?
+
+## Self Modification is the key to Concious
+
 ## 朋友只是還沒背叛的敵人
 
 ## 敵人只是還沒找到共同需要的朋友
