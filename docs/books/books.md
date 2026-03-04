@@ -2,6 +2,22 @@
 
 ## 2026
 
+### The Pattern On the Stone
+
+![](../books/images/2026/IMG_0439.jpg)
+
+2026-014
+
+---
+
+### The Delicate Art of Brute Force
+
+![](../books/images/2026/IMG_0438.jpg)
+
+2026-013
+
+---
+
 ### Mental Models for Critical Thining
 
 ![](../books/images/2026/IMG_0437.jpg)
