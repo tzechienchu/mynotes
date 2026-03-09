@@ -1,5 +1,11 @@
 # Ideas
 
+### 當一個團隊只有一言堂 那就毁了
+
+### human and computer are not the same memory system
+
+### Netanyahu say, Unleash Trump, Unleash US Marine 
+
 ## Computer's primitive operation is Boolean logic. (And, Or, Not) 
 
 ## What's Nuron's primitive operaion ?
