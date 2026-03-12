@@ -2,6 +2,14 @@
 
 ## 2026
 
+### The Causal Mindset Handbook
+
+![](../books/images/2026/IMG_0440.jpg)
+
+2026-015
+
+---
+
 ### The Pattern On the Stone
 
 ![](../books/images/2026/IMG_0439.jpg)
