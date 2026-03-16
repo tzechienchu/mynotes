@@ -2,6 +2,14 @@
 
 ## 2026
 
+### Causal Inference
+
+![](../books/images/2026/Screenshot_20260314_001840_Kindle.jpg)
+
+2026-016
+
+---
+
 ### The Causal Mindset Handbook
 
 ![](../books/images/2026/IMG_0440.jpg)
