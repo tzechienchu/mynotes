@@ -2,6 +2,24 @@
 
 ## 2026
 
+### Defensive C++ Arduino Programming
+
+![](../books/images/2026/IMG_0442.jpg)
+
+2026-018
+
+I like reading stroy about C language.
+
+---
+
+### Pragmatic C++ Arduino Programming
+
+![](../books/images/2026/IMG_0441.jpg)
+
+2026-017
+
+---
+
 ### Causal Inference
 
 ![](../books/images/2026/Screenshot_20260314_001840_Kindle.jpg)

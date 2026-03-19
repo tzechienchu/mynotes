@@ -61,6 +61,118 @@ Mob Programming Example
 
 [High Speed PCB Design](papers/2025/High-Speed%20PCB%20Design%20Guide.pdf)
 
+### Some C Stuff
+
+#### .h file
+
+pin.h : store pin name define and hardware related constant
+
+constant.h : store constant related to software
+
+data.h : store software related general data structure
+
+error.h : error code and error message
+
+global.h : place to define global access variable
+
+log.h : Macros about log
+
+---
+
+#### c naming convention
+
+Variable start with Lowercase
+
+Function, Enum, Class, Class start with Uppercases
+
+Parameters start with underscore
+
+Macro start with all uppercase with underscore between words
+
+#### c others stuff
+
+comment closing curly braces
+
+variable suppose to have min and max
+
+#### c function error handling
+
+1st parameter is alwasy *error
+
+```c
+int my_function(Error *err, int a, int b)
+{
+    if a < 0 {
+        *err = ERROR::LESSTHENZERO;
+        return 0;
+    }
+}
+
+```
+
+---
+
+#### setjmp longjmp 用法
+
+```c
+#include <stdio.h>
+#include <setjmp.h>
+
+jmp_buf buf;
+
+void nested_function() {
+    printf("在深層函數中，發生錯誤...\n");
+    longjmp(buf, 1); // 跳回到 setjmp 處，並傳回 1
+    printf("這行不會被執行\n");
+}
+
+int main() {
+    // 1. 設定跳轉點
+    if (setjmp(buf) == 0) {
+        printf("準備呼叫深層函數\n");
+        nested_function();
+    } else {
+        // 2. 當從 longjmp 跳回時
+        printf("已從錯誤中恢復\n");
+    }
+
+    return 0;
+}
+```
+
+---
+
+#### C Header File Example
+
+```c
+// 1. Include Guards (Essential to prevent multiple inclusions)
+#ifndef MY_HEADER_H
+#define MY_HEADER_H
+
+// 2. Includes (Only necessary ones, like standard types)
+#include <stdint.h>
+
+// 3. Macros and Constants
+#define MAX_BUFFER 1024
+
+// 4. Data Type Definitions (Structures, Enums, Typedefs)
+typedef struct {
+    int id;
+    char name[20];
+} User;
+
+// 5. Function Prototypes (Public interface)
+void ProcessUser(User* u);
+int GetStatus(void);
+
+// 6. External Global Variables (If shared)
+extern int globalConfig;
+
+#endif // MY_HEADER_H
+```
+
+---
+
 ## FPGA 🌐 🎬 💾 📚 📑
 
 ### FPGA DFX
