@@ -2,6 +2,14 @@
 
 ## 2026
 
+### 長大後 交朋友怎麽那麽難
+
+![](../books/images/2026/IMG_0443.jpg)
+
+2026-019
+
+---
+
 ### Defensive C++ Arduino Programming
 
 ![](../books/images/2026/IMG_0442.jpg)
