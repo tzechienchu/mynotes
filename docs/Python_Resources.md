@@ -211,6 +211,7 @@ sys.path.append(os.path.abspath(parent_dir))
 ```
 
 ## OpenCV
+
 ### Python Precision Delay
 
 ```py
@@ -251,6 +252,133 @@ cv2.imshow("image1", frame)
 if cv2.waitKey(1) & 0xff == ord('q'):
     print("exit")
     break
+```
+
+---
+
+## Python TK
+
+### Python UART TK GUI Program
+
+```py
+import tkinter as tk
+from tkinter import ttk, scrolledtext
+import serial
+import serial.tools.list_ports
+import threading
+
+class SerialGui:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("USB Serial JSON Controller")
+        self.serial_port = None
+        self.running = False
+
+        # --- 1. 連接設定區域 ---
+        setup_frame = tk.Frame(root)
+        setup_frame.pack(pady=10, padx=10, fill='x')
+
+        tk.Label(setup_frame, text="Port:").pack(side='left')
+        self.port_var = tk.StringVar()
+        self.port_combo = ttk.Combobox(setup_frame, textvariable=self.port_var, width=15)
+        self.port_combo.pack(side='left', padx=5)
+        self.refresh_ports()
+
+        tk.Label(setup_frame, text="Baud:").pack(side='left', padx=5)
+        self.baud_var = tk.StringVar(value="115200")
+        self.baud_combo = ttk.Combobox(setup_frame, textvariable=self.baud_var, values=["9600", "115200"], width=8)
+        self.baud_combo.pack(side='left', padx=5)
+
+        self.btn_connect = tk.Button(setup_frame, text="Connect", command=self.toggle_connection)
+        self.btn_connect.pack(side='left', padx=10)
+
+        # --- 2. 快速 JSON 指令按鈕區 (每列 5 個) ---
+        btn_frame = tk.LabelFrame(root, text="Quick JSON Commands")
+        btn_frame.pack(pady=5, padx=10, fill='x')
+
+        json_commands = [
+            ("Status", '{"status":1}'),
+            ("USB Data On", '{"send_to_usb":1}'),
+            ("USB Data Off", '{"send_to_usb":0}'),
+            ("Speed 100/100", '{"speed":2}'),
+            ("TWIST1", '{"TWIST_MODE":1}'),
+            ("TWIST2", '{"TWIST_MODE2":1}'),
+            ("PC Control", '{"CMD_MODE":1}'),
+        ]
+
+        MAX_COLUMNS = 5
+        for index, (label, cmd) in enumerate(json_commands):
+            r = index // MAX_COLUMNS
+            c = index % MAX_COLUMNS
+            btn = tk.Button(btn_frame, text=label, width=10, 
+                            command=lambda c=cmd: self.send_json_cmd(c))
+            btn.grid(row=r, column=c, padx=5, pady=5, sticky='we')
+
+        # --- 3. 接收資料顯示區 ---
+        self.txt_output = scrolledtext.ScrolledText(root, height=15, width=65)
+        self.txt_output.pack(pady=10, padx=10)
+
+        # --- 4. 自定義發送區 ---
+        input_frame = tk.Frame(root)
+        input_frame.pack(pady=10, padx=10, fill='x')
+
+        self.ent_input = tk.Entry(input_frame)
+        self.ent_input.pack(side='left', fill='x', expand=True, padx=5)
+        
+        self.btn_send = tk.Button(input_frame, text="Send Raw", command=self.send_data)
+        self.btn_send.pack(side='right', padx=5)
+
+    def refresh_ports(self):
+        ports = [p.device for p in serial.tools.list_ports.comports()]
+        self.port_combo['values'] = ports
+        if ports: self.port_combo.current(0)
+
+    def toggle_connection(self):
+        if not self.serial_port or not self.serial_port.is_open:
+            try:
+                self.serial_port = serial.Serial(self.port_var.get(), int(self.baud_var.get()), timeout=0.1)
+                self.running = True
+                self.btn_connect.config(text="Disconnect", bg="#ff9999")
+                threading.Thread(target=self.receive_data, daemon=True).start()
+            except Exception as e:
+                self.log(f"Error: {e}\n")
+        else:
+            self.running = False
+            if self.serial_port: self.serial_port.close()
+            self.btn_connect.config(text="Connect", bg="SystemButtonFace")
+
+    def send_data(self):
+        if self.serial_port and self.serial_port.is_open:
+            data = self.ent_input.get() + "\n"
+            self.serial_port.write(data.encode('utf-8'))
+            self.log(f">> Sent: {data}")
+            self.ent_input.delete(0, tk.END)
+
+    def send_json_cmd(self, json_cmd):
+        if self.serial_port and self.serial_port.is_open:
+            self.serial_port.write((json_cmd + "\n").encode('utf-8'))
+            self.log(f">> Sent JSON: {json_cmd}\n")
+        else:
+            self.log("Error: Please connect to a port first!\n")
+
+    def receive_data(self):
+        while self.running:
+            if self.serial_port and self.serial_port.in_waiting > 0:
+                try:
+                    data = self.serial_port.read(self.serial_port.in_waiting).decode('utf-8', errors='replace')
+                    self.log(data)
+                except:
+                    pass
+
+    def log(self, msg):
+        self.txt_output.insert(tk.END, msg)
+        self.txt_output.see(tk.END)
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = SerialGui(root)
+    root.mainloop()
+    
 ```
 
 ---
