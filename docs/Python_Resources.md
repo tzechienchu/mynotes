@@ -262,123 +262,273 @@ if cv2.waitKey(1) & 0xff == ord('q'):
 
 ```py
 import tkinter as tk
-from tkinter import ttk, scrolledtext
+from tkinter import ttk, messagebox, scrolledtext
 import serial
 import serial.tools.list_ports
+import json
 import threading
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import csv
+import queue
+from datetime import datetime
 
-class SerialGui:
+# ==========================================================
+# CUSTOMIZE YOUR SETTINGS HERE
+# ==========================================================
+
+# Updated Button Configuration as requested
+BUTTON_CONFIG = [
+    {"text": "Status", "cmd": {"status": 1}},
+    {"text": "Speed 100",  "cmd": {"speed": 2}},
+    {"text": "Speed 150",  "cmd": {"speed": 3}},
+    {"text": "Speed 200",  "cmd": {"speed": 4}},
+    {"text": "Speed 250",  "cmd": {"speed": 5}},
+    {"text": "TWIST1", "cmd": {"TWIST_MODE": 1}},
+    {"text": "TWIST2",  "cmd": {"TWIST_MODE2": 1}},
+    {"text": "PC Control", "cmd": {"CMD_MODE": 1}},
+    {"text": "Disable to USB", "cmd": {"send_to_usb": 0}},
+    {"text": "Enable to USB",  "cmd": {"send_to_usb": 1}},
+]
+
+# Define Groups of keys to display
+DATA_GROUPS = {
+    "Group 1 (Quaternion)": ["qw", "qx", "qy", "qz"],
+    "Group 2 (Accel)": ["ax", "ay", "az"],
+    "Group 3 (Gyro)": ["gx", "gy", "gz"]
+}
+
+# Unique keys for CSV logging
+ALL_CSV_KEYS = sorted(list(set([key for group in DATA_GROUPS.values() for key in group])))
+
+# ==========================================================
+
+class UARTApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("USB Serial JSON Controller")
-        self.serial_port = None
-        self.running = False
-
-        # --- 1. 連接設定區域 ---
-        setup_frame = tk.Frame(root)
-        setup_frame.pack(pady=10, padx=10, fill='x')
-
-        tk.Label(setup_frame, text="Port:").pack(side='left')
-        self.port_var = tk.StringVar()
-        self.port_combo = ttk.Combobox(setup_frame, textvariable=self.port_var, width=15)
-        self.port_combo.pack(side='left', padx=5)
-        self.refresh_ports()
-
-        tk.Label(setup_frame, text="Baud:").pack(side='left', padx=5)
-        self.baud_var = tk.StringVar(value="115200")
-        self.baud_combo = ttk.Combobox(setup_frame, textvariable=self.baud_var, values=["9600", "115200"], width=8)
-        self.baud_combo.pack(side='left', padx=5)
-
-        self.btn_connect = tk.Button(setup_frame, text="Connect", command=self.toggle_connection)
-        self.btn_connect.pack(side='left', padx=10)
-
-        # --- 2. 快速 JSON 指令按鈕區 (每列 5 個) ---
-        btn_frame = tk.LabelFrame(root, text="Quick JSON Commands")
-        btn_frame.pack(pady=5, padx=10, fill='x')
-
-        json_commands = [
-            ("Status", '{"status":1}'),
-            ("USB Data On", '{"send_to_usb":1}'),
-            ("USB Data Off", '{"send_to_usb":0}'),
-            ("Speed 100/100", '{"speed":2}'),
-            ("TWIST1", '{"TWIST_MODE":1}'),
-            ("TWIST2", '{"TWIST_MODE2":1}'),
-            ("PC Control", '{"CMD_MODE":1}'),
-        ]
-
-        MAX_COLUMNS = 5
-        for index, (label, cmd) in enumerate(json_commands):
-            r = index // MAX_COLUMNS
-            c = index % MAX_COLUMNS
-            btn = tk.Button(btn_frame, text=label, width=10, 
-                            command=lambda c=cmd: self.send_json_cmd(c))
-            btn.grid(row=r, column=c, padx=5, pady=5, sticky='we')
-
-        # --- 3. 接收資料顯示區 ---
-        self.txt_output = scrolledtext.ScrolledText(root, height=15, width=65)
-        self.txt_output.pack(pady=10, padx=10)
-
-        # --- 4. 自定義發送區 ---
-        input_frame = tk.Frame(root)
-        input_frame.pack(pady=10, padx=10, fill='x')
-
-        self.ent_input = tk.Entry(input_frame)
-        self.ent_input.pack(side='left', fill='x', expand=True, padx=5)
+        self.root.title("UART JSON Controller - Pro Edition")
         
-        self.btn_send = tk.Button(input_frame, text="Send Raw", command=self.send_data)
-        self.btn_send.pack(side='right', padx=5)
+        self.max_pts = 100
+        self.group_names = list(DATA_GROUPS.keys())
+        self.current_group_name = self.group_names[0]
+        self.current_keys = DATA_GROUPS[self.current_group_name]
+        
+        self.init_data_buffer()
+        
+        self.ser = None
+        self.is_running = False
+        self._after_id = None
+        
+        self.csv_queue = queue.Queue()
+        self.save_enabled = tk.BooleanVar(value=False)
+        self.log_filename = ""
+
+        self.setup_ui()
+        self.update_plot_loop()
+
+    def init_data_buffer(self):
+        num_keys = len(self.current_keys)
+        self.data = np.zeros((num_keys, self.max_pts), dtype=np.float64)
+        self.x_axis = np.arange(self.max_pts, dtype=np.int32)
+
+    def setup_ui(self):
+        # --- Top: Connection & Global Controls ---
+        top_frame = ttk.Frame(self.root)
+        top_frame.pack(side="top", fill="x", padx=10, pady=5)
+        
+        ttk.Label(top_frame, text="Port:").pack(side="left")
+        self.port_cb = ttk.Combobox(top_frame, width=15)
+        self.refresh_ports()
+        self.port_cb.pack(side="left", padx=5)
+        ttk.Button(top_frame, text="Refresh", command=self.refresh_ports, width=8).pack(side="left")
+        
+        self.btn_conn = ttk.Button(top_frame, text="Connect", command=self.toggle_serial)
+        self.btn_conn.pack(side="left", padx=10)
+
+        self.chk_save = ttk.Checkbutton(top_frame, text="Enable Saving (CSV)", variable=self.save_enabled)
+        self.chk_save.pack(side="left", padx=5)
+        
+        self.log_status_lbl = ttk.Label(top_frame, text="Status: Idle", foreground="gray")
+        self.log_status_lbl.pack(side="left", padx=10)
+        
+        ttk.Button(top_frame, text="Quit Program", command=self.quit_program).pack(side="right")
+
+        # --- Main Layout ---
+        main_paned = ttk.Panedwindow(self.root, orient="horizontal")
+        main_paned.pack(fill="both", expand=True, padx=10, pady=5)
+
+        # --- Left Panel: Controls ---
+        left_panel = ttk.Frame(main_paned)
+        main_paned.add(left_panel, weight=3)
+
+        # 1. Custom Command Buttons (Updated Layout for 10 buttons)
+        btn_grid = ttk.LabelFrame(left_panel, text="Command Buttons")
+        btn_grid.pack(fill="x", pady=5)
+        for i, config in enumerate(BUTTON_CONFIG):
+            cmd_str = json.dumps(config['cmd'])
+            btn = ttk.Button(btn_grid, text=config['text'], command=lambda s=cmd_str: self.send_data(s))
+            # Grid: 2 rows x 5 columns
+            btn.grid(row=i//5, column=i%5, padx=2, pady=4, sticky="nsew")
+        btn_grid.columnconfigure((0,1,2,3,4), weight=1)
+
+        # 2. Value Slider
+        slider_frame = ttk.LabelFrame(left_panel, text="Value Selection (-1.0 to 1.0)")
+        slider_frame.pack(fill="x", pady=5)
+        self.val_var = tk.DoubleVar(value=0.0)
+        self.slider = tk.Scale(slider_frame, from_=-1.0, to=1.0, resolution=0.05, 
+                              orient="horizontal", variable=self.val_var)
+        self.slider.pack(side="left", padx=10, expand=True, fill="x")
+        ttk.Button(slider_frame, text="Send Value", 
+                   command=lambda: self.send_data(json.dumps({"type": "set_val", "value": round(self.val_var.get(), 2)}))
+                   ).pack(side="right", padx=10)
+
+        # 3. Group Picker
+        picker_frame = ttk.LabelFrame(left_panel, text="Display Data Group")
+        picker_frame.pack(fill="x", pady=5)
+        self.group_cb = ttk.Combobox(picker_frame, values=self.group_names, state="readonly")
+        self.group_cb.current(0)
+        self.group_cb.bind("<<ComboboxSelected>>", self.on_group_change)
+        self.group_cb.pack(side="left", fill="x", expand=True, padx=10, pady=10)
+
+        # 4. Plot Area
+        self.fig, self.ax = plt.subplots(figsize=(5, 3), dpi=100)
+        self.setup_plot_lines()
+        self.canvas = FigureCanvasTkAgg(self.fig, master=left_panel)
+        self.canvas.get_tk_widget().pack(fill="both", expand=True, pady=5)
+
+        # --- Right Panel: Terminal ---
+        right_panel = ttk.LabelFrame(main_paned, text="Terminal Viewer")
+        main_paned.add(right_panel, weight=2)
+        self.log_area = scrolledtext.ScrolledText(right_panel, state='disabled', font=("Consolas", 9))
+        self.log_area.pack(fill="both", expand=True, padx=5, pady=5)
+
+        send_frame = ttk.Frame(right_panel)
+        send_frame.pack(fill="x", padx=5, pady=5)
+        self.raw_input = ttk.Entry(send_frame)
+        self.raw_input.pack(side="left", fill="x", expand=True)
+        self.raw_input.bind("<Return>", lambda e: self.send_raw())
+        ttk.Button(send_frame, text="Send Raw", command=self.send_raw).pack(side="right", padx=2)
+
+    def setup_plot_lines(self):
+        self.ax.clear()
+        self.lines = []
+        for key in self.current_keys:
+            line, = self.ax.plot(self.x_axis, np.zeros(self.max_pts), label=key)
+            self.lines.append(line)
+        self.ax.legend(loc="upper right", ncol=len(self.current_keys), fontsize='x-small')
+        self.ax.set_title(f"Group: {self.current_group_name}")
+        self.ax.grid(True, linestyle=':', alpha=0.6)
+
+    def on_group_change(self, event):
+        self.current_group_name = self.group_cb.get()
+        self.current_keys = DATA_GROUPS[self.current_group_name]
+        self.init_data_buffer()
+        self.setup_plot_lines()
+        self.canvas.draw()
 
     def refresh_ports(self):
         ports = [p.device for p in serial.tools.list_ports.comports()]
-        self.port_combo['values'] = ports
-        if ports: self.port_combo.current(0)
+        self.port_cb['values'] = ports
+        if ports: self.port_cb.current(0)
 
-    def toggle_connection(self):
-        if not self.serial_port or not self.serial_port.is_open:
+    def toggle_serial(self):
+        if not self.ser or not self.ser.is_open:
             try:
-                self.serial_port = serial.Serial(self.port_var.get(), int(self.baud_var.get()), timeout=0.1)
-                self.running = True
-                self.btn_connect.config(text="Disconnect", bg="#ff9999")
-                threading.Thread(target=self.receive_data, daemon=True).start()
+                self.ser = serial.Serial(self.port_cb.get(), 115200, timeout=0.1)
+                self.is_running = True
+                self.btn_conn.config(text="Disconnect")
+                threading.Thread(target=self.read_serial, daemon=True).start()
+                if self.save_enabled.get():
+                    self.start_logging()
             except Exception as e:
-                self.log(f"Error: {e}\n")
+                messagebox.showerror("Error", str(e))
         else:
-            self.running = False
-            if self.serial_port: self.serial_port.close()
-            self.btn_connect.config(text="Connect", bg="SystemButtonFace")
+            self.is_running = False
+            if self.ser: self.ser.close()
+            self.btn_conn.config(text="Connect")
+            self.log_status_lbl.config(text="Status: Idle", foreground="gray")
 
-    def send_data(self):
-        if self.serial_port and self.serial_port.is_open:
-            data = self.ent_input.get() + "\n"
-            self.serial_port.write(data.encode('utf-8'))
-            self.log(f">> Sent: {data}")
-            self.ent_input.delete(0, tk.END)
+    def start_logging(self):
+        self.log_filename = f"log_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+        self.log_status_lbl.config(text=f"Logging: {self.log_filename}", foreground="green")
+        threading.Thread(target=self.csv_logging_thread, daemon=True).start()
 
-    def send_json_cmd(self, json_cmd):
-        if self.serial_port and self.serial_port.is_open:
-            self.serial_port.write((json_cmd + "\n").encode('utf-8'))
-            self.log(f">> Sent JSON: {json_cmd}\n")
-        else:
-            self.log("Error: Please connect to a port first!\n")
+    def send_data(self, text):
+        if self.ser and self.ser.is_open:
+            self.ser.write((text + "\n").encode('utf-8'))
+            self.log_to_ui(f"TX -> {text}\n")
 
-    def receive_data(self):
-        while self.running:
-            if self.serial_port and self.serial_port.in_waiting > 0:
+    def send_raw(self):
+        raw_text = self.raw_input.get()
+        if raw_text:
+            self.send_data(raw_text)
+            self.raw_input.delete(0, tk.END)
+
+    def log_to_ui(self, msg):
+        self.log_area.config(state='normal')
+        self.log_area.insert(tk.END, msg)
+        self.log_area.see(tk.END)
+        self.log_area.config(state='disabled')
+
+    def read_serial(self):
+        while self.is_running:
+            if self.ser and self.ser.in_waiting:
                 try:
-                    data = self.serial_port.read(self.serial_port.in_waiting).decode('utf-8', errors='replace')
-                    self.log(data)
+                    line = self.ser.readline().decode('utf-8').strip()
+                    if not line: continue
+                    self.root.after(0, self.log_to_ui, f"RX <- {line}\n")
+                    payload = json.loads(line)
+                    self.data = np.roll(self.data, -1, axis=1)
+                    for i, key in enumerate(self.current_keys):
+                        self.data[i, -1] = payload.get(key, 0.0)
+                    if self.save_enabled.get():
+                        if not self.log_filename:
+                            self.root.after(0, self.start_logging)
+                        self.csv_queue.put(payload)
                 except:
-                    pass
+                    continue
 
-    def log(self, msg):
-        self.txt_output.insert(tk.END, msg)
-        self.txt_output.see(tk.END)
+    def csv_logging_thread(self):
+        try:
+            with open(self.log_filename, mode='a', newline='') as f:
+                writer = csv.DictWriter(f, fieldnames=["timestamp"] + ALL_CSV_KEYS)
+                writer.writeheader()
+                while self.is_running and self.save_enabled.get():
+                    try:
+                        data = self.csv_queue.get(timeout=0.5)
+                        row = {"timestamp": datetime.now().strftime('%H:%M:%S.%f')[:-3]}
+                        for key in ALL_CSV_KEYS: row[key] = data.get(key, "")
+                        writer.writerow(row)
+                        f.flush()
+                    except queue.Empty:
+                        continue
+        finally:
+            self.log_filename = ""
+
+    def update_plot_loop(self):
+        if self.is_running:
+            for i in range(len(self.current_keys)):
+                self.lines[i].set_ydata(self.data[i])
+            d_min, d_max = np.min(self.data), np.max(self.data)
+            margin = max((d_max - d_min) * 0.1, 1.0)
+            self.ax.set_ylim(d_min - margin, d_max + margin)
+            self.canvas.draw_idle()
+        self._after_id = self.root.after(50, self.update_plot_loop)
+
+    def quit_program(self):
+        self.is_running = False
+        if self._after_id: self.root.after_cancel(self._after_id)
+        if self.ser and self.ser.is_open: self.ser.close()
+        self.root.quit()
+        self.root.destroy()
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = SerialGui(root)
-    root.mainloop()
-    
+    root.geometry("1300x850")
+    app = UARTApp(root)
+    root.protocol("WM_DELETE_WINDOW", app.quit_program)
+    root.mainloop()    
 ```
 
 ---
