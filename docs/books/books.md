@@ -2,6 +2,14 @@
 
 ## 2026
 
+### Introduction C++
+
+![](../books/images/2026/IMG_0446.jpg)
+
+2026-021
+
+---
+
 ### Modern C (C23)
 
 ![](../books/images/2026/IMG_0444.jpg)

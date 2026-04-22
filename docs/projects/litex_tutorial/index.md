@@ -357,13 +357,14 @@ I wrote a load.py to load the bit file.
 
 load.py
 
+```py
 #!/usr/bin/env python3
 import os
 #os.system("openFPGALoader --scan-usb")
 #os.system("openFPGALoader ./build/gateware/top1.bit")
 #os.system("openFPGALoader -c digilent_hs3 ./build/gateware/top1.bit")
 os.system("openFPGALoader -c digilent_hs2 ./build/gateware/top1.bit")
-
+```
 
 You need to know the cable type.
 Run >openFPGALoader --scan-usb
@@ -376,6 +377,7 @@ Run >openFPGALoader -c digilent_hs2 ./build/gateware/top1.bit
 
 start_server.py
 
+```py
 #!/usr/bin/env python3
 import os
 
@@ -384,6 +386,7 @@ cmd = "litex_server --uart --uart-port=/dev/ttyUSB0"
 #cmd = "litex_server --jtag --jtag-config=openocd_xc7_ft2232.cfg"
 
 os.system(cmd)
+```
 
 We need to start a host debug server , 
 depends on the debug interface.
@@ -395,6 +398,7 @@ https://github.com/enjoy-digital/litex/wiki/Use-Host-Bridge-to-control-debug-a-S
 
 ## Test_Identifier.py
 
+```py
 #!/usr/bin/env python3
 
 from litex import RemoteClient
@@ -411,6 +415,8 @@ for i in range(256):
     if c == "\0":
         break
 print("fpga_id: " + fpga_id)
+
+```
 
 I put all my test in test folder. 
 Generated csr.csv is also in the test folder.
