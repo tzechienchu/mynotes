@@ -2,6 +2,14 @@
 
 ## 2026
 
+### The Brain, In Theory
+
+![](../books/images/2026/IMG_0447.jpg)
+
+2026-022
+
+---
+
 ### Introduction C++
 
 ![](../books/images/2026/IMG_0446.jpg)
