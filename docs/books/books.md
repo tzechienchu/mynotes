@@ -2,6 +2,14 @@
 
 ## 2026
 
+### The Developer's Guide to AI
+
+![](../books/images/2026/IMG_0448.jpg)
+
+2026-023
+
+---
+
 ### The Brain, In Theory
 
 ![](../books/images/2026/IMG_0447.jpg)
