@@ -2,6 +2,14 @@
 
 ## 2026
 
+### The Essential Book of AI
+
+![](../books/images/2026/IMG_0449.jpg)
+
+2026-024
+
+---
+
 ### The Developer's Guide to AI
 
 ![](../books/images/2026/IMG_0448.jpg)
