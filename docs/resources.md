@@ -246,6 +246,15 @@ extern int globalConfig;
 |Registered signals | _reg o _r                | count_reg, state_r |
 |Next state signals | n_                       | n_state            | 
 
+### Verilog Name Convention
+
+- Port     : name_in, name_out
+- Signal   : s_name, s_name_n, s_name_next
+- Variable : v_name, v_name_n
+- Constant : c_name
+
+---
+
 ### USB3 DAQ
 
 #### USB3 FIFO Interface for DAQ use FT60X and Cypress FX3
