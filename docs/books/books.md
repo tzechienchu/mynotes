@@ -2,6 +2,16 @@
 
 ## 2026
 
+### Circuit In The Brain
+
+![](../books/images/2026/IMG_0451.jpg)
+
+2026-025
+
+沒看完 中間lost track 變得很難閱讀下去
+
+---
+
 ### The Essential Book of AI
 
 ![](../books/images/2026/IMG_0449.jpg)
