@@ -6,6 +6,48 @@
 
 [UV Commands](https://docs.astral.sh/uv/getting-started/features/)
 
+### UV
+
+####  UV Commands
+
+    Project setup
+    uv init myproject           # Create new project
+    uv add requests             # Add dependency
+    uv remove requests             # Remove dependency
+    uv sync                     # Install from lockfile
+
+    Running code
+    uv run script.py    # Run in project environment
+    uv run pytest              # Run tests
+
+    Python management
+    uv python install 3.12     # Install Python version
+    uv python pin 3.12         # Set project Python
+
+    Tool usage
+    uvx black .                # Run tool temporarily
+    uv tool install ruff       # Install tool globally
+
+    Package management (pip-compatible)
+    uv pip install requests  # Direct pip replacement
+    uv pip install -r requirements.txt
+
+#### UV Kickstart
+
+- uv init project_folder_name
+- uv add package_name
+- uv add package_name --dev
+
+#### after UV -> Git
+
+- git init
+- git add .
+- git commit -m "Initial commit"
+
+#### Create new repo with GitHub CLI
+
+- gh repo create my-project --private --source=. --remote=origin --push
+
 ### PySerial
 
 PySerial Example Code [pyserial_sample.md](subtitles/pyserial_sample.md)
