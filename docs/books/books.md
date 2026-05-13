@@ -2,6 +2,14 @@
 
 ## 2026
 
+### A Simple Approach to Neuroscience
+
+![](../books/images/2026/IMG_0452.jpg)
+
+2026-026
+
+---
+
 ### Circuit In The Brain
 
 ![](../books/images/2026/IMG_0451.jpg)
