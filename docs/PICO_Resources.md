@@ -50,6 +50,8 @@ Nuke Flash
 
 [RT-Thread and LVGL](https://rt-thread.medium.com/get-raspberry-pi-pico-running-on-rt-thread-rtos-with-an-opensource-light-versatile-graphics-library-c1f708882bff)
 
+## PICO SPI in Arduino 8 bits Every CS
+
 ## RP2040 Arduino How to Make 2 PWM Start at the same time
 
 ```c
