@@ -2,6 +2,14 @@
 
 ## 2026
 
+### The Law of Thought
+
+![](../books/images/2026/IMG_0457.jpg)
+
+2026-027
+
+---
+
 ### A Simple Approach to Neuroscience
 
 ![](../books/images/2026/IMG_0452.jpg)

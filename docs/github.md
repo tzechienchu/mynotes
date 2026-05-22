@@ -112,6 +112,10 @@
 
 [Pico Flashloader](https://github.com/rhulme/pico-flashloader)
 
+### SerialPlotster
+
+[SerialPlotster](https://github.com/todbot/SerialPlotster)
+
 ## FPGA
 
 ### Xilinx bitstream analizing tool 

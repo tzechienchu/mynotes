@@ -38,6 +38,11 @@
 
 🎬[Agile Hardware Design use Chisel 2025](https://www.youtube.com/playlist?list=PLfrN7RIcMe6gxHh5EwK0hktA5qWQQuSRQ)
 
+
+## Guest Lectures - ETHZ Robot Learning Course 2026
+
+🎬[Guest Lectures - ETHZ Robot Learning Course 2026](https://www.youtube.com/playlist?list=PLPU18BnWYUZIpmc2GuFlSXVGJxXZVeZ2B)
+
 ---
 
 ## NeuralScience
