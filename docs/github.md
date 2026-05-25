@@ -112,6 +112,10 @@
 
 [Pico Flashloader](https://github.com/rhulme/pico-flashloader)
 
+### Pico DSP Skeleton
+
+[Pico DSP Skeleton](https://github.com/grughuhler/rpi_pico_related)
+
 ### SerialPlotster
 
 [SerialPlotster](https://github.com/todbot/SerialPlotster)
