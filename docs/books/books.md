@@ -2,6 +2,14 @@
 
 ## 2026
 
+### Inflation
+
+![](../books/images/2026/IMG_0458.jpg)
+
+2026-028
+
+---
+
 ### The Law of Thought
 
 ![](../books/images/2026/IMG_0457.jpg)
