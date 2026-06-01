@@ -2,6 +2,18 @@
 
 ## 2026
 
+### Logic Before Language
+
+![](../books/images/2026/IMG_0461.jpg)
+
+2026-029
+
+    Well, logic is based on language.
+    This book is as verbose as an llm.
+    And the RTR stuff is also just words. 
+
+---
+
 ### Inflation
 
 ![](../books/images/2026/IMG_0458.jpg)
