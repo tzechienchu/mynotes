@@ -1,8 +1,8 @@
 # Welcome to Frank's Notebook
 
-## [2026-05 Notes](./Y2026/Y2026-05.md)
+## [2026-06 Notes](./Y2026/Y2026-06.md)
 
-## [2026-04 Notes](./Y2026/Y2026-04.md)
+## [2026-05 Notes](./Y2026/Y2026-05.md)
 
 ---
 
