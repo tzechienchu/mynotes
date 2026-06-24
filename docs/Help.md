@@ -283,4 +283,9 @@ Control-Shift-P
 
 #### Don't put large file 
 
+# SMB Server
+
+## Restart SMB Server
+
+sudo systemctl restart smbd nmbd
 

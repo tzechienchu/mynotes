@@ -2,6 +2,40 @@
 
 ## 2026
 
+### Make Sense of Chaos
+
+![](../books/images/2026/IMG_0465.jpg)
+
+2026-033
+
+---
+
+### Verilog FPGA Programming
+
+![](../books/images/2026/IMG_0464.jpg)
+
+2026-032
+
+---
+
+### Google NotebookLM 
+
+![](../books/images/2026/IMG_0463.jpg)
+
+2026-031
+
+---
+
+### A World Appear
+
+![](../books/images/2026/IMG_0462.jpg)
+
+2026-030
+
+True, World is Create from Consciousness.
+
+---
+
 ### Logic Before Language
 
 ![](../books/images/2026/IMG_0461.jpg)
