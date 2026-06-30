@@ -173,6 +173,87 @@ slave.flush()
 
 ```
 
+### Connect PM400 to Python at Ubuntu
+
+To connect a Thorlabs PM400 power meter on Ubuntu 22.04 LTS, the most reliable approach is using the Standard Commands for Programmable Instruments (SCPI) via Python's pyvisa library. Thorlabs power meters natively present themselves as USBTMC (USB Test and Measurement Class) devices on Linux systems, eliminating the need for proprietary Windows .dll drivers
+
+- pip3 install pyvisa pyvisa-py
+- sudo nano /etc/udev/rules.d/99-thorlabs.rules
+                                                
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1313", ATTRS{idProduct}=="8075", MODE="0666", GROUP="plugdev"
+
+KERNEL=="usbtmc*", ATTRS{idVendor}=="1313", ATTRS{idProduct}=="8075", MODE="0666", GROUP="plugdev"
+
+- sudo udevadm control --reload-rules
+- sudo udevadm trigger
+
+```py
+import pyvisa
+import time
+
+def connect_thorlabs_pm400():
+    # Initialize the Visa Resource Manager using the pure-Python backend (@py)
+    rm = pyvisa.ResourceManager('@py')
+    
+    # List all discovered resources
+    resources = rm.list_resources()
+    print("Discovered VISA Resources:", resources)
+    
+    pm400_resource = None
+    for res in resources:
+        # Check for Thorlabs USBTMC identifier strings (Vendor ID 0x1313)
+        if "0x1313" in res or "USB" in res:
+            pm400_resource = res
+            break
+            
+    if not pm400_resource:
+        print("Error: Thorlabs PM400 device not found. Check physical USB connection and udev rules.")
+        return
+
+    print(f"Connecting to: {pm400_resource}")
+    
+    try:
+        # Open connection with defined termination character required by Thorlabs SCPI
+        instrument = rm.open_resource(pm400_resource, read_termination='\n', write_termination='\n')
+        
+        # Query device identification details
+        idn = instrument.query('*IDN?')
+        print(f"Connected to Device Identification: {idn.strip()}")
+        
+        # Configure PM400 to measure Power in Watts
+        instrument.write('CONF:POW') 
+        
+        # Read the current wavelength configuration
+        current_wavelength = instrument.query('SENS:CORR:WAV?')
+        print(f"Current Wavelength Setting: {current_wavelength.strip()} nm")
+        
+        # Example: Set to a specific wavelength if needed (uncomment line below)
+        # instrument.write('SENS:CORR:WAV 532')
+        
+        print("\nStarting live power logging (Press Ctrl+C to stop)...")
+        while True:
+            # Request a new measurement sample from the sensor head
+            power_str = instrument.query('READ?')
+            power_val = float(power_str)
+            
+            # Format the output cleanly into scientific notation
+            print(f"Measured Power: {power_val:.6e} W", end='\r')
+            time.sleep(0.5)
+            
+    except KeyboardInterrupt:
+        print("\nMeasurement loop stopped by user.")
+    except Exception as e:
+        print(f"\nAn error occurred: {e}")
+    finally:
+        if 'instrument' in locals():
+            instrument.close()
+            print("Instrument connection securely closed.")
+
+if __name__ == "__main__":
+    connect_thorlabs_pm400()
+
+```
+
 ### Virtual Enviroment
 
 ``` py

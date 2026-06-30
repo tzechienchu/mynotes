@@ -1,5 +1,7 @@
 # Welcome to Frank's Notebook
 
+## [2026-07 Notes](./Y2026/Y2026-07.md)
+
 ## [2026-06 Notes](./Y2026/Y2026-06.md)
 
 ## [2026-05 Notes](./Y2026/Y2026-05.md)
