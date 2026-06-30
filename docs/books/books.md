@@ -2,6 +2,22 @@
 
 ## 2026
 
+### Fundamental C: Get Closer to The Machine
+
+![](../books/images/2026/81hmO4B7UaL._SL1500_.jpg)
+
+2026-035
+
+---
+
+### Hands-On FPGA Projects
+
+![](../books/images/2026/IMG_0174.jpg)
+
+2026-034
+
+---
+
 ### Make Sense of Chaos
 
 ![](../books/images/2026/IMG_0465.jpg)
