@@ -3,7 +3,7 @@ theme:
   name: material
 nav:
   - 'Home': 'index.md'
-  - '2026-06': 'Y2026/Y2026-06.md'
+  - '2026-July': 'Y2026/Y2026-07.md'
   - 'Books': './books/books.md'
   - 'Video Lectures': './video_lecture.md'
   - 'Pins': 'pins.md'
