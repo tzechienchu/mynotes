@@ -2,6 +2,22 @@
 
 ## 2026
 
+### Fooled by Randomness
+
+![](../books/images/2026/IMG_0467.jpg)
+
+2026-037
+
+---
+
+### Deep C Dives Adventures in C
+
+![](../books/images/2026/61kpJiBFI4L._SL1500_.jpg)
+
+2026-036
+
+---
+
 ### Fundamental C: Get Closer to The Machine
 
 ![](../books/images/2026/81hmO4B7UaL._SL1500_.jpg)
