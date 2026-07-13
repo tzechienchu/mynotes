@@ -26,6 +26,12 @@
 
 ---
 
+### Scope Probe Design
+
+[Tecktronic Probe Design](./papers/2026/062-1146-00.pdf)
+
+---
+
 ## eneuro paper source
 
 [eneuro](https://www.eneuro.org/)
