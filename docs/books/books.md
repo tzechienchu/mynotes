@@ -2,6 +2,14 @@
 
 ## 2026
 
+### The Black Swan
+
+![](../books/images/2026/IMG_0468.jpg)
+
+2026-038
+
+---
+
 ### Fooled by Randomness
 
 ![](../books/images/2026/IMG_0467.jpg)
