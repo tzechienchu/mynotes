@@ -22,9 +22,19 @@
 
 [Debug Probe](https://www.raspberrypi.com/documentation/microcontrollers/debug-probe.html)
 
-## PyBoard STM32F405
+## STM32 
+
+### PyBoard STM32F405
 
 ![PyBoard](./images/2025/pybv11-pinout.jpg)
+
+### STM32F405 I2C
+
+    I2C Pin Mapping Overview
+    Each I2C port can be routed to multiple alternative GPIO pin packs to suit your board layout: [1]
+    I2C1: SCL on PB6 (or PB8), SDA on PB7 (or PB9)
+    I2C2: SCL on PB10, SDA on PB11
+    I2C3: SCL on PA8 (or PH7), SDA on PC9 (or PH8) [1, 2]
 
 ## FT2232
 

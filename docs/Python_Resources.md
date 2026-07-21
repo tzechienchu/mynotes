@@ -388,6 +388,101 @@ sys.path.append(os.path.abspath(parent_dir))
         writer.write(fp)
 ```
 
+### Python Functional Pointer 
+
+```py
+PAYMENT_HANDLERS = {}
+
+def register(payment_type):
+    def decorator(func):
+        PAYMENT_HANDLERS[payment_type] = func
+        return func
+    return decorator
+
+@register("credit_card")
+def charge_credit_card(amount):
+    return f"Charged ${amount} to credit card"
+
+@register("paypal")
+def charge_paypal(amount):
+    return f"Charged ${amount} via PayPal"
+
+@register("crypto")
+def charge_crypto(amount):
+    return f"Charged ${amount} in crypto"
+
+def process_payment(payment_type, amount):
+    handler = PAYMENT_HANDLERS.get(payment_type)
+    if handler is None:
+        raise ValueError(f"Unknown payment type: {payment_type!r}")
+    return handler(amount)
+```
+
+```py
+class Registry:
+    """A reusable name-to-object registry."""
+
+    def __init__(self, name):
+        self.name = name
+        self._registry = {}
+
+    def register(self, key):
+        def decorator(obj):
+            if key in self._registry:
+                raise KeyError(
+                    f"{key!r} already registered in {self.name!r}"
+                )
+            self._registry[key] = obj
+            return obj
+        return decorator
+
+    def get(self, key):
+        if key not in self._registry:
+            raise KeyError(
+                f"{key!r} not found in {self.name!r}. "
+                f"Available: {list(self._registry)}"
+            )
+        return self._registry[key]
+
+    def __contains__(self, key):
+        return key in self._registry
+
+    def keys(self):
+        return self._registry.keys()
+```
+
+```py
+
+transforms = Registry("transforms")
+
+@transforms.register("lowercase")
+def to_lower(text):
+    return text.lower()
+
+@transforms.register("strip")
+def strip_whitespace(text):
+    return text.strip()
+
+@transforms.register("remove_digits")
+def remove_digits(text):
+    return "".join(c for c in text if not c.isdigit())
+
+# The pipeline is now just data. It could come from a YAML file,
+# a CLI argument, or a database row.
+pipeline = ["strip", "lowercase", "remove_digits"]
+text = "  Order #4521 CONFIRMED  "
+
+for step in pipeline:
+    text = transforms.get(step)(text)
+
+print(repr(text))
+
+Output:
+'order # confirmed'
+```
+
+---
+
 ## OpenCV
 
 ### Python Precision Delay
