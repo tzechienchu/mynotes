@@ -389,6 +389,18 @@ extern int globalConfig;
 
 ![](../images/2025/Screenshot%20from%202025-12-17%2016-53-54.png)
 
+### PCB Bypass Cap
+
+![](../images/2026/Screenshot%20from%202026-05-21%2016-27-33.png)
+
+![](../images/2026/Screenshot%20from%202026-05-21%2016-29-25.png)
+
+🌐[https://www.protoexpress.com/blog/decoupling-capacitor-use/](https://www.protoexpress.com/blog/decoupling-capacitor-use/)
+
+🌐[https://www.protoexpress.com/blog/decoupling-capacitor-placement-guidelines-pcb-design/](https://www.protoexpress.com/blog/decoupling-capacitor-placement-guidelines-pcb-design/)
+
+---
+
 ### Digilent Analog Discovery 2 Schematics
 
 [Digilent Analog Discovery 2 Schematics](https://digilent.com/reference/test-and-measurement/analog-discovery-2/hardware-design-guide?srsltid=AfmBOopvdmBdjPj54B-BKPZd-laQ4OiJSQnNHrf0MrcLWDgZMCemvK6Q)
