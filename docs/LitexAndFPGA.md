@@ -14,6 +14,14 @@ ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
 [getting-started-with-litex](https://sourcesup.renater.fr/www/mic-sec-2022/labs/getting-started-with-litex.html)
 
+### Litex and Efinix 2026-08
+
+- Use Ubuntu 22.04 Python > 3.9
+- No venv needed 
+- Install Litex along side efinix Tools
+- Pay attention to which python3 path
+- Only set LITEX_ENV_EFINITY="~/efinity-yyyy-d-linux-x64/efinity/yyyy.mm"
+
 ## Migen Simulation
 
 ### Counter
