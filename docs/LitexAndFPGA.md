@@ -22,6 +22,12 @@ ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 - Pay attention to which python3 path
 - Only set LITEX_ENV_EFINITY="~/efinity-yyyy-d-linux-x64/efinity/yyyy.mm"
 
+### Litex Radiant Synth Tool Change
+
+Add "--synth-mode=lse" after "--build"
+
+---
+
 ## Migen Simulation
 
 ### Counter

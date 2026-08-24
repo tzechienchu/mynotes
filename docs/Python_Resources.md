@@ -973,3 +973,432 @@ while True:
 ### Micrpython IRQ
 
 [raspberry-pi-pico-interrupts-micropython](https://randomnerdtutorials.com/raspberry-pi-pico-interrupts-micropython/)
+
+### Host Python Control PyBoard Through USB UART
+
+```py
+#
+# This file is part of the MicroPython project, http://micropython.org/
+#
+# The MIT License (MIT)
+#
+# Copyright (c) 2014-2016 Damien P. George
+# Copyright (c) 2017 Paul Sokolovsky
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
+"""
+pyboard interface
+This module provides the Pyboard class, used to communicate with and
+control the pyboard over a serial USB connection.
+Example usage:
+    import pyboard
+    pyb = pyboard.Pyboard('/dev/ttyACM0')
+    pyb.enter_raw_repl()
+    pyb.exec('pyb.LED(1).on()')
+    pyb.exit_raw_repl()
+To run a script from the local machine on the board and print out the results:
+    import pyboard
+    pyboard.execfile('test.py', device='/dev/ttyACM0')
+This script can also be run directly.  To execute a local script, use:
+    ./pyboard.py test.py
+Or:
+    python pyboard.py test.py
+"""
+
+import sys
+import time
+import serial
+
+def stdout_write_bytes(b):
+    sys.stdout.buffer.write(b)
+    sys.stdout.buffer.flush()
+
+class PyboardError(BaseException):
+    pass
+
+class Pyboard:
+    def __init__(self, serial_device, baudrate=115200):
+        self.serial = serial.Serial(serial_device, baudrate=baudrate, interCharTimeout=1)
+
+    def close(self):
+        self.serial.close()
+
+    def read_until(self, min_num_bytes, ending, timeout=10, data_consumer=None):
+        data = self.serial.read(min_num_bytes)
+        if data_consumer:
+            data_consumer(data)
+        timeout_count = 0
+        while True:
+            if data.endswith(ending):
+                break
+            elif self.serial.inWaiting() > 0:
+                new_data = self.serial.read(1)
+                data = data + new_data
+                if data_consumer:
+                    data_consumer(new_data)
+                #time.sleep(0.01)
+                timeout_count = 0
+            else:
+                timeout_count += 1
+                if timeout is not None and timeout_count >= 10 * timeout:
+                    break
+                time.sleep(0.1)
+        return data
+
+    def enter_raw_repl(self):
+        self.serial.write(b'\r\x03\x03') # ctrl-C twice: interrupt any running program
+        # flush input (without relying on serial.flushInput())
+        n = self.serial.inWaiting()
+        while n > 0:
+            self.serial.read(n)
+            n = self.serial.inWaiting()
+        self.serial.write(b'\r\x01') # ctrl-A: enter raw REPL
+        data = self.read_until(1, b'to exit\r\n>')
+        if not data.endswith(b'raw REPL; CTRL-B to exit\r\n>'):
+            print(data)
+            raise PyboardError('could not enter raw repl')
+        self.serial.write(b'\x04') # ctrl-D: soft reset
+        data = self.read_until(1, b'to exit\r\n>')
+        if not data.endswith(b'raw REPL; CTRL-B to exit\r\n>'):
+            print(data)
+            raise PyboardError('could not enter raw repl')
+
+    def exit_raw_repl(self):
+        self.serial.write(b'\r\x02') # ctrl-B: enter friendly REPL
+
+    def follow(self, timeout, data_consumer=None):
+        # wait for normal output
+        data = self.read_until(1, b'\x04', timeout=timeout, data_consumer=data_consumer)
+        if not data.endswith(b'\x04'):
+            raise PyboardError('timeout waiting for first EOF reception')
+        data = data[:-1]
+
+        # wait for error output
+        data_err = self.read_until(2, b'\x04>', timeout=timeout)
+        if not data_err.endswith(b'\x04>'):
+            raise PyboardError('timeout waiting for second EOF reception')
+        data_err = data_err[:-2]
+
+        # return normal and error output
+        return data, data_err
+
+    def exec_raw_no_follow(self, command):
+        if isinstance(command, bytes):
+            command_bytes = command
+        else:
+            command_bytes = bytes(command, encoding='utf8')
+
+        # write command
+        for i in range(0, len(command_bytes), 256):
+            self.serial.write(command_bytes[i:min(i + 256, len(command_bytes))])
+            time.sleep(0.01)
+        self.serial.write(b'\x04')
+
+        # check if we could exec command
+        data = self.serial.read(2)
+        if data != b'OK':
+            raise PyboardError('could not exec command')
+
+    def exec_raw(self, command, timeout=10, data_consumer=None):
+        self.exec_raw_no_follow(command);
+        return self.follow(timeout, data_consumer)
+
+    def eval(self, expression):
+        ret = self.exec('print({})'.format(expression))
+        ret = ret.strip()
+        return ret
+
+    def exec(self, command):
+        ret, ret_err = self.exec_raw(command)
+        if ret_err:
+            raise PyboardError('exception', ret, ret_err)
+        return ret
+
+    def execfile(self, filename):
+        with open(filename, 'rb') as f:
+            pyfile = f.read()
+        return self.exec(pyfile)
+
+    def get_time(self):
+        t = str(self.eval('pyb.RTC().datetime()'), encoding='utf8')[1:-1].split(', ')
+        return int(t[4]) * 3600 + int(t[5]) * 60 + int(t[6])
+
+def execfile(filename, device='/dev/ttyACM0'):
+    pyb = Pyboard(device)
+    pyb.enter_raw_repl()
+    output = pyb.execfile(filename)
+    stdout_write_bytes(output)
+    pyb.exit_raw_repl()
+    pyb.close()
+    
+```
+
+### ICEZero programming use Micropython
+
+```py
+##############################################################################
+# ice_zero_prog.py
+#             Copyright (c) Kevin M. Hubbard 2017 BlackMesaLabs
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+# Description:
+#   This uses GPIO pins on a RaspPi to bit-bang SPI protocol to a FPGA PROM.
+#
+# Revision History:
+# Ver   When       Who       What
+# ----  --------   --------  ---------------------------------------------------
+# 0.01  2017.01.22 khubbard  Creation. Reads PROM ID.
+# 0.02  2017.01.28 khubbard  Writes Lattice bitfil to PROM now.
+# 0.02  2017.01.29 khubbard  Bulk Erase Added.
+# NOTE: Sector Erase not working yet.
+##############################################################################
+import sys;
+import RPi.GPIO as GPIO;
+import time;
+from time import sleep;
+
+class App:
+  def __init__(self):
+    return;
+
+  def main(self):
+    self.main_init();
+#   self.main_loop();
+
+  def main_init( self ):
+    args = sys.argv + [None]*5;# args[0] is this scripts name
+    self.arg0     = args[1];
+    self.arg1     = args[2];
+    self.spi_link = spi_link( platform="ice_zero_proto" );
+    self.prom     = micron_prom( self.spi_link );
+
+    file_name = self.arg0;
+    if ( self.arg1 == None ):
+      addr = 0x000000;
+    else:
+      addr = int( self.arg1, 16 );
+
+    (mfr_id,dev_id,dev_cap) = self.prom.read_id();
+    print("Found "+mfr_id+" "+dev_id+" "+str(dev_cap)+" MBytes" );
+
+    print("Bulk Erasing...");
+    self.prom.erase();
+    print("Complete.");
+
+    print("Erasing and loading " + file_name + " to %06x" % addr );
+    self.prom.write_file_to_mem( file_name, addr );
+
+    # Read out 1st 8 bytes as visual check
+    miso_bytes = self.prom.read_mem( addr, 8 );
+    for each in miso_bytes:
+      print("%02x" % ( each ) );
+
+    self.spi_link.close();
+    return;
+
+  def main_loop( self ):
+    while( True ):
+      pass;# Not used for this design
+    return;
+
+
+###############################################################################
+# Class for bit banging to Micron SPI PROM connected to Lattice ICE40 FPGA
+# The memory is organized as 256 (64KB) main sectors that are further divided
+# into 16 subsectors each (4096 subsectors in total). The memory can be erased 
+# one 4KB subsector at a time, 64KB sectors at a time, or as a whole. 
+class micron_prom:
+  def __init__ ( self, spi_link ):
+    self.id           = 0x9f;# Read ID   
+    self.wr           = 0x02;# Page Program
+    self.rd           = 0x03;# Read Data
+    self.rd_status    = 0x05;# Read Data
+    self.wr_en        = 0x06;# Write Enable 
+    self.wr_dis       = 0x04;# Write Disable
+    self.relpd        = 0xab;# Release Deep PowerDown
+    self.subsec_erase = 0x20;# Erase Sector
+    self.sec_erase    = 0xd8;# Erase Sector
+    self.bulk_erase   = 0xc7;# Bulk Erase Device
+    self.spi_link = spi_link;
+    return;
+
+  def read_id ( self ):
+    miso_bytes = self.spi_link.xfer( [0x9F], 17 );# Micron READ_ID
+    ( mfr_id, dev_id, dev_capacity ) = miso_bytes[0:3];
+    if ( mfr_id == 0x20 ):
+      mfr_id = "Micron";
+    else:
+      mfr_id = "%02" % mfr_id;
+    if ( dev_id == 0xBA ): 
+      dev_id = "N25Q128A";
+    else:
+      dev_id = "%02" % dev_id;
+    dev_capacity = (2**dev_capacity) / (1024 * 1024 );
+    return ( mfr_id, dev_id, dev_capacity );# 0x20, 0xBA, 0x18 == 128Mb
+
+  def erase( self ):
+    miso_bytes = self.spi_link.xfer( [ self.wr_en ], 0 );
+    mosi_bytes = [ self.bulk_erase ];
+    miso_bytes = self.spi_link.xfer( mosi_bytes, 0 );
+    status = 0x01;# Loop until Status says erase is done
+    while ( status & 0x01 != 0x00 ):
+      status = self.spi_link.xfer( [ self.rd_status ], 1 )[0];
+    miso_bytes = self.spi_link.xfer( [ self.wr_dis ], 0 );
+    return;
+
+  def read_mem ( self, addr, num_bytes ):
+    mosi_bytes = [ self.rd, 
+                   ( addr & 0xFF0000 ) >> 16,
+                   ( addr & 0x00FF00 ) >>  8,
+                   ( addr & 0x0000FF ) >>  0 ];
+    miso_bytes = self.spi_link.xfer( mosi_bytes, num_bytes );
+    return miso_bytes;
+
+  def write_file_to_mem( self, file_name, addr ):
+    # Great example of reading a binary file
+    import array, struct;
+    bytes = array.array('B');
+    file_in = open ( file_name, 'r' );
+    file_bytes = file_in.read();
+    total_bytes = len( file_bytes );
+    miso_bytes = self.spi_link.xfer( [ self.wr_en ], 0 );
+    mosi_bytes = [ self.sec_erase, 
+                   ( addr & 0xFF0000 ) >> 16,
+                   ( addr & 0x00FF00 ) >>  8,
+                   ( addr & 0x0000FF ) >>  0 ];
+    miso_bytes = self.spi_link.xfer( mosi_bytes, 0 );# Erase the sector
+    miso_bytes = self.spi_link.xfer( [ self.wr_dis ], 0 );
+    
+    status = 0x01;# Loop until Status says erase is done
+    while ( status & 0x01 != 0x00 ):
+      status = self.spi_link.xfer( [ self.rd_status ], 1 )[0];
+    k = 0;
+    perc = 0; xferd = 0;
+    while( len( file_bytes ) > 0 ):
+      if ( ( 100.0*float(xferd) / float(total_bytes) ) > perc ):
+        print("%d%%" % (perc) );
+        perc += 10;
+      # Grab 256 bytes at a time
+      if ( len( file_bytes ) > 256 ):
+        xfer_bytes = file_bytes[0:256];
+        file_bytes = file_bytes[256:];
+      else:
+        xfer_bytes = file_bytes[0:];
+        file_bytes = [];
+      mosi_bytes = [ self.wr, 
+                     ( addr & 0xFF0000 ) >> 16,
+                     ( addr & 0x00FF00 ) >>  8,
+                     ( addr & 0x0000FF ) >>  0 ];
+      for byte in xfer_bytes:
+        mosi_bytes += [ ord( byte )];
+      miso_bytes = self.spi_link.xfer( [ self.wr_en ], 0 );
+      miso_bytes = self.spi_link.xfer( mosi_bytes, 0 );# Write 256 bytes  
+      miso_bytes = self.spi_link.xfer( [ self.wr_dis ], 0 );
+      status = 0x01;# Loop until Status says write is done
+      while ( status & 0x01 != 0x00 ):
+        status = self.spi_link.xfer( [ self.rd_status ], 1 )[0];
+      addr += 256; xferd += 256;
+    return;
+
+  def write_mem ( self, addr, num_bytes ):
+    mosi_bytes = [ self.rd, 
+                   ( addr & 0xFF0000 ) >> 16,
+                   ( addr & 0x00FF00 ) >>  8,
+                   ( addr & 0x0000FF ) >>  0 ];
+    miso_bytes = self.spi_link.xfer( mosi_bytes, num_bytes );
+    return miso_bytes;
+
+  def close( self ):
+    return;
+
+
+###############################################################################
+# Class for bit banging to Micron SPI PROM connected to Lattice ICE40 FPGA
+class spi_link:
+  def __init__ ( self, platform ):
+    try:
+      import RPi.GPIO as GPIO;
+    except:
+      raise RuntimeError("ERROR: Unable to import RaspPi RPi.GPIO module");
+
+    if ( platform == "ice_zero_proto" ):
+      GPIO.setmode(GPIO.BOARD);
+      self.pin_rst_l = 37;
+      self.pin_clk   = 36;
+      self.pin_cs_l  = 32;
+      self.pin_miso  = 31;
+      self.pin_mosi  = 33;
+      self.pin_done  = 39;
+    else:
+      raise RuntimeError("ERROR: Unknown platform " + platform );
+
+    GPIO.setup( self.pin_rst_l, GPIO.OUT, initial = GPIO.LOW );
+    GPIO.setup( self.pin_cs_l , GPIO.OUT, initial = GPIO.HIGH );
+    GPIO.setup( self.pin_clk  , GPIO.OUT, initial = GPIO.LOW  );
+    GPIO.setup( self.pin_mosi , GPIO.OUT, initial = GPIO.LOW  );
+    GPIO.setup( self.pin_miso , GPIO.IN                       );
+    return;
+
+  def close( self ):
+    GPIO.setup( self.pin_cs_l , GPIO.IN );
+    GPIO.setup( self.pin_clk  , GPIO.IN );
+    GPIO.setup( self.pin_mosi , GPIO.IN );
+    GPIO.setup( self.pin_rst_l, GPIO.IN );
+    return;
+
+  def xfer( self, mosi_bytes, miso_bytes_len ):
+    GPIO.output( self.pin_cs_l , GPIO.LOW);# Assert Chip Select
+    miso_bytes = [];
+    for each_byte in mosi_bytes:
+      shift_reg = each_byte;
+      for i in range(0,8,1):
+        bit = 0x80 & shift_reg;
+        if ( bit == 0x00 ):
+          GPIO.output( self.pin_mosi , GPIO.LOW);
+        else:
+          GPIO.output( self.pin_mosi , GPIO.HIGH);
+        GPIO.output( self.pin_clk , GPIO.HIGH);
+        GPIO.output( self.pin_clk , GPIO.LOW );
+        shift_reg = ( shift_reg << 1 );
+    for i in range(0, miso_bytes_len):
+      shift_reg = 0x00;
+      for i in range(0,8,1):
+        bit = GPIO.input( self.pin_miso );
+        GPIO.output( self.pin_clk , GPIO.HIGH);
+        GPIO.output( self.pin_clk , GPIO.LOW );
+        shift_reg = (bit     ) + (shift_reg << 1);
+      miso_bytes += [ shift_reg ];   
+    GPIO.output( self.pin_cs_l , GPIO.HIGH);# Assert Chip Select
+    return miso_bytes;
+
+
+###############################################################################
+app = App();
+app.main();
+```

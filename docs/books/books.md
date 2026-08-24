@@ -2,6 +2,22 @@
 
 ## 2026
 
+### 無敵合作
+
+![](../books/images/2026/IMG_0486.jpg)
+
+2026-044
+
+---
+
+### The Reverse Centaur's Guide to Life after AI
+
+![](../books/images/2026/IMG_0485.jpg)
+
+2026-043
+
+---
+
 ### 我看到的世界跟你不一樣
 
 ![](../books/images/2026/IMG_0478.jpg)
