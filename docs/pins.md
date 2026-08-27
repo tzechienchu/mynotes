@@ -51,6 +51,20 @@
 | AC5 | ClockOut |   output  |
 | AC6 | OE#      |   input   |
 
+### FT2232 / FT2232H JTAG Pin Out Mapping Table
+
+When configuring the FT2232 for JTAG debugging (typically using the **MPSSE** engine), **Channel A (ADBUS)** is used as the standard interface.
+
+| JTAG Signal | FT2232 Channel A Pin | I/O Direction (FT2232 Side) | Description |
+| :--- | :--- | :--- | :--- |
+| **TCK** | `ADBUS0` | Output | Test Clock |
+| **TDI** | `ADBUS1` | Output | Test Data In |
+| **TDO** | `ADBUS2` | Input | Test Data Out |
+| **TMS** | `ADBUS3` | Output | Test Mode Select |
+| **nTRST** | `ADBUS4` or `ACBUS0` | Output | Optional: Test Reset (Depends on layout configuration) |
+| **nSRST** | `ADBUS5` or `ACBUS1` | Output / Open-Drain | Optional: System Reset (Depends on layout configuration) |
+| **GND** | `GND` | - | Ground Reference |
+
 ### PyFTID Doc
 
 [PyFTDI Doc](https://eblot.github.io/pyftdi/index.html)
