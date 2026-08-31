@@ -2,6 +2,30 @@
 
 ## 2026
 
+### The Fractalist 
+
+![](../books/images/2026/IMG_0499.jpg)
+
+2026-047
+
+---
+
+### 迷幻蘑菇
+
+![](../books/images/2026/IMG_0494.jpg)
+
+2026-046
+
+---
+
+### 輪到你了
+
+![](../books/images/2026/IMG_0487.jpg)
+
+2026-045
+
+---
+
 ### 無敵合作
 
 ![](../books/images/2026/IMG_0486.jpg)
