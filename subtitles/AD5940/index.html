@@ -1,0 +1,1485 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AD5940 - 朱子建 Tze-Chien Chu (Frank) Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ad5940" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="朱子建 Tze-Chien Chu (Frank) Notes" class="md-header__button md-logo" aria-label="朱子建 Tze-Chien Chu (Frank) Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            朱子建 Tze-Chien Chu (Frank) Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AD5940
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="朱子建 Tze-Chien Chu (Frank) Notes" class="md-nav__button md-logo" aria-label="朱子建 Tze-Chien Chu (Frank) Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    朱子建 Tze-Chien Chu (Frank) Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Y2026/Y2026-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-September
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../books/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../video_lecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Lectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PICO_Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LitexAndFPGA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Litex&FPGA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../facts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quotes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ideas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mags/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    *Magazins (Local)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#github-for-ad5940" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Github for AD5940
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-sheet-and-application-notes-of-ad5940" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Sheet and Application Notes of AD5940
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad5940-related-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AD5940 Related Papers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plating
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        電化學
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impedance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impedance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impedance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bio-impedance-24-wire-bia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bio-Impedance 2/4 Wire BIA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electrochemical-impedance-spectroscopy-234-wire-eis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electrochemical Impedance Spectroscopy 2/3/4 Wire EIS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-balance-bridge-impedance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Balance Bridge Impedance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ad5933-block-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AD5933 Block Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nano-z" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nano Z
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tetroplater-open-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tetroplater (Open Source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aia-stm32-ad5941" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AIA STM32 + AD5941
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impedance-measurement-and-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        impedance-measurement-and-analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electrical-bioimpedance-spectroscopy-ebis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        electrical bioimpedance spectroscopy EBIS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impedance-measurements-have-been-performed-on-pure-resistive-loads-as-well-as-on-a-2r1c-series-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impedance measurements have been performed on pure resistive loads as well as on a 2R1C series circuit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plating-and-z-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plating and Z-Measurement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#electrochemical-impedance-spectroscopya-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electrochemical Impedance Spectroscopy─A Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad5940lib-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AD5940Lib Data Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad5940lib-sequencer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AD5940Lib Sequencer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AD5940Lib Sequencer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequencer-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequencer Basic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequencer-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequencer Command
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad5940-all-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AD5940 All Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad5940-basic-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AD5940 Basic Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-cfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Cfg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-cfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Cfg
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complex Cfg">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wgcfg-waveform-generator-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WGCfg : Waveform generator configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsloopcfg-high-speed-loop-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HSLoopCfg : High speed loop configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lploopcfg-low-power-loop-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LPLoopCfg : Low power loop Configure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dspcfg-dsp-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DSPCfg : DSP Configure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsrtiacal-hstia-internal-rtia-calibration-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HSRTIACal : HSTIA internal RTIA calibration structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lprtiacal-lptia-internal-rtia-calibration-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LPRTIACal : LPTIA internal RTIA calibration structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad5940-software-to-block-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AD5940 Software to Block Diagram
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AD5940 Software to Block Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsloop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSLoop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lpdac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LPDAC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsloop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HSLoop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wavegen-sin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WaveGen Sin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wavegen-arbitary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WaveGen Arbitary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vbias0-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VBias0 output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ad5940">AD5940</h1>
+<h2 id="github-for-ad5940">Github for AD5940</h2>
+<p><a href="https://github.com/analogdevicesinc/ad5940lib">AD5940Lib</a></p>
+<p><a href="https://github.com/analogdevicesinc/ad5940-examples">AD5940 Examples</a></p>
+<p><a href="https://wiki.analog.com/resources/eval/user-guides/ad5940">AD594x User Guide</a></p>
+<p><a href="https://wiki.analog.com/resources/pmods/ad5933">AD5933 User Guide</a></p>
+<p><a href="https://github.com/IMTEK-FreiStat/FreiStat-IoT">electrochemical measurements with the Analog Devices AD5940 or AD5941 integrated potentiostat controlled by an Adafruit Feather M0 Wifi (MCU)</a></p>
+<p><a href="https://github.com/Phong0217/AD5940-with-3-electrode">AD5940-with-3-electrode</a></p>
+<p><a href="https://github.com/MX-Liu/EIS-Project">EIS-Project</a></p>
+<p><a href="https://github.com/FalloutBoy379/Impedance-Analyzer">Impedance-Analyzer</a></p>
+<p><a href="https://github.com/jankae/LCR">LCR Meter</a></p>
+<h2 id="data-sheet-and-application-notes-of-ad5940">Data Sheet and Application Notes of AD5940</h2>
+<p><a href="AD5940-5941.pdf">AD5940-5941.pdf</a></p>
+<p><a href="an-1557.pdf">AN1557 Implementing the AD5940 and AD8233 in a Full Bioelectric System</a></p>
+<p><a href="an-1563-ad594x.pdf">AD1563 Optimizing the AD5940 for Electrochemical Measurements</a></p>
+<h2 id="ad5940-related-papers">AD5940 Related Papers</h2>
+<p><a href="TFG_Dolors_Farre.pdf">DESIGN, IMPLEMENTATION AND TEST OF A LOW-COST ELECTRICAL IMPEDANCE SPECTROSCOPY SYSTEM BASED ON AN AD5940</a></p>
+<p><a href="sensors-22-05775.pdf">A Multi-Sensory Hardware Platform for Capturing andAnalyzing Physiological Emotional Signals</a></p>
+<p><a href="1-s2.0-S1110016824000231-main.pdf">Wearable devices for glucose monitoring</a></p>
+<p><a href="1574623.pdf">Highly Integrated Multichannel CMOS Sensor Systems for Micro-Physiological High-Content Screening Applications</a></p>
+<p><a href="1570910796_final_submitted_article.pdf">A Portable Electrochemical Measurement Platform for Wearable-Flexible Sweat Sensors</a></p>
+<p><a href="Analog_Front-End_Enables_Electrical_Impedance_Spec.pdf">Analog Front-End Enables Electrical Impedance Spectroscopy System On-Chip for Biomedical Applications</a></p>
+<p><a href="qt5zd915kj.pdf">A Wireless, Reconfigurable, Multichannel Potentiostat for Wearable Electrochemical Biosensing Applications</a></p>
+<p><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/tee.24134">Design and Implementation of a Cost-Effective, Portable Impedance Analyzer Device with AD5941</a></p>
+<h2 id="plating">Plating</h2>
+<p><a href="https://github.com/MatsumotoJ/Tetroplater">Tetroplater</a></p>
+<p><a href="Probe%20Tool%20Spec.pdf">Kontex Plating Doc</a></p>
+<p><a href="https://intantech.com/RHD_electroplating_board.html">RHD_electroplating_board</a></p>
+<p><img alt="" src="Screenshot%20from%202025-03-21%2017-12-25.png" /></p>
+<p><img alt="" src="Screenshot%20from%202025-03-21%2017-40-03.png" /></p>
+<p>from following paper</p>
+<p><a href="micromachines-15-00447.pdf">Ultraflexible PEDOT:PSS/IrOx-Modified Electrodes</a></p>
+<h2 id="_1">電化學</h2>
+<p><a href="https://www.iesttech.com/big5/NewsDetail/4909075.html">走進電化學 | 電化學研究的秘密武器—三電極體系</a></p>
+<h2 id="impedance">Impedance</h2>
+<h3 id="bio-impedance-24-wire-bia">Bio-Impedance 2/4 Wire BIA</h3>
+<h3 id="electrochemical-impedance-spectroscopy-234-wire-eis">Electrochemical Impedance Spectroscopy 2/3/4 Wire EIS</h3>
+<h3 id="automatic-balance-bridge-impedance">Automatic Balance Bridge Impedance</h3>
+<p><img alt="" src="Screenshot%20from%202025-03-25%2012-08-45.png" /></p>
+<h3 id="ad5933-block-diagram">AD5933 Block Diagram</h3>
+<p><img alt="" src="Screenshot%20from%202025-03-25%2012-19-02.png" /></p>
+<h3 id="nano-z">Nano Z</h3>
+<p><img alt="" src="Screenshot%20from%202025-03-26%2012-55-26.png" /></p>
+<h3 id="tetroplater-open-source">Tetroplater (Open Source)</h3>
+<p><img alt="" src="Screenshot%20from%202025-03-26%2016-49-46.png" /></p>
+<p><img alt="" src="Screenshot%20from%202025-03-26%2016-49-56.png" /></p>
+<p><img alt="" src="Screenshot%20from%202025-03-26%2016-50-08.png" /></p>
+<p><img alt="" src="Screenshot%20from%202025-03-26%2016-50-17.png" /></p>
+<p><img alt="" src="Screenshot%20from%202025-03-26%2016-50-28.png" /></p>
+<p><img alt="" src="Screenshot%20from%202025-03-26%2016-50-38.png" /></p>
+<h3 id="aia-stm32-ad5941">AIA STM32 + AD5941</h3>
+<p><img alt="" src="The-hardware-configuration-of-the-AIA-post-manufacturing-featuring-the-main-PCB-along.png" /></p>
+<h3 id="impedance-measurement-and-analysis">impedance-measurement-and-analysis</h3>
+<p><a href="https://www.analog.com/cn/solutions/instrumentation-and-measurement/electronic-test-and-measurement/impedance-measurement-and-analysis.html">impedance-measurement-and-analysis</a></p>
+<h3 id="electrical-bioimpedance-spectroscopy-ebis">electrical bioimpedance spectroscopy EBIS</h3>
+<h3 id="impedance-measurements-have-been-performed-on-pure-resistive-loads-as-well-as-on-a-2r1c-series-circuit">Impedance measurements have been performed on pure resistive loads as well as on a 2R1C series circuit</h3>
+<p><img alt="2R1C" src="Screenshot%20from%202025-03-21%2011-50-45.png" style="height:150px" /></p>
+<h2 id="plating-and-z-measurement">Plating and Z-Measurement</h2>
+<!--- 
+![](./AD5940/20250325_122719~2.jpg)
+--->
+
+<p><img alt="" src="plating01.png" /></p>
+<h2 id="electrochemical-impedance-spectroscopya-tutorial">Electrochemical Impedance Spectroscopy─A Tutorial</h2>
+<p><a href="https://pubs.acs.org/doi/10.1021/acsmeasuresciau.2c00070">Electrochemical Impedance Spectroscopy─A Tutorial</a></p>
+<p><a href="https://www.mdpi.com/1424-8220/21/19/6578">Electrochemical Impedance Spectroscopy (EIS): Principles, Construction, and Biosensing Applications</a></p>
+<h2 id="ad5940lib-data-structure">AD5940Lib Data Structure</h2>
+<p><a href="AD5940_Struct/">AD5940_Struct.md</a></p>
+<h2 id="ad5940lib-sequencer">AD5940Lib Sequencer</h2>
+<p><a href="AD5940_Seq/">AD5940_Seq.md</a></p>
+<h3 id="sequencer-basic">Sequencer Basic</h3>
+<div class="language-text highlight"><pre><span></span><code>6K SRAM
+4 Seperate Sequence
+</code></pre></div>
+<h3 id="sequencer-command">Sequencer Command</h3>
+<div class="language-text highlight"><pre><span></span><code>Write : Move Data to Register (0x0000 to 0x21FC)
+        Address is 7 bits + 
+Wait Command : Wait in sync with Sequencer
+Timeout Command : Timeout independet to Sequencer
+</code></pre></div>
+<h2 id="ad5940-all-functions">AD5940 All Functions</h2>
+<p><a href="AD5940_Fn/">AD5940_Fn.md</a></p>
+<h2 id="ad5940-basic-flow">AD5940 Basic Flow</h2>
+<p><img alt="" src="../../diagrams/2025/AD5940/AD5940_Basic_Flow.png" /></p>
+<h2 id="configurations">Configurations</h2>
+<h3 id="basic-cfg">Basic Cfg</h3>
+<div class="language-text highlight"><pre><span></span><code>AFERefCfg : ADC/DAC/TIA reference and buffer
+</code></pre></div>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>ADCBaseCfg : ADC Basic settings include MUX and PGA.
+ADCFilterCfg : ADC filter settings.
+DFTCfg : DFT
+ADCDigComp : ADC digital comparator
+StatCfg : Statistic function
+</code></pre></div>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>SWMatrixCfg : Switch matrix configure
+HSTIACfg : HSTIA Configure
+HSDACCfg : HSDAC Configure
+LPDACCfg : LPDAC Configure 
+LPAmpCfg : Low power amplifiers(PA and TIA)
+</code></pre></div>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>WGTrapzCfg : Trapezoid Generator parameters
+WGSinCfg : Sin wave generator parameters
+</code></pre></div>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>AGPIOCfg : GPIO Configure
+FIFOCfg : FIFO Configure
+</code></pre></div>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>SEQCfg : Sequencer Configure
+SEQInfo : Sequence info structure
+SeqGpioTrig : ???
+</code></pre></div>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>WUPTCfg : Wakeup Timer Configure
+CLKCfg : Clock configure
+</code></pre></div>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>HSDACCal : HSDAC calibration structure.
+LPDACCal : LPDAC calibration structure.
+LPDACPara : LPDAC parameters: LPDAC code to voltage transfer function.(Math)
+</code></pre></div>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>LFOSCMeasure : LFOSC frequency measure structure
+ADCPGACal : ADC PGA calibration type
+LPTIAOffsetCal : LPTIA Offset calibration type
+ClksCalInfo : Structure for calculating how much system clocks needed for specified number of data
+SoftSweepCfg : Software controlled Sweep Function
+</code></pre></div>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>fImpPol : Impedance result in Polar coordinate
+fImpCar : Impedance result in Cartesian coordinate
+iImpCar : Impedance result in Cartesian coordinate
+FreqParams : FreqParams_Type - Structure to store optimum filter settings
+</code></pre></div>
+<h3 id="complex-cfg">Complex Cfg</h3>
+<h4 id="wgcfg-waveform-generator-configuration">WGCfg : Waveform generator configuration</h4>
+<div class="language-text highlight"><pre><span></span><code>WGTrapzCfg
+WGSinCfg
+</code></pre></div>
+<h4 id="hsloopcfg-high-speed-loop-configuration">HSLoopCfg : High speed loop configuration</h4>
+<div class="language-text highlight"><pre><span></span><code>SWMatrixCfg
+HSDACCfg
+WGCfg
+HSTIACfg
+</code></pre></div>
+<h4 id="lploopcfg-low-power-loop-configure">LPLoopCfg : Low power loop Configure</h4>
+<div class="language-text highlight"><pre><span></span><code>LPDACCfg
+LPAmpCfg
+</code></pre></div>
+<h4 id="dspcfg-dsp-configure">DSPCfg : DSP Configure</h4>
+<div class="language-text highlight"><pre><span></span><code>ADCBaseCfg
+ADCFilterCfg
+ADCDigComp
+DFTCfg
+StatCfg
+</code></pre></div>
+<h4 id="hsrtiacal-hstia-internal-rtia-calibration-structure">HSRTIACal : HSTIA internal RTIA calibration structure</h4>
+<div class="language-text highlight"><pre><span></span><code>HSTIACfg
+DFTCfg
+</code></pre></div>
+<h4 id="lprtiacal-lptia-internal-rtia-calibration-structure">LPRTIACal : LPTIA internal RTIA calibration structure</h4>
+<div class="language-text highlight"><pre><span></span><code>DFTCfg
+</code></pre></div>
+<h2 id="ad5940-software-to-block-diagram">AD5940 Software to Block Diagram</h2>
+<h3 id="adc">ADC</h3>
+<p><img alt="ADC" src="../../diagrams/2025/AD5940/AD5940_MyBD_ADC.png" /></p>
+<h3 id="lsloop">LSLoop</h3>
+<p><img alt="LSLoop" src="../images/Screenshot%20from%202025-03-12%2010-28-58.png" /></p>
+<h3 id="lpdac">LPDAC</h3>
+<p><img alt="LPDAC" src="../../diagrams/2025/AD5940/AD5940_MyBD_LPDAC.png" /></p>
+<h3 id="hsloop">HSLoop</h3>
+<p><img alt="HSLoop from AD5940 Function Diagram 2" src="../images/Screenshot%20from%202025-03-13%2014-32-21.png" /></p>
+<h3 id="wavegen-sin">WaveGen Sin</h3>
+<p><img alt="WG_Sin" src="../../diagrams/2025/AD5940/AD5940_MyBD_WGSin.png" /></p>
+<h3 id="wavegen-arbitary">WaveGen Arbitary</h3>
+<p><img alt="WG_Arbitary" src="../../diagrams/2025/AD5940/AD5940_MyBD_WGAny.png" /></p>
+<h2 id="notes">Notes</h2>
+<h3 id="vbias0-output">VBias0 output</h3>
+<p><img alt="" src="../images/Screenshot%20from%202025-02-18%2015-08-58.png" style="height:300px" /></p>
+<p><img alt="" src="../images/Screenshot%20from%202025-02-18%2015-23-49.png" /></p>
+<p><img alt="" src="../images/Screenshot%20from%202025-02-18%2015-57-33.png" /></p>
+<p>Document from Page 30 : Low Power DAC
+Register : LPDACDAT0</p>
+<p><a href="https://github.com/analogdevicesinc/ad5940-examples/blob/ae917b69b4f71214c7f19ae3eef563b9c547d48f/examples/AD5940_LPLoop/AD5940_LpLoop.c">AD5940_LpLoop</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.select", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

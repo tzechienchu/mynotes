@@ -1,0 +1,930 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Harp Pico Core - 朱子建 Tze-Chien Chu (Frank) Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#harp-pico-core" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="朱子建 Tze-Chien Chu (Frank) Notes" class="md-header__button md-logo" aria-label="朱子建 Tze-Chien Chu (Frank) Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            朱子建 Tze-Chien Chu (Frank) Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Harp Pico Core
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="朱子建 Tze-Chien Chu (Frank) Notes" class="md-nav__button md-logo" aria-label="朱子建 Tze-Chien Chu (Frank) Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    朱子建 Tze-Chien Chu (Frank) Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Y2026/Y2026-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-September
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../books/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../video_lecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Lectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PICO_Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python_Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LitexAndFPGA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Litex&FPGA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../facts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quotes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ideas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mags/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    *Magazins (Local)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="harp-pico-core">Harp Pico Core</h1>
+<p>An RP2040 Harp Core that implements the <a href="https://harp-tech.org/protocol/BinaryProtocol-8bit.html">Harp Protocol</a> to serve as the basis of a custom Harp device.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Synchronization to an external Harp Clock Synchronizer signal.</li>
+<li>Parsing incoming harp messages</li>
+<li>Dispatching messages to the appropriate register</li>
+<li>Sending harp-compliant timestamped replies</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<p>See the <a href="./examples">examples</a> folder to get a feel for incorporating the harp core into your own project.</p>
+<p>Additionally, here are a few examples that use the RP2040 Harp Core as a submodule in the wild:
+* <a href="https://github.com/AllenNeuralDynamics/harp.device.environment_sensor">harp.device.environment-sensor</a>
+* <a href="https://github.com/AllenNeuralDynamics/harp.device.white-rabbit">harp.device.white-rabbit</a>
+* <a href="https://github.com/AllenNeuralDynamics/harp.device.lickety-split">harp.device.lickety-split</a>
+* <a href="https://github.com/AllenNeuralDynamics/harp.device.sniff-detector">harp.device.sniff-detector</a>
+* <a href="https://github.com/AllenNeuralDynamics/harp.device.treadmill">harp.device.treadmill</a>
+* <a href="https://github.com/AllenNeuralDynamics/harp.device.cuttlefish">harp.device.cuttlefish</a>
+* <a href="https://github.com/AllenNeuralDynamics/harp.pico.cam-trigger">harp.pico.cam-trigger</a>
+* <a href="https://github.com/AllenNeuralDynamics/harp.pico.ephys-sync">harp.pico.ephys-sync</a></p>
+<hr />
+<h1 id="using-this-library">Using this Library</h1>
+<p>The easiest way to use this library is to include it as submodule in your project.
+To see how to structure your project to incorporate the RP2040 Harp Core as a library, see the examples above--or read on.</p>
+<h2 id="install-the-pico-sdk">Install the Pico SDK</h2>
+<p>Download (or clone) the <a href="https://github.com/raspberrypi/pico-sdk">Pico SDK</a> to a known folder on your PC.
+(This folder does not need to be a sub-folder of your project.)
+From the Pico SDK project root folder, install the Pico SDK's dependencies with:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git submodule update --init --recursive
+</span></code></pre></div></p>
+<h2 id="install-the-harp-core-as-a-submodule">Install the Harp Core as a submodule</h2>
+<p>Next, in a sub-folder of your project, add <strong>harp.core.rp2040</strong> as a submodule with:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git submodule add git@github.com:AllenNeuralDynamics/harp.core.rp2040.git
+</span></code></pre></div></p>
+<h2 id="setup-your-projects-cmakeliststxt">Setup your Project's CMakeLists.txt</h2>
+<p>At the top of your project's CMakeLists.txt, you will need to include and initialize the Pico SDK. You can do so with:
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">include</span><span class="p">(</span><span class="o">${</span><span class="nv">PICO_SDK_PATH</span><span class="o">}</span><span class="s">/pico_sdk_init.cmake</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">pico_sdk_init</span><span class="p">()</span>
+</span></code></pre></div></p>
+<p>Your must also point to the folder of the <strong>Harp.Core.RP2040</strong>'s CMakeLists.txt with
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">/path/to/cmakelist_dir</span><span class="w"> </span><span class="s">build</span><span class="p">)</span><span class="w"> </span><span class="c"># Path to harp.core.rp2040's CMakeLists.txt</span>
+</span></code></pre></div>
+(Note that you must change <code>path/to/cmakelist_dir</code> above to the actual path of this project's CMakeLists.txt.)</p>
+<p>At the linking step, you can link against the Harp core libraries with:
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">harp_core</span><span class="w"> </span><span class="s">harp_sync</span><span class="p">)</span>
+</span></code></pre></div></p>
+<h2 id="point-to-the-pico-sdk">Point to the Pico SDK</h2>
+<p>Recommended, but optional: define the <code>PICO_SDK_PATH</code> environment variable to point to the location where the pico-sdk was downloaded. i.e:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>PICO_SDK_PATH=/home/username/projects/pico-sdk
+</span></code></pre></div>
+On Linux, it may be preferrable to put this in your <code>.bashrc</code> file.</p>
+<h2 id="compiling-the-firmware">Compiling the Firmware</h2>
+<h3 id="without-an-ide">Without an IDE</h3>
+<p>From this directory, create a directory called build, enter it, and invoke cmake with:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdir build
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>cd build
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>cmake ..
+</span></code></pre></div>
+If you did not define the <code>PICO_SDK_PATH</code> as an environment variable, you must pass it in here like so:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mkdir build
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>cd build
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>cmake -DPICO_SDK_PATH=/path/to/pico-sdk ..
+</span></code></pre></div>
+After this point, you can invoke the auto-generated Makefile with <code>make</code></p>
+<h2 id="flashing-the-firmware">Flashing the Firmware</h2>
+<p>Press-and-hold the Pico's BOOTSEL button and power it up (i.e: plug it into usb).
+At this point you do one of the following:
+* drag-and-drop the created <strong>*.uf2</strong> file into the mass storage device that appears on your pc.
+* flash with <a href="https://github.com/raspberrypi/picotool">picotool</a></p>
+<hr />
+<h1 id="using-bonsai">Using Bonsai</h1>
+<p>Native packages exist in Bonsai for communicating with devices that speak Harp protocol.
+For more information on reading data or writing commands to your custom new harp device, see the <a href="https://harp-tech.org/articles/operators.html">Harp Tech Bonsai notes</a>.</p>
+<hr />
+<h1 id="power-usage">Power Usage</h1>
+<ul>
+<li>It is possible to <em>just</em> use the <code>HarpSynchronizer</code> or <em>just</em> use the <code>HarpCApp</code> as standalone entities.</li>
+<li>Several utility functions to convert betweeen local and system time exist</li>
+<li>if events from <em>Harp Time</em> need to be scheduled in <em>system time</em>.</li>
+<li>if events in system time need to be timestamped in <em>Harp time</em>.</li>
+</ul>
+<hr />
+<h1 id="developer-notes">Developer Notes</h1>
+<h3 id="debugging-with-printf">Debugging with printf</h3>
+<p>The Harp Core consumes the USB serial port, so <code>printf</code> messages must be rerouted to an available UART port.
+The Pico SDK makes this step fairly straightforward. Before calling <code>printf</code> you must first setup a UART port with:
+<div class="language-C highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">#define UART_TX_PIN (0)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="cp">#define BAUD_RATE (921600)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">stdio_uart_init_full</span><span class="p">(</span><span class="n">uart0</span><span class="p">,</span><span class="w"> </span><span class="n">BAUD_RATE</span><span class="p">,</span><span class="w"> </span><span class="n">UART_TX_PIN</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="c1">// or uart1, depending on pin</span>
+</span></code></pre></div>
+To read these messages, you must connect a <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/954/7064488?">3.3V FTDI Cable</a> to the corresponding pin and connect to it with the matching baud rate.</p>
+<p>Additionally, in your CMakeLists.txt, you must add   <br />
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">pico_enable_stdio_uart</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">1</span><span class="p">)</span><span class="w"> </span><span class="c"># UART stdio for printf.</span>
+</span></code></pre></div>
+for each library and executable using <code>printf</code> and you must link it with <code>pico_stdlib</code>.</p>
+<h3 id="debugging-the-core">Debugging the Core</h3>
+<p><code>printf</code> messages are sprinkled throughout the Harp Core code, and they can be conditionally compiled by adding flags to your CMakeLists.txt.</p>
+<p>To print out details of every <em>outgoing</em> (Device to PC) messages, add:
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">add_definitions</span><span class="p">(</span><span class="s">-DDEBUG_HARP_MSG_OUT</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p>To print out details of every <em>received</em> (PC to Device) messages, add:
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">add_definitions</span><span class="p">(</span><span class="s">-DDEBUG_HARP_MSG_IN</span><span class="p">)</span>
+</span></code></pre></div></p>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="https://github.com/harp-tech/protocol">Harp Protocol Repo</a></li>
+<li><a href="https://github.com/harp-tech/pyharp">pyharp</a> python library for connecting to harp-compliant devices and sending read/writes.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.select", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

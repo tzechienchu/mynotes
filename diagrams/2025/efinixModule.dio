@@ -1,0 +1,48 @@
+<mxfile host="65bd71144e">
+    <diagram id="o_CRJ7GOy8gzuKhkLOkT" name="Page-1">
+        <mxGraphModel dx="751" dy="401" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="Core 3" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="40" width="390" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" style="edgeStyle=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="2" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="2" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="efinix FPGA Module&lt;div&gt;===&lt;/div&gt;&lt;div&gt;XME0712 Artix 7&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="70" width="120" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;shape=flexArrow;" edge="1" parent="1" source="4">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="510" y="110" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="USB3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="10">
+                    <mxGeometry x="0.4427" y="2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="FT60X" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="315" y="80" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;shape=flexArrow;endArrow=none;endFill=0;startArrow=block;" edge="1" parent="1" source="7">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="500" y="190" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="Analog" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="12">
+                    <mxGeometry x="0.7151" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="DAQ" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="315" y="160" width="110" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

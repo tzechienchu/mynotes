@@ -1,0 +1,1802 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AD5940 Software Data Structure - 朱子建 Tze-Chien Chu (Frank) Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ad5940-software-data-structure" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="朱子建 Tze-Chien Chu (Frank) Notes" class="md-header__button md-logo" aria-label="朱子建 Tze-Chien Chu (Frank) Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            朱子建 Tze-Chien Chu (Frank) Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AD5940 Software Data Structure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="朱子建 Tze-Chien Chu (Frank) Notes" class="md-nav__button md-logo" aria-label="朱子建 Tze-Chien Chu (Frank) Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    朱子建 Tze-Chien Chu (Frank) Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Y2026/Y2026-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-September
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../books/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../video_lecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Lectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PICO_Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python_Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LitexAndFPGA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Litex&FPGA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../facts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quotes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ideas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mags/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    *Magazins (Local)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#top" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adcdactia-reference-and-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADC/DAC/TIA reference and buffer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adc-basic-settings-and-filter-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADC Basic settings and Filter setting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DFT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adc-digital-comparator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADC digital comparator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistic-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistic function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-matrix-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch matrix configure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hstia-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HSTIA Configure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hsdac-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HSDAC Configure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lpdac-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LPDAC Configure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trapezoid-generator-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trapezoid Generator parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sin-wave-generator-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sin wave generator parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#waveform-generator-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Waveform generator configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-speed-loop-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High speed loop configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#low-power-loop-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Low power loop Configure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dsp-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DSP Configure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpio-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPIO Configure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fifo-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIFO Configure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequencer-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequencer Configure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wakeup-timer-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wakeup Timer Configure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clock-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clock configure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hstia-internal-rtia-calibration-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HSTIA internal RTIA calibration structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lptia-internal-rtia-calibration-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LPTIA internal RTIA calibration structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hsdac-calibration-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HSDAC calibration structure.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lpdac-calibration-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LPDAC calibration structure.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lfosc-frequency-measure-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFOSC frequency measure structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adc-pga-calibration-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADC PGA calibration type
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lptia-offset-calibration-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LPTIA Offset calibration type
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-for-calculating-how-much-system-clocks-needed-for-specified-number-of-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure for calculating how much system clocks needed for specified number of data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-controlled-sweep-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software controlled Sweep Function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impedance-result-in-polar-coordinate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impedance result in Polar coordinate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impedance-result-in-cartesian-coordinate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impedance result in Cartesian coordinate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#int32_t-type-impedance-result-in-cartesian-coordinate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        int32_t type Impedance result in Cartesian coordinate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#freqparams_type-structure-to-store-optimum-filter-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FreqParams_Type - Structure to store optimum filter settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequencer-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequencer Generator
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ad5940-software-data-structure">AD5940 Software Data Structure</h1>
+<h2 id="top">Top</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/** </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cm"> * @} MISC_Block_Const</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm"> * @} MISC_Block</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm"> * */</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cm">/**</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cm"> * @defgroup TypeDefinitions</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="cm"> * @{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="cm">*/</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">typedef</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">AD5940Err</span><span class="p">;</span><span class="w">    </span><span class="cm">/**&lt; error number defination */</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="cm">/**</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="cm"> * bool definition for ad5940lib.</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="cm">*/</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">{</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="n">bFALSE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">bTRUE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">bFALSE</span><span class="p">,</span><span class="w">   </span><span class="cm">/**&lt; True and False definition*/</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span><span class="n">BoolFlag</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="adcdactia-reference-and-buffer">ADC/DAC/TIA reference and buffer</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="cm">/* ADC/DAC/TIA reference and buffer */</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">HpBandgapEn</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Enable High power band-gap. Clear bit AFECON.HPREFDIS will enable Bandgap, while set this bit will disable bandgap */</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">Hp1V8BuffEn</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; High power 1.8V reference buffer enable */</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">Hp1V1BuffEn</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; High power 1.1V reference buffer enable */</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">Lp1V8BuffEn</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Low power 1.8V reference buffer enable */</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">Lp1V1BuffEn</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Low power 1.1V reference buffer enable */</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="cm">/* Low bandwidth loop reference and buffer */</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">LpBandgapEn</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Enable Low power band-gap. */</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">LpRefBufEn</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Enable the 2.5V low power reference buffer */</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">LpRefBoostEn</span><span class="p">;</span><span class="w">    </span><span class="cm">/**&lt; Boost buffer current */</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="cm">/* DAC Reference Buffer */</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">HSDACRefEn</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Enable DAC reference buffer from HP Bandgap */</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="cm">/* Misc. control  */</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">Hp1V8ThemBuff</span><span class="p">;</span><span class="w">   </span><span class="cm">/**&lt; Thermal Buffer for internal 1.8V reference to AIN3 pin  */</span><span class="w">              </span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">Hp1V8Ilimit</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Current limit for High power 1.8V reference buffer */</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">Disc1V8Cap</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Discharge 1.8V capacitor. Short external 1.8V decouple capacitor to ground. Be careful when use this bit  */</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">Disc1V1Cap</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Discharge 1.1V capacitor. Short external 1.1V decouple capacitor to ground. Be careful when use this bit  */</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">}</span><span class="n">AFERefCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="adc-basic-settings-and-filter-setting">ADC Basic settings and Filter setting</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/** </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cm"> * @defgroup ADC_BlockType</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cm"> * @{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cm">*/</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="cm">/**</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="cm"> * Structure for ADC Basic settings include MUX and PGA.</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="cm">*/</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">{</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCMuxP</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; ADC Positive input channel selection. select from @ref ADCMUXP */</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCMuxN</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; ADC negative input channel selection. select from @ref ADCMUXN */</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCPga</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; ADC PGA settings, select from @ref ADCPGA */</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span><span class="n">ADCBaseCfg_Type</span><span class="p">;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="cm">/**</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="cm"> * Structure for ADC filter settings.</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="cm">*/</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">{</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc3Osr</span><span class="p">;</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc2Osr</span><span class="p">;</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCAvgNum</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; Average filter is enabled when DFT source is @ref DFTSRC_AVG in function @ref AD5940_DFTCfgS. This average filter is only used by DFT engine. */</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCRate</span><span class="p">;</span><span class="w">             </span><span class="cm">/**&lt; ADC Core sample rate */</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">BpNotch</span><span class="p">;</span><span class="w">             </span><span class="cm">/**&lt; Bypass Notch filter in SINC2+Notch block, so only SINC2 is used. ADCFILTERCON.BIT4 */</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">BpSinc3</span><span class="p">;</span><span class="w">             </span><span class="cm">/**&lt; Bypass SINC3 Module */</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">Sinc3ClkEnable</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Enable SINC3 clock */</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">Sinc2NotchClkEnable</span><span class="p">;</span><span class="w"> </span><span class="cm">/**&lt; Enable SINC2+Notch clock */</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">Sinc2NotchEnable</span><span class="p">;</span><span class="w">    </span><span class="cm">/**&lt; Enable SINC2+Notch block */</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">DFTClkEnable</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; Enable DFT clock */</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">WGClkEnable</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Enable Waveform Generator clock */</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="p">}</span><span class="n">ADCFilterCfg_Type</span><span class="p">;</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="cm">/** @} */</span>
+</span></code></pre></div>
+<h2 id="dft">DFT</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/**</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cm"> * DFT Configuration structure.</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cm">*/</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">DftNum</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; DFT number */</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">DftSrc</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; DFT Source */</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">HanWinEn</span><span class="p">;</span><span class="w">    </span><span class="cm">/**&lt; Enable Hanning window */</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span><span class="n">DFTCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="adc-digital-comparator">ADC digital comparator</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/**</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cm"> * ADC digital comparator</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cm">*/</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">ADCMin</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; The ADC code minimum limit value */</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">ADCMinHys</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">ADCMax</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; The ADC code maximum limit value */</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">ADCMaxHys</span><span class="p">;</span><span class="w">   </span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span><span class="n">ADCDigComp_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="statistic-function">Statistic function</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/**</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cm"> * Statistic function</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cm">*/</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">{</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">StatDev</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Statistic standard deviation configure */</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">StatSample</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; Sample size */</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">StatEnable</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; Set true to enable statistic block */</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span><span class="n">StatCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="switch-matrix-configure">Switch matrix configure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/**</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cm"> * Switch matrix configure */</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">{</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">Dswitch</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; D switch settings. Select from @ref SWD_Const*/</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">Pswitch</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; P switch settings. Select from @ref SWP_Const */</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">Nswitch</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; N switch settings. Select from @ref SWN_Const */</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">Tswitch</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; T switch settings. Select from @ref SWT_Const */</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span><span class="n">SWMatrixCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="hstia-configure">HSTIA Configure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">/** HSTIA Configure */</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">{</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">HstiaBias</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; When select Vzero as bias, the related switch(VZERO2HSTIA) at LPDAC should be closed */</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">HstiaRtiaSel</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; RTIA selection @ref HSTIARTIA_Const */</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ExtRtia</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Value of external RTIA*/</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">HstiaCtia</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Set internal CTIA value from 1 to 32 pF */</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">DiodeClose</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; Close the switch for internal back to back diode */</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">HstiaDeRtia</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; DE0 node RTIA selection @ref HSTIADERTIA_Const */</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">HstiaDeRload</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; DE0 node Rload selection @ref HSTIADERLOAD_Const */</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">HstiaDe1Rtia</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; (ADuCM355 only, ignored on AD594x)DE1 node RTIA selection @ref HSTIADERTIA_Const */</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">HstiaDe1Rload</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; (ADuCM355 only)DE1 node Rload selection @ref HSTIADERLOAD_Const */</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="p">}</span><span class="n">HSTIACfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="hsdac-configure">HSDAC Configure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">/** HSDAC Configure */</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">{</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ExcitBufGain</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Select from  EXCITBUFGAIN_2, EXCITBUFGAIN_0P25 */</span><span class="w">     </span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">HsDacGain</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Select from  HSDACGAIN_1, HSDACGAIN_0P2 */</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">HsDacUpdateRate</span><span class="p">;</span><span class="w">   </span><span class="cm">/**&lt; Divider for DAC update. Available range is 7~255. */</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">}</span><span class="n">HSDACCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="lpdac-configure">LPDAC Configure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cm">/** LPDAC Configure </span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="cm"> * @note The LPDAC structure:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="cm"> * @code</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="cm"> * Switch to select DAC output to Vzero and Vbias nodes. Vzero and Vbias can select from DAC6BIT and DAC12BIT output freely. </span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="cm"> * LPDAC  &gt;DAC6BIT ---- Vzero   LPDACVZERO_12BIT</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="cm"> *                 \--- Vbias   LPDACVBIAS_6BIT</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="cm"> *        &gt;DAC12BIT---- Vzero   LPDACVZERO_6BIT</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="cm"> *                 \--- Vbias   LPDACVBIAS_12BIT</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="cm"> * Vzero/Vbias switch, controlled by @ref LPDACCfg_Type LpDacSW</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="cm"> * Vzero ------PIN</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="cm"> *       \-----LPTIA  LPDACSW_VZERO2LPTIA. LPTIA positive input</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="cm"> *        \----HSTIA  LPDACSW_VZERO2LPAMP. HSTIA positive input. Note, there is a MUX on HSTIA positive input pin to select the bias voltage between Vzero and 1.1V fixed internal reference.</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="cm"> * Vbias ------PIN    LPDACSW_VBIAS2PIN</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="cm"> *       \-----LPAMP  LPDACSW_VBIAS2LPAMP positive input. The potential state amplifier input, or called LPAMP or PA(potential amplifier).</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="cm"> * @endcode</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="cm">*/</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="p">{</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpdacSel</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; Selectr from LPDAC0 or LPDAC1. LPDAC1 is only available on ADuCM355. */</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpDacSrc</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; LPDACSRC_MMR or LPDACSRC_WG. Note: HSDAC is always connects to WG. Disable HSDAC if there is need. */</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpDacVzeroMux</span><span class="p">;</span><span class="w">   </span><span class="cm">/**&lt; Select which DAC output connects to Vzero. 6Bit or 12Bit DAC */</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpDacVbiasMux</span><span class="p">;</span><span class="w">   </span><span class="cm">/**&lt; Select which DAC output connects to Vbias */</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpDacSW</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; LPDAC switch set. Only available from Si2 */</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpDacRef</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; Reference selection. Either internal 2.5V LPRef or AVDD. select from @ref LPDACREF_Const*/</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">DataRst</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Keep Reset register REG_AFE_LPDACDAT0DATA */</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">PowerEn</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Power up REG_AFE_LPDACDAT0 */</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="w">  </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">DacData12Bit</span><span class="p">;</span><span class="w">    </span><span class="cm">/**&lt; Data for 12bit DAC */</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="w">  </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">DacData6Bit</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Data for 6bit DAC */</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="p">}</span><span class="n">LPDACCfg_Type</span><span class="p">;</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="cm">/**</span>
+</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="cm"> * Low power amplifiers(PA and TIA)</span>
+</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="cm">*/</span>
+</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="p">{</span>
+</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpAmpSel</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; Select from LPAMP0 and LPAMP1. LPAMP1 is only available on ADuCM355. */</span>
+</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpTiaRf</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; The one order RC filter resistor selection. Select from @ref LPTIARF_Const */</span>
+</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpTiaRload</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; The Rload resistor right in front of LPTIA negative input terminal. Select from @ref LPTIARLOAD_Const*/</span>
+</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpTiaRtia</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; LPTIA RTIA resistor selection. Set it to open(@ref LPTIARTIA_Const) when use external resistor. */</span>
+</span><span id="__span-9-40"><a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpAmpPwrMod</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Power mode for LP PA and LPTIA */</span>
+</span><span id="__span-9-41"><a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpTiaSW</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Set of switches, using macro LPTIASW() to close switch */</span>
+</span><span id="__span-9-42"><a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">LpPaPwrEn</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; Enable(bTRUE) or disable(bFALSE) power of PA(potential amplifier) */</span>
+</span><span id="__span-9-43"><a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">LpTiaPwrEn</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Enable(bTRUE) or Disable(bFALSE) power of LPTIA amplifier */</span>
+</span><span id="__span-9-44"><a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a><span class="p">}</span><span class="n">LPAmpCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="trapezoid-generator-parameters">Trapezoid Generator parameters</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cm">/**</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="cm"> * @brief Trapezoid Generator parameters</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="cm"> * The definition of the Trapezoid waveform is shown below. Note the Delay and Slope are all in clock unit.</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="cm"> * @code</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="cm"> * </span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="cm"> * DCLevel2         _________</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="cm"> *                 /         \</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="cm"> *                /           \</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="cm"> * DCLevel1 _____/             \______</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="cm"> *         |     |  |       |  |</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="cm"> *         Delay1|S1|Delay2 |S2| Delay1 repeat...</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="cm"> * Where S1 is slope1 and S2 is slop2</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="cm"> * @endcode</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="cm"> * The DAC update rate from Trapezoid generator is SystemClock/50. The default SystemClock</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="cm"> * is internal HFOSC 16MHz. So the update rate is 320kHz.</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="cm"> * The time parameter specifies in clock number.</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="cm"> * For example, if Delay1 is set to 10, S1 is set 20, the time for Delay1 period is 10/320kHz = 31.25us,</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="cm"> * and time for S1 period is 20/320kHz = 62.5us.</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="cm">*/</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="p">{</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">WGTrapzDCLevel1</span><span class="p">;</span><span class="w">   </span><span class="cm">/**&lt; Trapezoid generator DC level1, this value is written directly to corresponding register */</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">WGTrapzDCLevel2</span><span class="p">;</span><span class="w">   </span><span class="cm">/**&lt; DC level2, similar to DCLevel1 */</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">WGTrapzDelay1</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Trapezoid generator delay 1 */</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">WGTrapzDelay2</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Trapezoid generator delay 2 */</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">WGTrapzSlope1</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Trapezoid generator Slope 1 */</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">WGTrapzSlope2</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Trapezoid generator Slope 2 */</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="p">}</span><span class="n">WGTrapzCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="sin-wave-generator-parameters">Sin wave generator parameters</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cm">/**</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="cm"> * Sin wave generator parameters</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="cm">*/</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">{</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SinFreqWord</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; Frequency word */</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SinAmplitudeWord</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; Amplitude word, range is 0 to 2047. Amplitude range is 0 to 800mV */</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SinOffsetWord</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Offset word, range is -2048 to 2047. Offset voltage range is -800 to +800mV */</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SinPhaseWord</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; the start phase of sine wave. Use to tune start phase of signal. */</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="p">}</span><span class="n">WGSinCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="waveform-generator-configuration">Waveform generator configuration</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cm">/**</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="cm"> * Waveform generator configuration</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="cm">*/</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">{</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">WgType</span><span class="p">;</span><span class="w">            </span><span class="cm">/**&lt; Select from WGTYPE_MMR, WGTYPE_SIN, WGTYPE_TRAPZ. HSDAC is always connected to WG. */</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">GainCalEn</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Enable Gain calibration */</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">OffsetCalEn</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; Enable offset calibration */</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">  </span><span class="n">WGTrapzCfg_Type</span><span class="w"> </span><span class="n">TrapzCfg</span><span class="p">;</span><span class="w">   </span><span class="cm">/**&lt; Configure Trapezoid generator */</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">  </span><span class="n">WGSinCfg_Type</span><span class="w"> </span><span class="n">SinCfg</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; Configure Sine wave generator */</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">WgCode</span><span class="p">;</span><span class="w">            </span><span class="cm">/**&lt; The 12bit data WG will move to DAC data register. */</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="p">}</span><span class="n">WGCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="high-speed-loop-configuration">High speed loop configuration</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cm">/**</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="cm"> * High speed loop configuration </span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="cm"> * */</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">{</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="n">SWMatrixCfg_Type</span><span class="w"> </span><span class="n">SWMatCfg</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; switch matrix configuration. */</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="n">HSDACCfg_Type</span><span class="w"> </span><span class="n">HsDacCfg</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; HSDAC configuration. */</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span><span class="n">WGCfg_Type</span><span class="w"> </span><span class="n">WgCfg</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; Waveform generator configuration. */</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="n">HSTIACfg_Type</span><span class="w"> </span><span class="n">HsTiaCfg</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; HSTIA configuration. */</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="p">}</span><span class="n">HSLoopCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="low-power-loop-configure">Low power loop Configure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cm">/**</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="cm"> * Low power loop Configure </span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="cm"> * */</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">{</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span><span class="n">LPDACCfg_Type</span><span class="w"> </span><span class="n">LpDacCfg</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; LPDAC configuration. @note Must select LPDAC0 or LPDAC1 in structure. */</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span><span class="n">LPAmpCfg_Type</span><span class="w"> </span><span class="n">LpAmpCfg</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; LPAMP(LPTIA and PA) configuration. @note Must select LPAMP0 or LPAMP1 in structure. */</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="p">}</span><span class="n">LPLoopCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="dsp-configure">DSP Configure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cm">/**</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="cm"> * DSP Configure </span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="cm"> * */</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">{</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="n">ADCBaseCfg_Type</span><span class="w"> </span><span class="n">ADCBaseCfg</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; ADC base configuration */</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span><span class="n">ADCFilterCfg_Type</span><span class="w"> </span><span class="n">ADCFilterCfg</span><span class="p">;</span><span class="w">   </span><span class="cm">/**&lt; ADC filter configuration include SINC3/SINC2/Notch/Average(for DFT only) */</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">  </span><span class="n">ADCDigComp_Type</span><span class="w"> </span><span class="n">ADCDigCompCfg</span><span class="p">;</span><span class="w">    </span><span class="cm">/**&lt; ADC digital comparator */</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="n">DFTCfg_Type</span><span class="w"> </span><span class="n">DftCfg</span><span class="p">;</span><span class="w">               </span><span class="cm">/**&lt; DFT configuration include data source, DFT number and Hanning Window */</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">  </span><span class="n">StatCfg_Type</span><span class="w"> </span><span class="n">StatCfg</span><span class="p">;</span><span class="w">             </span><span class="cm">/**&lt; Statistic block */</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="p">}</span><span class="n">DSPCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="gpio-configure">GPIO Configure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cm">/**</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="cm"> * GPIO Configure </span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="cm"> * */</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">{</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">FuncSet</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; AGP0 to AGP7 function sets */</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">OutputEnSet</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; AGPIO_Pin0|AGPIO_Pin1|...|AGPIO_Pin7, Enable output of selected pins, disable other pins */</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">InputEnSet</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Enable input of selected pins, disable other pins */</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">PullEnSet</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; Enable pull up or down on selected pin. disable other pins */</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">OutVal</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; Value for GPIOOUT register */</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="p">}</span><span class="n">AGPIOCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="fifo-configure">FIFO Configure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cm">/**</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="cm"> * FIFO configure</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="cm">*/</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">{</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">FIFOEn</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; Enable DATAFIFO. Disable FIFO will reset FIFO */</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">FIFOMode</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; Stream mode or standard FIFO mode */</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">FIFOSize</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; How to allocate the internal 6kB SRAM. Data FIFO and sequencer share all 6kB SRAM */</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">FIFOSrc</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Select which data source will be stored to FIFO */</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">FIFOThresh</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; FIFO threshold value, 0 to 1023. Threshold can be used to generate interrupt so MCU can read back data before FIFO is full */</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="p">}</span><span class="n">FIFOCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="sequencer-configure">Sequencer Configure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cm">/**</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="cm"> * Sequencer configure</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="cm">*/</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="p">{</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SeqMemSize</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Sequencer memory size. SRAM is used by both FIFO and Sequencer. Make sure the total SRAM used is less than 6kB. */</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">SeqEnable</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; Enable sequencer. Only with valid trigger, sequencer can run */</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">SeqBreakEn</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Do not use it */</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">SeqIgnoreEn</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Do not use it */</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">SeqCntCRCClr</span><span class="p">;</span><span class="w">    </span><span class="cm">/**&lt; Clear sequencer count and CRC */</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SeqWrTimer</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Set wait how much clocks after every commands executed */</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="p">}</span><span class="n">SEQCfg_Type</span><span class="p">;</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="cm">/**</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="cm"> * Sequence info structure</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="cm">*/</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="p">{</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SeqId</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; The Sequence ID @ref SEQID_Const */</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SeqRamAddr</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; The start address that in AF5940 SRAM */</span>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SeqLen</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; Sequence length */</span>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">WriteSRAM</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; Write command to SRAM or not. */</span>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="n">pSeqCmd</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; Pointer to the sequencer commands that stored in MCU */</span>
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="p">}</span><span class="n">SEQInfo_Type</span><span class="p">;</span>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="p">{</span>
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">PinSel</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; Select which pin are going to be configured. @ref AGPIOPIN_Const */</span>
+</span><span id="__span-18-29"><a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SeqPinTrigMode</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; The pin detect mode. Select from @ref SEQPINTRIGMODE_Const */</span>
+</span><span id="__span-18-30"><a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">bEnable</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Allow detected pin action to trigger corresponding sequence. */</span>
+</span><span id="__span-18-31"><a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a><span class="p">}</span><span class="n">SeqGpioTrig_Cfg</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="wakeup-timer-configure">Wakeup Timer Configure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cm">/**</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="cm"> * Wakeup Timer Configure</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="cm"> * */</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">{</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">WuptEndSeq</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt;  end sequence selection @ref WUPTENDSEQ_Const. Wupt will go back to slot A after this one is executed. */</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">WuptOrder</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span><span class="w">     </span><span class="cm">/**&lt;  The 8 slots for WakeupTimer. Place @ref SEQID_Const to this array. */</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SeqxSleepTime</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w">  </span><span class="cm">/**&lt; Time before put AFE to sleep. 0 to 0x000f_ffff. We normally don't use this feature and it's disabled in @ref AD5940_Initialize */</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SeqxWakeupTime</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w"> </span><span class="cm">/**&lt; Time before Wakeup AFE.  */</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">WuptEn</span><span class="p">;</span><span class="w">            </span><span class="cm">/**&lt; Timer enable. Once enabled, it starts to run. */</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="p">}</span><span class="n">WUPTCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="clock-configure">Clock configure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cm">/**</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="cm"> * Clock configure</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="cm">*/</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="p">{</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SysClkSrc</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; System clock source @ref SYSCLKSRC_Const */</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCCLkSrc</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; ADC clock source @ref ADCCLKSRC_Const */</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SysClkDiv</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; System clock divider. Use this to ensure System clock &lt; 16MHz. */</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCClkDiv</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; ADC control clock divider. ADC core clock is @ADCCLkSrc, but control clock should be &lt;16MHz.  */</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">HFOSCEn</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Enable internal 16MHz/32MHz HFOSC */</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">HfOSC32MHzMode</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; Enable internal HFOSC to output 32MHz */</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">LFOSCEn</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Enable internal 32kHZ OSC */</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">HFXTALEn</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; Enable XTAL driver */</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="p">}</span><span class="n">CLKCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="hstia-internal-rtia-calibration-structure">HSTIA internal RTIA calibration structure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cm">/**</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="cm"> * HSTIA internal RTIA calibration structure</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="cm"> * @note ADC filter settings and DFT should be configured properly based on signal frequency.</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="cm">*/</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="p">{</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">fFreq</span><span class="p">;</span><span class="w">                </span><span class="cm">/**&lt; Calibration frequency */</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">fRcal</span><span class="p">;</span><span class="w">                </span><span class="cm">/**&lt; Rcal resistor value in Ohm*/</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">SysClkFreq</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; The real frequency of system clock */</span><span class="w">  </span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">AdcClkFreq</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; The real frequency of ADC clock */</span><span class="w">   </span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">  </span><span class="n">HSTIACfg_Type</span><span class="w"> </span><span class="n">HsTiaCfg</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; HSTIA configuration */</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc3Osr</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; SINC3OSR_5, SINC3OSR_4 or SINC3OSR_2 */</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc2Osr</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; SINC3OSR_5, SINC3OSR_4 or SINC3OSR_2 */</span><span class="w"> </span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">  </span><span class="n">DFTCfg_Type</span><span class="w"> </span><span class="n">DftCfg</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; DFT configuration. */</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">bPolarResult</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; bTRUE-Polar coordinate:Return results in Magnitude and Phase. bFALSE-Cartesian coordinate: Return results in Real part and Imaginary Part */</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="p">}</span><span class="n">HSRTIACal_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="lptia-internal-rtia-calibration-structure">LPTIA internal RTIA calibration structure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cm">/**</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="cm"> * LPTIA internal RTIA calibration structure</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="cm">*/</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="p">{</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">fFreq</span><span class="p">;</span><span class="w">                </span><span class="cm">/**&lt; Calibration frequency. Set it to 0.0 for DC calibration */</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">fRcal</span><span class="p">;</span><span class="w">                </span><span class="cm">/**&lt; Rcal resistor value in Ohm*/</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">SysClkFreq</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; The real frequency of system clock */</span><span class="w">  </span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">AdcClkFreq</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; The real frequency of ADC clock */</span><span class="w">   </span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpAmpSel</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; Select from LPAMP0 and LPAMP1. LPAMP1 is only available on ADuCM355. */</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">bWithCtia</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Connect external CTIA or not. */</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpTiaRtia</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; LPTIA RTIA selection. */</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LpAmpPwrMod</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; Amplifiers power mode setting */</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc3Osr</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; SINC3OSR_5, SINC3OSR_4 or SINC3OSR_2 */</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc2Osr</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; SINC3OSR_5, SINC3OSR_4 or SINC3OSR_2 */</span><span class="w"> </span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">  </span><span class="n">DFTCfg_Type</span><span class="w"> </span><span class="n">DftCfg</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; DFT configuration */</span>
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">bPolarResult</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; bTRUE-Polar coordinate:Return results in Magnitude and Phase. bFALSE-Cartesian coordinate: Return results in Real part and Imaginary Part */</span>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="p">}</span><span class="n">LPRTIACal_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="hsdac-calibration-structure">HSDAC calibration structure.</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cm">/**</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="cm"> * HSDAC calibration structure.</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="cm">*/</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="p">{</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">fRcal</span><span class="p">;</span><span class="w">                </span><span class="cm">/**&lt; Rcal resistor value in Ohm*/</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">SysClkFreq</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; The real frequency of system clock */</span><span class="w">  </span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">AdcClkFreq</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; The real frequency of ADC clock */</span><span class="w"> </span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">AfePwrMode</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; Calibrate DAC in High power mode */</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ExcitBufGain</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Select from  EXCITBUFGAIN_2, EXCITBUFGAIN_0P25 */</span><span class="w">     </span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">HsDacGain</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Select from  HSDACGAIN_1, HSDACGAIN_0P2 */</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc3Osr</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; SINC3OSR_5, SINC3OSR_4 or SINC3OSR_2 */</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc2Osr</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; SINC3OSR_5, SINC3OSR_4 or SINC3OSR_2 */</span><span class="w"> </span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="p">}</span><span class="n">HSDACCal_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="lpdac-calibration-structure">LPDAC calibration structure.</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cm">/**</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="cm"> * LPDAC calibration structure.</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="cm">*/</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="p">{</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">LpdacSel</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; Select from LPDAC0 and LPDAC1. LPDAC1 is ADuCM355 only. */</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">  </span><span class="kt">float</span><span class="w">     </span><span class="n">SysClkFreq</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; The real frequency of system clock */</span><span class="w">  </span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">  </span><span class="kt">float</span><span class="w">     </span><span class="n">AdcClkFreq</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; The real frequency of ADC clock */</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">  </span><span class="kt">float</span><span class="w">     </span><span class="n">ADCRefVolt</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; ADC reference voltage. Default is 1.82V*/</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">ADCSinc3Osr</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; SINC3OSR_5, SINC3OSR_4 or SINC3OSR_2 */</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">ADCSinc2Osr</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; SINC2 OSR settings. */</span><span class="w"> </span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">  </span><span class="kt">int32_t</span><span class="w">   </span><span class="n">SettleTime10us</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Wait how much time after TIA is enabled? */</span><span class="w">   </span>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">  </span><span class="kt">int32_t</span><span class="w">   </span><span class="n">TimeOut10us</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; ADC converts signal need time. Specify the maximum time allowed. Timeout in 10us. negative number means wait no time. */</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="p">}</span><span class="n">LPDACCal_Type</span><span class="p">;</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="cm">/**</span>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="cm"> * LPDAC parameters: LPDAC code to voltage transfer function.</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="cm"> * Voltage(mV) = kC2V_DACxB * Code + bC2V_DACxB; </span>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="cm"> *  where x is 12 or 6 represent 12Bit DAC and 6Bit DAC. C2V means code to voltage.</span>
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="cm"> *  Code is the data register value for LPDAC. The equation gives real output voltage of LPDAC.    </span>
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="cm"> * Similarly, Code(LSB) = kV2C_DACxB * Voltage(mV) + bV2C_DACxB;</span>
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="cm"> * </span>
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="cm"> * Apparently, kV2C_DACxB = 1/kC2V_DACxB;</span>
+</span><span id="__span-24-24"><a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="cm"> *             bV2C_DACxB = -bC2V_DACxB/kC2V_DACxB;</span>
+</span><span id="__span-24-25"><a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="cm">*/</span>
+</span><span id="__span-24-26"><a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-24-27"><a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="p">{</span>
+</span><span id="__span-24-28"><a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a><span class="w">  </span><span class="cm">/* Code to voltage equation parameters */</span>
+</span><span id="__span-24-29"><a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">kC2V_DAC12B</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; the k factor of code to voltage(in mV) transfer function */</span>
+</span><span id="__span-24-30"><a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">bC2V_DAC12B</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; the offset of code to voltage transfer function. It's the voltage in mV when code is zero. */</span>
+</span><span id="__span-24-31"><a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">kC2V_DAC6B</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; the k factor for LPDAC 6 bit output. */</span>
+</span><span id="__span-24-32"><a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">bC2V_DAC6B</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; the offset for LPDAC 6 bit output. */</span>
+</span><span id="__span-24-33"><a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a><span class="w"> </span><span class="cm">/* Code to voltage equation parameters */</span>
+</span><span id="__span-24-34"><a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">kV2C_DAC12B</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; the k factor for converting voltage to code for LPDAC 12bit output. */</span>
+</span><span id="__span-24-35"><a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">bV2C_DAC12B</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; the offset for converting voltage to code for LPDAC 12bit output. */</span>
+</span><span id="__span-24-36"><a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">kV2C_DAC6B</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; the k factor for converting voltage to code for LPDAC 6bit output. */</span>
+</span><span id="__span-24-37"><a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">bV2C_DAC6B</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; the offset for converting voltage to code for LPDAC 6bit output. */</span>
+</span><span id="__span-24-38"><a id="__codelineno-24-38" name="__codelineno-24-38" href="#__codelineno-24-38"></a><span class="p">}</span><span class="n">LPDACPara_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="lfosc-frequency-measure-structure">LFOSC frequency measure structure</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="cm">/**</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="cm"> * LFOSC frequency measure structure</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="cm">*/</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="p">{</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">CalSeqAddr</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; Sequence start address */</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">CalDuration</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; Time can be used for calibration in unit of ms. Recommend to use tens of millisecond like 10ms */</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">SystemClkFreq</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; System clock frequency.  */</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="p">}</span><span class="n">LFOSCMeasure_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="adc-pga-calibration-type">ADC PGA calibration type</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="cm">/**</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="cm"> * ADC PGA calibration type</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="cm">*/</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="p">{</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">SysClkFreq</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; The real frequency of system clock */</span><span class="w">  </span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">AdcClkFreq</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; The real frequency of ADC clock */</span><span class="w">  </span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">VRef1p82</span><span class="p">;</span><span class="w">             </span><span class="cm">/**&lt; The real voltage of 1.82 reference. Unit is volt. */</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">VRef1p11</span><span class="p">;</span><span class="w">             </span><span class="cm">/**&lt; The real voltage of 1.1 reference. Unit is volt. */</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc3Osr</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; SINC3OSR_5, SINC3OSR_4 or SINC3OSR_2 */</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc2Osr</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; SINC3OSR_5, SINC3OSR_4 or SINC3OSR_2 */</span><span class="w"> </span>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCPga</span><span class="p">;</span><span class="w">            </span><span class="cm">/**&lt; Which PGA gain we are going to calibrate? */</span>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">PGACalType</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; Calibrate gain of offset or gain+offset? */</span>
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">TimeOut10us</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; Timeout in 10us. -1 means no time-out*/</span>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="p">}</span><span class="n">ADCPGACal_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="lptia-offset-calibration-type">LPTIA Offset calibration type</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="cm">/**</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="cm"> * LPTIA Offset calibration type</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="cm">*/</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">{</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">LpAmpSel</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; Select from LPAMP0 and LPAMP1. LPAMP1 is only available on ADuCM355. */</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">  </span><span class="kt">float</span><span class="w">     </span><span class="n">SysClkFreq</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; The real frequency of system clock */</span><span class="w">  </span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">  </span><span class="kt">float</span><span class="w">     </span><span class="n">AdcClkFreq</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; The real frequency of ADC clock */</span><span class="w">  </span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">ADCSinc3Osr</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; SINC3OSR_5, SINC3OSR_4 or SINC3OSR_2 */</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">ADCSinc2Osr</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; SINC3OSR_5, SINC3OSR_4 or SINC3OSR_2 */</span><span class="w"> </span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">ADCPga</span><span class="p">;</span><span class="w">             </span><span class="cm">/**&lt; PGA Gain selection */</span>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">DacData12Bit</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; 12Bit DAC data */</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">DacData6Bit</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; 6Bit DAC data */</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">LpDacVzeroMux</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Vzero is used as LPTIA bias voltage, select 12Bit/6Bit DAC */</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">LpAmpPwrMod</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; LP amplifiers power mode, select from LPAMPPWR_NORM, LPAMPPWR_BOOSTn*/</span><span class="w"> </span>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">LpTiaSW</span><span class="p">;</span><span class="w">            </span><span class="cm">/**&lt; Switch configuration for LPTIA. Normally for SW(5) and SW(9).*/</span>
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w">  </span><span class="n">LpTiaRtia</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; LPTIA RTIA resistor selection. */</span>
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="w">  </span><span class="kt">int32_t</span><span class="w">   </span><span class="n">SettleTime10us</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; Wait how much time after TIA is enabled? */</span><span class="w">   </span>
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="w">  </span><span class="kt">int32_t</span><span class="w">   </span><span class="n">TimeOut10us</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; ADC converts signal need time. Specify the maximum time allowed. Timeout in 10us. negative number means wait no time. */</span>
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="p">}</span><span class="n">LPTIAOffsetCal_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="structure-for-calculating-how-much-system-clocks-needed-for-specified-number-of-data">Structure for calculating how much system clocks needed for specified number of data</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="cm">/**</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="cm"> * Structure for calculating how much system clocks needed for specified number of data</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="cm">*/</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="p">{</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">DataType</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; The final data output selection. @ref DATATYPE_Const */</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">DataCount</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; How many data you want. */</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc3Osr</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; ADC SINC3 filter OSR setting */</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc2Osr</span><span class="p">;</span><span class="w">       </span><span class="cm">/**&lt; ADC SINC2 filter OSR setting */</span>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCAvgNum</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Average number for DFT engine. Only used when data type is DATATYPE_DFT and DftSrc is DFTSRC_AVG */</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">DftSrc</span><span class="p">;</span><span class="w">            </span><span class="cm">/**&lt; The DFT source. Only used when data type is DATATYPE_DFT */</span>
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="w">  </span><span class="kt">uint8_t</span><span class="w">  </span><span class="n">ADCRate</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; ADCRate @ref ADCRATE_Const. Only used when data type is DATATYPE_NOTCH */</span>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">BpNotch</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; Bypass notch filter or not. Only used when data type is DATATYPE_DFT and DftSrc is DFTSRC_SINC2NOTCH */</span>
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">RatioSys2AdcClk</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Ratio of system clock to ADC clock frequency */</span>
+</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a><span class="p">}</span><span class="n">ClksCalInfo_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="software-controlled-sweep-function">Software controlled Sweep Function</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="cm">/** </span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="cm"> * Software controlled Sweep Function </span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="cm"> * */</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="p">{</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">SweepEn</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Software can automatically sweep frequency from following parameters. Set value to 1 to enable it. */</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">SweepStart</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Sweep start frequency. Software will go back to the start frequency when it reaches SWEEP_STOP */</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">SweepStop</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; Sweep end frequency. */</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SweepPoints</span><span class="p">;</span><span class="w">     </span><span class="cm">/**&lt; How many points from START to STOP frequency */</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">SweepLog</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; The step is linear or logarithmic. 0: Linear, 1: Logarithmic*/</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SweepIndex</span><span class="p">;</span><span class="w">      </span><span class="cm">/**&lt; Current position of sweep */</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="p">}</span><span class="n">SoftSweepCfg_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="impedance-result-in-polar-coordinate">Impedance result in Polar coordinate</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="cm">/**</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="cm"> * Impedance result in Polar coordinate </span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="cm">*/</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">{</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">Magnitude</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; The magnitude in polar coordinate */</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">Phase</span><span class="p">;</span><span class="w">             </span><span class="cm">/**&lt; The phase in polar coordinate */</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="p">}</span><span class="n">fImpPol_Type</span><span class="p">;</span><span class="w"> </span><span class="c1">//Polar</span>
+</span></code></pre></div>
+<h2 id="impedance-result-in-cartesian-coordinate">Impedance result in Cartesian coordinate</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="cm">/**</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="cm"> * Impedance result in Cartesian coordinate </span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="cm">*/</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="p">{</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">Real</span><span class="p">;</span><span class="w">              </span><span class="cm">/**&lt; The real part in Cartesian coordinate */</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">Image</span><span class="p">;</span><span class="w">             </span><span class="cm">/**&lt; The imaginary in Cartesian coordinate */</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="p">}</span><span class="n">fImpCar_Type</span><span class="p">;</span><span class="w"> </span><span class="c1">//Cartesian</span>
+</span></code></pre></div>
+<h2 id="int32_t-type-impedance-result-in-cartesian-coordinate">int32_t type Impedance result in Cartesian coordinate</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cm">/**</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="cm"> * int32_t type Impedance result in Cartesian coordinate </span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="cm">*/</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="p">{</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">Real</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; The real part in Cartesian coordinate */</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">Image</span><span class="p">;</span><span class="w">        </span><span class="cm">/**&lt; The real imaginary in Cartesian coordinate */</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="p">}</span><span class="n">iImpCar_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="freqparams_type-structure-to-store-optimum-filter-settings">FreqParams_Type - Structure to store optimum filter settings</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="cm">/**</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="cm"> *  FreqParams_Type - Structure to store optimum filter settings </span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="cm">*/</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="p">{</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">    </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">HighPwrMode</span><span class="p">;</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">DftNum</span><span class="p">;</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">DftSrc</span><span class="p">;</span>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc3Osr</span><span class="p">;</span>
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ADCSinc2Osr</span><span class="p">;</span>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">NumClks</span><span class="p">;</span>
+</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="p">}</span><span class="n">FreqParams_Type</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="sequencer-generator">Sequencer Generator</h2>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="p">{</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">RegAddr</span><span class="w">  </span><span class="o">:</span><span class="mi">8</span><span class="p">;</span><span class="w">   </span><span class="cm">/**&lt; 8bit address is enough for sequencer */</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">RegValue</span><span class="w"> </span><span class="o">:</span><span class="mi">24</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; Reg data is limited to 24bit by sequencer  */</span>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="p">}</span><span class="n">SEQGenRegInfo_Type</span><span class="p">;</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="cm">/**</span>
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="cm"> * Sequencer generator data base.</span>
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="cm">*/</span>
+</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="k">struct</span>
+</span><span id="__span-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="p">{</span>
+</span><span id="__span-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a><span class="w">  </span><span class="n">BoolFlag</span><span class="w"> </span><span class="n">EngineStart</span><span class="p">;</span><span class="w">         </span><span class="cm">/**&lt; Flag to mark start of the generator */</span>
+</span><span id="__span-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">BufferSize</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; Total buffer size */</span>
+</span><span id="__span-34-14"><a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a>
+</span><span id="__span-34-15"><a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="n">pSeqBuff</span><span class="p">;</span><span class="w">           </span><span class="cm">/**&lt; The buffer for sequence generator(both sequences and RegInfo) */</span>
+</span><span id="__span-34-16"><a id="__codelineno-34-16" name="__codelineno-34-16" href="#__codelineno-34-16"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">SeqLen</span><span class="p">;</span><span class="w">              </span><span class="cm">/**&lt; Generated sequence length till now */</span>
+</span><span id="__span-34-17"><a id="__codelineno-34-17" name="__codelineno-34-17" href="#__codelineno-34-17"></a><span class="w">  </span><span class="n">SEQGenRegInfo_Type</span><span class="w"> </span><span class="o">*</span><span class="n">pRegInfo</span><span class="p">;</span><span class="w"> </span><span class="cm">/**&lt; Pointer to buffer where stores register info */</span>
+</span><span id="__span-34-18"><a id="__codelineno-34-18" name="__codelineno-34-18" href="#__codelineno-34-18"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">RegCount</span><span class="p">;</span><span class="w">            </span><span class="cm">/**&lt; The count of register info available in buffer *pRegInfo. */</span>
+</span><span id="__span-34-19"><a id="__codelineno-34-19" name="__codelineno-34-19" href="#__codelineno-34-19"></a><span class="w">  </span><span class="n">AD5940Err</span><span class="w"> </span><span class="n">LastError</span><span class="p">;</span><span class="w">          </span><span class="cm">/**&lt; The last error message. */</span>
+</span><span id="__span-34-20"><a id="__codelineno-34-20" name="__codelineno-34-20" href="#__codelineno-34-20"></a><span class="p">}</span><span class="n">SeqGenDB</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Data base of Seq Generator */</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.select", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

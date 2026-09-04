@@ -1,0 +1,1803 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Python_Resources/">
+      
+      
+        <link rel="next" href="../tutorial/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Litex&FPGA - 朱子建 Tze-Chien Chu (Frank) Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#litex-and-fpga" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="朱子建 Tze-Chien Chu (Frank) Notes" class="md-header__button md-logo" aria-label="朱子建 Tze-Chien Chu (Frank) Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            朱子建 Tze-Chien Chu (Frank) Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Litex&FPGA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="朱子建 Tze-Chien Chu (Frank) Notes" class="md-nav__button md-logo" aria-label="朱子建 Tze-Chien Chu (Frank) Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    朱子建 Tze-Chien Chu (Frank) Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Y2026/Y2026-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026-September
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../books/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_lecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Lectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PICO_Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python_Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Litex&FPGA
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Litex&FPGA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#litex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Litex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#litex-and-efinix-2026-08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex and Efinix 2026-08
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#litex-radiant-synth-tool-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex Radiant Synth Tool Change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#litex-without-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex without CPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#litex-instance-external-verilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex Instance External Verilog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#litex-use-radiant-ip-to-wrap-into-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex use Radiant IP to wrap into Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#litex-setting-for-radiant-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex Setting for Radiant Setting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-litex-wrappers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating LiteX wrappers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migen-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migen Simulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migen Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migen-selection-of-signal-from-signal-as-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migen Selection of Signal from Signal as Index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migen-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migen Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migen-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migen Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migen-reset-fsm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migen Reset FSM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#icestorm-toolset-for-ice40-fpga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IceStorm toolset for ICE40 FPGA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chisel-fpga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chisel FPGA開発日記
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amaranth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amaranth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verilog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-art-of-fpga-design-element14-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Art of FPGA Design - element14 Community
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-signal-processing-from-algorithm-to-fpga-bitstream-element14-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Digital Signal Processing, from Algorithm to FPGA Bitstream - element14 Community
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xilinx-petalinux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xilinx Petalinux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Xilinx Petalinux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buildrootamdxilinx-zynq-zc702-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用Buildroot编译AMD/Xilinx Zynq ZC702 单板 Linux （内核和文件系统）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zcu104_mpsoc-development-petalinux-20242-basic-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZCU104_MPSoC Development - Petalinux 2024.2 Basic Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xillinux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xillinux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ultrazed-eg-pcie-carrier-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UltraZed-EG PCIe Carrier Card 開發紀錄
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#petalinux-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Petalinux Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perfecting-petalinux-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perfecting PetaLinux Workshop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vivado-vitis-petalinux-2024-on-ubuntu-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vivado Vitis Petalinux 2024 on Ubuntu 2024
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zynq-petalinux-and-vitis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zynq PetaLinux and Vitis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quotes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ideas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mags/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    *Magazins (Local)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#litex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Litex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#litex-and-efinix-2026-08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex and Efinix 2026-08
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#litex-radiant-synth-tool-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex Radiant Synth Tool Change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#litex-without-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex without CPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#litex-instance-external-verilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex Instance External Verilog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#litex-use-radiant-ip-to-wrap-into-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex use Radiant IP to wrap into Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#litex-setting-for-radiant-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Litex Setting for Radiant Setting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-litex-wrappers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating LiteX wrappers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migen-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migen Simulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migen Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migen-selection-of-signal-from-signal-as-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migen Selection of Signal from Signal as Index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migen-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migen Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migen-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migen Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migen-reset-fsm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migen Reset FSM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#icestorm-toolset-for-ice40-fpga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IceStorm toolset for ICE40 FPGA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chisel-fpga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chisel FPGA開発日記
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amaranth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Amaranth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verilog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verilog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-art-of-fpga-design-element14-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Art of FPGA Design - element14 Community
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-signal-processing-from-algorithm-to-fpga-bitstream-element14-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Digital Signal Processing, from Algorithm to FPGA Bitstream - element14 Community
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xilinx-petalinux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xilinx Petalinux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Xilinx Petalinux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buildrootamdxilinx-zynq-zc702-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用Buildroot编译AMD/Xilinx Zynq ZC702 单板 Linux （内核和文件系统）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zcu104_mpsoc-development-petalinux-20242-basic-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZCU104_MPSoC Development - Petalinux 2024.2 Basic Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xillinux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xillinux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ultrazed-eg-pcie-carrier-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UltraZed-EG PCIe Carrier Card 開發紀錄
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#petalinux-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Petalinux Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perfecting-petalinux-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perfecting PetaLinux Workshop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vivado-vitis-petalinux-2024-on-ubuntu-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vivado Vitis Petalinux 2024 on Ubuntu 2024
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zynq-petalinux-and-vitis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zynq PetaLinux and Vitis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="litex-and-fpga">Litex and FPGA</h1>
+<h2 id="litex">Litex</h2>
+<p><a href="https://github.com/fjullien/migen_litex_tutorials">fjullien migen_litex_tutorials</a> &lt;-- Best Litex tutorial</p>
+<p><a href="../subtitles/migen_litex_tutorials/">Local migen_litex_tutorials</a></p>
+<p><a href="https://github.com/enjoy-digital/litex/wiki">officail litx wiki</a>.</p>
+<p><a href="https://github.com/gatecat/litex-nexus-mipi">Litex MIPI CSI</a></p>
+<p>ICEStorm Install <a href="../subtitles/icestorm_install/">icestorm_install.md</a></p>
+<p><a href="https://sourcesup.renater.fr/www/mic-sec-2022/labs/getting-started-with-litex.html">getting-started-with-litex</a></p>
+<h3 id="litex-and-efinix-2026-08">Litex and Efinix 2026-08</h3>
+<ul>
+<li>Use Ubuntu 22.04 Python &gt; 3.9</li>
+<li>No venv needed </li>
+<li>Install Litex along side efinix Tools</li>
+<li>Pay attention to which python3 path</li>
+<li>Only set LITEX_ENV_EFINITY="~/efinity-yyyy-d-linux-x64/efinity/yyyy.mm"</li>
+</ul>
+<h3 id="litex-radiant-synth-tool-change">Litex Radiant Synth Tool Change</h3>
+<p>Add "--synth-mode=lse" after "--build"</p>
+<hr />
+<h3 id="litex-without-cpu">Litex without CPU</h3>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">BaseSoC</span><span class="p">(</span><span class="n">SoCMini</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">sys_clk_freq</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">100e6</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="c1"># SoCMini (No CPU, we are controlling the SoC over UART)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">SoCMini</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">,</span> <span class="n">sys_clk_freq</span><span class="p">,</span> 
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                         <span class="n">csr_data_width</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                         <span class="n">ident</span><span class="o">=</span><span class="s2">"Hello World! </span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span> 
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                         <span class="n">ident_version</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="c1"># No CPU, use Serial to control Wishbone bus</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">add_uartbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"uart_debug"</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">115200</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="c1">#self.add_jtagbone()</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="c1"># FPGA identification</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">submodules</span><span class="o">.</span><span class="n">dna</span> <span class="o">=</span> <span class="n">dna</span><span class="o">.</span><span class="n">DNA</span><span class="p">()</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">add_csr</span><span class="p">(</span><span class="s2">"dna"</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="litex-instance-external-verilog">Litex Instance External Verilog</h3>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">din</span>    <span class="o">=</span> <span class="n">Signal</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">dout</span>   <span class="o">=</span> <span class="n">Signal</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">dinout</span> <span class="o">=</span> <span class="n">Signal</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="bp">self</span><span class="o">.</span><span class="n">specials</span> <span class="o">+=</span> <span class="n">Instance</span><span class="p">(</span><span class="s2">"custom_core"</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>   <span class="n">p_DATA_WIDTH</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>   <span class="n">i_din</span>     <span class="o">=</span> <span class="n">din</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>   <span class="n">o_dout</span>    <span class="o">=</span> <span class="n">dout</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>   <span class="n">io_dinout</span> <span class="o">=</span> <span class="n">dinout</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">#################################################################</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># Create a Dict for the Parameters/IOs.</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">params_ios</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1"># Add the Parameters.</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">params_ios</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>   <span class="n">p_DATA_WIDTH</span> <span class="o">=</span> <span class="mi">32</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">)</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="c1"># Add the IOs.</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="n">params_ios</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>   <span class="n">i_din</span>     <span class="o">=</span> <span class="n">din</span><span class="p">,</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>   <span class="n">o_dout</span>    <span class="o">=</span> <span class="n">dout</span><span class="p">,</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>   <span class="n">io_dinout</span> <span class="o">=</span> <span class="n">dinout</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="p">)</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="c1"># Do the Instance:</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="bp">self</span><span class="o">.</span><span class="n">specials</span> <span class="o">+=</span> <span class="n">Instance</span><span class="p">(</span><span class="s2">"custom_core"</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">params_ios</span><span class="p">)</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="c1">#################################################################</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">fifo_ports</span><span class="p">):</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    <span class="n">litedram_params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="p">{</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>        <span class="c1"># FIFO In.</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>        <span class="sa">f</span><span class="s2">"i_user_fifo_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_in_valid"</span><span class="p">:</span> <span class="n">axis_in</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">valid</span><span class="p">,</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        <span class="sa">f</span><span class="s2">"o_user_fifo_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_in_ready"</span><span class="p">:</span> <span class="n">axis_in</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ready</span><span class="p">,</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>        <span class="sa">f</span><span class="s2">"i_user_fifo_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_in_data"</span> <span class="p">:</span> <span class="n">axis_in</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        <span class="c1"># FIFO Out.</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>        <span class="sa">f</span><span class="s2">"o_user_fifo_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_out_valid"</span><span class="p">:</span> <span class="n">axis_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">valid</span><span class="p">,</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        <span class="sa">f</span><span class="s2">"i_user_fifo_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_out_ready"</span><span class="p">:</span> <span class="n">axis_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ready</span><span class="p">,</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>        <span class="sa">f</span><span class="s2">"o_user_fifo_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_out_data"</span> <span class="p">:</span> <span class="n">axis_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="p">})</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="c1">#################################################################</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="n">platform</span><span class="o">.</span><span class="n">add_sources</span><span class="p">(</span><span class="s2">"./"</span><span class="p">,</span> <span class="c1">#Search path location</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>  <span class="s2">"core0.v"</span><span class="p">,</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>  <span class="s2">"core1.vhd"</span><span class="p">,</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>  <span class="s2">"core2.sv"</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><a href="https://github.com/enjoy-digital/litex/wiki/Reuse-a-(System)Verilog,-VHDL,-Amaranth,-Spinal-HDL,-Chisel-core">Reuse a (System)Verilog</a></p>
+<hr />
+<h3 id="litex-use-radiant-ip-to-wrap-into-module">Litex use Radiant IP to wrap into Module</h3>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Counter</span><span class="p">(</span><span class="n">LiteXModule</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">platform</span><span class="p">):</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>       <span class="bp">self</span><span class="o">.</span><span class="n">co</span> <span class="o">=</span> <span class="n">Signal</span><span class="p">()</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>       <span class="n">platform</span><span class="o">.</span><span class="n">add_sources</span><span class="p">(</span><span class="s2">"./myCounter/rtl"</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>           <span class="s2">"myCounter.v"</span><span class="p">,</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>       <span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>       <span class="n">platform</span><span class="o">.</span><span class="n">add_sources</span><span class="p">(</span><span class="s2">"./myCounter/constraints"</span><span class="p">,</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>           <span class="s2">"myCounter.ldc"</span><span class="p">,</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>       <span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>       <span class="n">clk_en_i</span> <span class="o">=</span> <span class="n">Signal</span><span class="p">()</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>       <span class="n">q_o</span> <span class="o">=</span> <span class="n">Signal</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>       <span class="bp">self</span><span class="o">.</span><span class="n">comb</span> <span class="o">+=</span> <span class="p">[</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>          <span class="n">clk_en_i</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>          <span class="bp">self</span><span class="o">.</span><span class="n">co</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">q_o</span><span class="p">[</span><span class="mi">23</span><span class="p">])</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>       <span class="p">]</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>       <span class="bp">self</span><span class="o">.</span><span class="n">specials</span> <span class="o">+=</span> <span class="n">Instance</span><span class="p">(</span><span class="s2">"myCounter"</span><span class="p">,</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>           <span class="n">i_clk_i</span>    <span class="o">=</span> <span class="n">ClockSignal</span><span class="p">(</span><span class="s2">"sys"</span><span class="p">),</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>           <span class="n">i_clk_en_i</span>  <span class="o">=</span> <span class="n">clk_en_i</span><span class="p">,</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>           <span class="n">i_aclr_i</span>    <span class="o">=</span> <span class="n">ResetSignal</span><span class="p">(</span><span class="s2">"sys"</span><span class="p">),</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>           <span class="n">o_q_o</span>    <span class="o">=</span> <span class="n">q_o</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>       <span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="litex-setting-for-radiant-setting">Litex Setting for Radiant Setting</h3>
+<p>In BaseSOC</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>       <span class="n">platform</span><span class="o">.</span><span class="n">add_platform_command</span><span class="p">(</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>           <span class="s2">"ldc_set_sysconfig {{JTAG_PORT=ENABLE MCCLK_FREQ=14.1 DONE_PORT=ENABLE INITN_PORT=ENABLE PROGRAMN_PORT=ENABLE DONE_OD=ON WAKE_UP=ENABLE_DONE_SYNC MASTER_SPI_PORT=SERIAL}}"</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>       <span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>       <span class="n">platform</span><span class="o">.</span><span class="n">add_platform_command</span><span class="p">(</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>           <span class="s2">"ldc_set_sysconfig {{MASTER_SPI_PORT=SERIAL BOOTMODE=SINGLE CONFIGIO_VOLTAGE_BANK0=1.8 CONFIGIO_VOLTAGE_BANK1=1.8 CONFIG_IOSLEW=FAST}}"</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>       <span class="p">)</span>
+</span></code></pre></div>
+<p>In Build main()</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>        <span class="n">parser</span><span class="o">.</span><span class="n">set_defaults</span><span class="p">(</span><span class="n">synth_mode</span><span class="o">=</span><span class="s2">"lse"</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="creating-litex-wrappers">Creating LiteX wrappers</h3>
+<p>📑<a href="https://myriadrf.org/projects/limedfb/docs/litex_wrappers/creating_litex_wrappers.html">Creating LiteX wrappers</a></p>
+<hr />
+<h2 id="migen-simulation">Migen Simulation</h2>
+<h3 id="counter">Counter</h3>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">migen</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">DPLL</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="n">Signal</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">sync</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">dpll_test</span><span class="p">(</span><span class="n">dut</span><span class="p">):</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>         <span class="nb">print</span><span class="p">((</span><span class="k">yield</span> <span class="n">dut</span><span class="o">.</span><span class="n">count</span><span class="p">))</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>         <span class="k">yield</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">dut</span> <span class="o">=</span> <span class="n">DPLL</span><span class="p">()</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="n">run_simulation</span><span class="p">(</span><span class="n">dut</span><span class="p">,</span> <span class="n">dpll_test</span><span class="p">(</span><span class="n">dut</span><span class="p">),</span> <span class="n">vcd_name</span><span class="o">=</span><span class="s2">"dpll.vcd"</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="migen-selection-of-signal-from-signal-as-index">Migen Selection of Signal from Signal as Index</h3>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>        <span class="n">shiftout</span> <span class="o">=</span> <span class="n">Array</span><span class="p">({}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">REG_Number</span><span class="p">))</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>            <span class="n">shiftout</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">spi_miso1</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">Regsiters</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;</span> <span class="o">~</span><span class="bp">self</span><span class="o">.</span><span class="n">spi_cs</span><span class="p">)]</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>            <span class="n">shiftout</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">spi_miso2</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">Regsiters</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;</span> <span class="o">~</span><span class="bp">self</span><span class="o">.</span><span class="n">spi_cs</span><span class="p">)]</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">REG_Number</span><span class="p">):</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">comb</span> <span class="o">+=</span> <span class="p">[</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>                <span class="n">Case</span><span class="p">(</span><span class="n">shift_count</span><span class="p">,</span> <span class="n">shiftout</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>            <span class="p">]</span>
+</span></code></pre></div>
+<h3 id="migen-case">Migen Case</h3>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">comb</span> <span class="o">+=</span> <span class="n">Case</span><span class="p">(</span><span class="n">word_cound</span><span class="p">,{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>            <span class="mi">0</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">uart_tx</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">start_b0</span><span class="p">),</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>            <span class="mi">1</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">uart_tx</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">start_b1</span><span class="p">),</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>            <span class="mi">2</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">uart_tx</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">timestamp_b0</span><span class="p">),</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>            <span class="mi">3</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">uart_tx</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">timestamp_b1</span><span class="p">),</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>            <span class="mi">4</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">uart_tx</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">timestamp_b2</span><span class="p">),</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>            <span class="mi">5</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">uart_tx</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">timestamp_b3</span><span class="p">),</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>            <span class="s2">"default"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">uart_tx</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="p">})</span>
+</span></code></pre></div>
+<h3 id="migen-module">Migen Module</h3>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>        <span class="n">encoder</span> <span class="o">=</span> <span class="n">Encoder8b10b</span><span class="p">()</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>        <span class="n">decoder</span> <span class="o">=</span> <span class="n">Decoder8b10b</span><span class="p">()</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">submodules</span> <span class="o">+=</span> <span class="p">[</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>            <span class="n">encoder</span><span class="p">,</span> <span class="n">decoder</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="p">]</span>
+</span></code></pre></div>
+<h3 id="migen-reset-fsm">Migen Reset FSM</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>        <span class="n">fsm</span>   <span class="o">=</span> <span class="n">FSM</span><span class="p">(</span><span class="n">reset_state</span><span class="o">=</span><span class="s2">"WAIT"</span><span class="p">)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>        <span class="n">fsm</span>   <span class="o">=</span> <span class="n">ClockDomainsRenamer</span><span class="p">(</span><span class="s2">"icap"</span><span class="p">)(</span><span class="n">fsm</span><span class="p">)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        <span class="n">fsm</span>   <span class="o">=</span> <span class="n">ResetInserter</span><span class="p">()(</span><span class="n">fsm</span><span class="p">)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">submodules</span> <span class="o">+=</span> <span class="n">fsm</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">comb</span> <span class="o">+=</span> <span class="n">fsm</span><span class="o">.</span><span class="n">reset</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">write</span> <span class="o">|</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">))</span>
+</span></code></pre></div>
+<h2 id="icestorm-toolset-for-ice40-fpga">IceStorm toolset for ICE40 FPGA</h2>
+<div class="language-makefile highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c"># Project setup</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">PROJ</span><span class="w">      </span><span class="o">=</span><span class="w"> </span>blinky
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nv">BUILD</span><span class="w">     </span><span class="o">=</span><span class="w"> </span>./build
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nv">DEVICE</span><span class="w">    </span><span class="o">=</span><span class="w"> </span>8k
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nv">FOOTPRINT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ct256
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c"># Files</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="nv">FILES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>top.v
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">all</span> <span class="n">clean</span> <span class="n">burn</span> <span class="n">timing</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="nf">all $(BUILD)/$(PROJ).asc $(BUILD)/$(PROJ).bin</span><span class="o">:</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="c">    # if build folder doesn't exist, create it</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="k">$(</span>BUILD<span class="k">)</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="c">    # synthesize using Yosys</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">    </span>yosys<span class="w"> </span>-p<span class="w"> </span><span class="s2">"synth_ice40 -top top -blif </span><span class="k">$(</span>BUILD<span class="k">)</span><span class="s2">/</span><span class="k">$(</span>PROJ<span class="k">)</span><span class="s2">.blif -json </span><span class="k">$(</span>BUILD<span class="k">)</span><span class="s2">/</span><span class="k">$(</span>PROJ<span class="k">)</span><span class="s2">.json"</span><span class="w"> </span><span class="k">$(</span>FILES<span class="k">)</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="c">    # Place and route using arachne</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="c">    #arachne-pnr -d $(DEVICE) -P $(FOOTPRINT) -o $(BUILD)/$(PROJ).asc -p pinmap.pcf $(BUILD)/$(PROJ).blif</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">    </span>nextpnr-ice40<span class="w"> </span>--hx<span class="k">$(</span>DEVICE<span class="k">)</span><span class="w"> </span>--json<span class="w"> </span>build/<span class="k">$(</span>PROJ<span class="k">)</span>.json<span class="w"> </span>--pcf<span class="w"> </span>pinmap.pcf<span class="w"> </span>--asc<span class="w"> </span>build/<span class="k">$(</span>PROJ<span class="k">)</span>.asc
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="c">    # Convert to bitstream using IcePack</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">    </span>icepack<span class="w"> </span><span class="k">$(</span>BUILD<span class="k">)</span>/<span class="k">$(</span>PROJ<span class="k">)</span>.asc<span class="w"> </span><span class="k">$(</span>BUILD<span class="k">)</span>/<span class="k">$(</span>PROJ<span class="k">)</span>.bin
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="nf">burn</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">BUILD</span><span class="k">)</span>/<span class="k">$(</span><span class="nv">PROJ</span><span class="k">)</span>.<span class="n">bin</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">    </span>iceprog<span class="w"> </span><span class="k">$(</span>BUILD<span class="k">)</span>/<span class="k">$(</span>PROJ<span class="k">)</span>.bin
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="nf">timing</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">BUILD</span><span class="k">)</span>/<span class="k">$(</span><span class="nv">PROJ</span><span class="k">)</span>.<span class="n">asc</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">    </span>icetime<span class="w"> </span>-tmd<span class="w"> </span>hx<span class="k">$(</span>DEVICE<span class="k">)</span><span class="w"> </span><span class="k">$(</span>BUILD<span class="k">)</span>/<span class="k">$(</span>PROJ<span class="k">)</span>.asc
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="nf">clean</span><span class="o">:</span>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">    </span>rm<span class="w"> </span>build/*
+</span></code></pre></div>
+<h2 id="chisel-fpga">Chisel FPGA開発日記</h2>
+<p><a href="https://msyksphinz.hatenablog.com/">https://msyksphinz.hatenablog.com/</a></p>
+<p><a href="https://www.hatena.ne.jp/">https://www.hatena.ne.jp/</a></p>
+<p><a href="https://hatenablog.com/">https://hatenablog.com/</a></p>
+<p><a href="https://www.youtube.com/playlist?list=PLfrN7RIcMe6g2LBRJLTHTdhyj5s8ag0Rg">Agile Hardware Design Video 2024</a></p>
+<p><img alt="Chip Alliance" src="../images/2025/Screenshot%20from%202025-02-04%2016-58-19.png" /></p>
+<p><a href="https://www.chipsalliance.org/">Chip Alliance</a></p>
+<hr />
+<h2 id="amaranth">Amaranth</h2>
+<p><a href="https://amaranth-lang.org/docs/amaranth/latest/">Amaranth HDL Document</a></p>
+<hr />
+<h2 id="verilog">Verilog</h2>
+<p><a href="https://verilogguide.readthedocs.io/en/latest/">https://verilogguide.readthedocs.io/en/latest/</a></p>
+<p><a href="https://www.chipverify.com/">https://www.chipverify.com/</a></p>
+<p><a href="https://www.asic-world.com/verilog/index.html">Verilog Tutorial</a></p>
+<hr />
+<h2 id="the-art-of-fpga-design-element14-community">The Art of FPGA Design - element14 Community</h2>
+<p><a href="https://community.element14.com/technologies/fpga-group/b/blog/posts/the-art-of-fpga-design">The Art of FPGA Design - element14 Community</a></p>
+<h2 id="digital-signal-processing-from-algorithm-to-fpga-bitstream-element14-community">Digital Signal Processing, from Algorithm to FPGA Bitstream - element14 Community</h2>
+<p><a href="https://community.element14.com/technologies/fpga-group/b/blog/posts/the-art-of-fpga-design-season-2---digital-signal-processing-from-algorithm-to-fpga-bitstream">Digital Signal Processing, from Algorithm to FPGA Bitstream</a></p>
+<hr />
+<h2 id="xilinx-petalinux">Xilinx Petalinux</h2>
+<h3 id="buildrootamdxilinx-zynq-zc702-linux">使用Buildroot编译AMD/Xilinx Zynq ZC702 单板 Linux （内核和文件系统）</h3>
+<p>🌐<a href="https://www.cnblogs.com/hankfu/p/19048169">使用Buildroot编译AMD/Xilinx Zynq ZC702 单板 Linux （内核和文件系统）</a></p>
+<hr />
+<h3 id="zcu104_mpsoc-development-petalinux-20242-basic-tutorial">ZCU104_MPSoC Development - Petalinux 2024.2 Basic Tutorial</h3>
+<p>🌐<a href="https://www.hackster.io/engrinam0077/zcu104-mpsoc-development-petalinux-2024-2-basic-tutorial-c82b8d">ZCU104_MPSoC Development - Petalinux 2024.2 Basic Tutorial</a></p>
+<hr />
+<h3 id="xillinux">Xillinux</h3>
+<p>🌐<a href="https://xillybus.com/xillinux">Xillinux: A Linux distribution for Z-Turn Lite, Zedboard, ZyBo and MicroZed</a></p>
+<p>The Xillinux distribution is a software + FPGA code kit for running a full-blown graphical desktop on the Z-Turn Lite, Zedboard and (non-Z7) ZyBo, attaching a monitor, keyboard and mouse to the board itself. Xillinux also supports MicroZed without the graphics.</p>
+<hr />
+<h3 id="ultrazed-eg-pcie-carrier-card">UltraZed-EG PCIe Carrier Card 開發紀錄</h3>
+<p>🌐<a href="https://coldnew.github.io/b394a9ce/">UltraZed-EG PCIe Carrier Card 開發紀錄 使用 PetaLinux 建立系統</a></p>
+<hr />
+<h3 id="petalinux-demo">Petalinux Demo</h3>
+<p>🎬<a href="https://www.youtube.com/watch?v=U2QBNz2XzYs">Xilinx Zynq &amp; PetaLinux Project Demo</a></p>
+<p>🎬<a href="https://www.youtube.com/watch?v=yMJrtXS_5iU">PetaLinux SPI Device Control LCD Panel</a></p>
+<p>🎬<a href="https://www.youtube.com/watch?v=nacLtYDEbRk">Creating Multi-Boot Bitstream In Xilinx FPGA</a></p>
+<p>🎬<a href="https://www.youtube.com/watch?v=pir2bskQwBA">Xilinx HLS Project Demo - SHA256 Calculation</a></p>
+<hr />
+<h3 id="perfecting-petalinux-workshop">Perfecting PetaLinux Workshop</h3>
+<p>💾<a href="https://github.com/ATaylorCEngFIET/perfecting_petalinux">Perfecting PetaLinux Workshop</a></p>
+<p>🎬<a href="https://www.youtube.com/watch?v=Tloz2tJsJow">Perfecting PetaLinux Workshop</a></p>
+<p>📚<a href="https://docs.amd.com/r/en-US/ug1144-petalinux-tools-reference-guide">PetaLinux Tools Documentation: Reference Guide (UG1144)</a></p>
+<hr />
+<h3 id="vivado-vitis-petalinux-2024-on-ubuntu-2024">Vivado Vitis Petalinux 2024 on Ubuntu 2024</h3>
+<p>🌐<a href="https://www.hackster.io/whitney-knitter/vivado-vitis-petalinux-2024-2-install-on-ubuntu-59f3c3">Vivado Vitis Petalinux 2024.2</a></p>
+<p>🌐<a href="https://www.hackster.io/juan-abelaira/hardware-acceleration-in-fpga-with-vivado-and-vitis-1d0043">Hardware acceleration in FPGA with Vivado and Vitis</a></p>
+<p>🌐<a href="https://dspdev.io/en/posts/vivado-2024-ubuntu/">Vivado 2024 on Ubuntu 2024</a></p>
+<p><img alt="" src="../images/2026/Screenshot%20from%202026-01-26%2013-23-23.png" /></p>
+<hr />
+<h3 id="zynq-petalinux-and-vitis">Zynq PetaLinux and Vitis</h3>
+<p>🌐<a href="https://www.hackster.io/whitney-knitter/fixed-platform-design-on-zynq-7000-in-petalinux-2024-1-ae3f6d">Zynq PetaLinux 2024-1</a></p>
+<p>🌐<a href="https://www.hackster.io/whitney-knitter/fixed-platform-design-on-zynq-7000-in-vitis-2024-1-5ac3a1">Fixed Platform Design on Zynq-7000 in Vitis 2024.1</a></p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.select", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
