@@ -357,3 +357,17 @@
 ### Clash6502 Haskell
 
 [Clash6502](https://github.com/polygonhell/Clash6502)
+
+### FPGA use SX3 Fifo Example
+
+💾[FPGA use SX3 Fifo Example](https://github.com/Infineon/sx3_data_slavefifo_example)
+
+---
+
+### Adiuvo Forgix LiteX Test
+
+💾[Adiuvo Forgix LiteX Test](https://github.com/enjoy-digital/aduivo_forgix_test)
+
+This repository documents one practical test flow for the LiteX-Boards adiuvo_forgix target: build the RP2350 SPIBone design, load the FPGA from MicroPython, then exercise LiteX CSRs over SPIBone.
+
+---
