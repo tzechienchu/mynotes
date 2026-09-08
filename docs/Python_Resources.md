@@ -1,12 +1,14 @@
 # Python Reource and Tutorial
 
+## UV
+
 ### 使用 uv 管理 Python 環境
 
 [使用 uv 管理 Python 環境](https://docs.astral.sh/uv/)
 
 [UV Commands](https://docs.astral.sh/uv/getting-started/features/)
 
-### UV
+---
 
 ####  UV Commands
 
@@ -48,9 +50,15 @@
 
 - gh repo create my-project --private --source=. --remote=origin --push
 
-### PySerial
+## PySerial
+
+### PySerial Example Code
 
 PySerial Example Code [pyserial_sample.md](subtitles/pyserial_sample.md)
+
+---
+
+## PyFTDI
 
 ### Python FTDI for SPI
 
@@ -173,6 +181,81 @@ slave.flush()
 
 ```
 
+### PyFTDI SPI and GPIO
+
+```py
+import time
+from pyftdi.spi import SpiController
+
+def main():
+    # 1. Instantiate the SPI Controller
+    # We specify cs_count=1 to tell PyFtdi we are only using ADBUS3 for Chip Select.
+    # Pins ADBUS4 to ADBUS7 will be released for GPIO use.
+    spi_ctrl = SpiController(cs_count=1)
+
+    # 2. Configure Channel A ('/1') of the FT2232 device
+    # Format: ftdi://ftdi:2232/<interface_num>
+    spi_ctrl.configure('ftdi://ftdi:2232h/1')
+
+    # 3. Get the SPI port instance for your slave device
+    # cs=0 targets ADBUS3. Mode 0, 1MHz clock speed.
+    spi_device = spi_ctrl.get_port(cs=0, freq=1e6, mode=0)
+
+    # 4. Get the concurrent GPIO controller on the same port
+    # This retrieves the internal MPSSE GPIO controller instead of building a new one
+    gpio = spi_ctrl.get_gpio()
+
+    # 5. Configure GPIO Direction (Pins 4 to 7)
+    # Binary layout: ADBUS[7, 6, 5, 4, 3, 2, 1, 0]
+    # Let's make ADBUS4 an Output (GPO) and ADBUS5 an Input (GPI)
+    # Pins 0-3 are handled by PyFtdi for SPI automatically, but we mask the direction register.
+    pins_to_config = 0b0011_0000  # Mask for ADBUS4 and ADBUS5
+    direction_mask = 0b0001_0000  # ADBUS4 = Output (1), ADBUS5 = Input (0)
+    
+    gpio.set_direction(pins=pins_to_config, direction=direction_mask)
+
+    print("Starting concurrent SPI & GPIO operations...")
+
+    try:
+        while True:
+            # --- GPIO WRITE ---
+            # Drive ADBUS4 HIGH (0x10)
+            print("Setting ADBUS4 HIGH...")
+            gpio.write(0x10)
+            
+            # --- SPI TRANSACTION ---
+            # Send a dummy byte (0x9F is commonly 'Read JEDEC ID') and read back 3 bytes
+            # exchange() automatically asserts and releases Chip Select (ADBUS3)
+            tx_data = [0x9F]
+            rx_data = spi_device.exchange(tx_data, readlen=3)
+            print(f"SPI Read Data: {rx_data}")
+
+            # --- GPIO READ ---
+            # Read all line states, then isolate the ADBUS5 bit (0x20)
+            port_state = gpio.read()
+            gpi_high = bool(port_state & 0x20)
+            print(f"ADBUS5 Input State is: {'HIGH' if gpi_high else 'LOW'}")
+
+            # --- GPIO WRITE ---
+            # Drive ADBUS4 LOW (0x00)
+            print("Setting ADBUS4 LOW...\n")
+            gpio.write(0x00)
+
+            time.sleep(1)
+
+    except KeyboardInterrupt:
+        print("\nStopping script.")
+    finally:
+        # Properly release the FTDI hardware resources
+        spi_ctrl.terminate()
+
+if __name__ == '__main__':
+    main()
+
+```
+
+---
+
 ### Connect PM400 to Python at Ubuntu
 
 To connect a Thorlabs PM400 power meter on Ubuntu 22.04 LTS, the most reliable approach is using the Standard Commands for Programmable Instruments (SCPI) via Python's pyvisa library. Thorlabs power meters natively present themselves as USBTMC (USB Test and Measurement Class) devices on Linux systems, eliminating the need for proprietary Windows .dll drivers
@@ -255,6 +338,8 @@ if __name__ == "__main__":
 ```
 ---
 
+## Python OpenCV
+
 ### An example of setting webcam settings via v4l2-ctl in a python script.
 
 ```py
@@ -309,7 +394,53 @@ cam = cv2.VideoCapture(1)
 
 ---
 
-### Virtual Enviroment
+### Python Precision Delay
+
+```py
+start_time_ns = time.perf_counter_ns()
+time_elapsed_ns = time.perf_counter_ns() - start_time_ns
+while(time_elapsed_ns < gap_us*1000):
+    time_elapsed_ns = time.perf_counter_ns() - start_time_ns
+```
+
+### UVC camera exposure timing in OpenCV
+
+```py
+
+ExpoTime_ms = 5
+
+fourcc = cv2.VideoWriter_fourcc('M','J','P','G')
+#camera.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25) On
+camera.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.75)
+
+camera.set(cv2.CAP_PROP_FOURCC, fourcc)
+camera.set(cv2.CAP_PROP_FRAME_WIDTH, 800)
+camera.set(cv2.CAP_PROP_FRAME_HEIGHT,600)
+camera.set(cv2.CAP_PROP_FPS, 120) # Must after CAP_PROP_FOURCC
+camera.set(cv2.CAP_PROP_EXPOSURE, ExpoTime_ms*10)
+
+```
+
+### OpenCV Camera Caputer and Display
+
+```py
+ret, frame = camera.read()
+    
+ret = camera.grab()
+ret, frame = camera.retrieve()
+
+cv2.imshow("image1", frame)
+
+if cv2.waitKey(1) & 0xff == ord('q'):
+    print("exit")
+    break
+```
+
+---
+
+## Virtual Enviroment
+
+### Virtual Enviroment Example
 
 ``` py
 python3 -m venv virtkv
@@ -321,7 +452,7 @@ source ./virtkv/bin/activate
 Other Solution
 [https://python-poetry.org/](https://python-poetry.org/)
 
-### Makefile for Python
+## Makefile for Python
 
 ### Makefile for Python project
 
@@ -480,53 +611,6 @@ print(repr(text))
 Output:
 'order # confirmed'
 ```
-
----
-
-## OpenCV
-
-### Python Precision Delay
-
-```py
-start_time_ns = time.perf_counter_ns()
-time_elapsed_ns = time.perf_counter_ns() - start_time_ns
-while(time_elapsed_ns < gap_us*1000):
-    time_elapsed_ns = time.perf_counter_ns() - start_time_ns
-```
-
-### UVC camera exposure timing in OpenCV
-
-```py
-
-ExpoTime_ms = 5
-
-fourcc = cv2.VideoWriter_fourcc('M','J','P','G')
-#camera.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25) On
-camera.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.75)
-
-camera.set(cv2.CAP_PROP_FOURCC, fourcc)
-camera.set(cv2.CAP_PROP_FRAME_WIDTH, 800)
-camera.set(cv2.CAP_PROP_FRAME_HEIGHT,600)
-camera.set(cv2.CAP_PROP_FPS, 120) # Must after CAP_PROP_FOURCC
-camera.set(cv2.CAP_PROP_EXPOSURE, ExpoTime_ms*10)
-
-```
-
-### OpenCV Camera Caputer and Display
-
-```py
-ret, frame = camera.read()
-    
-ret = camera.grab()
-ret, frame = camera.retrieve()
-
-cv2.imshow("image1", frame)
-
-if cv2.waitKey(1) & 0xff == ord('q'):
-    print("exit")
-    break
-```
-
 ---
 
 ## Python TK
