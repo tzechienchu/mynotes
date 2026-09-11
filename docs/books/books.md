@@ -2,6 +2,22 @@
 
 ## 2026
 
+### 正念老化
+
+![](../books/images/2026/Screenshot_20260909_210643_Kobo%20Books.jpg)
+
+2026-049
+
+---
+
+### 布魯克林有棵樹
+
+![](../books/images/2026/Screenshot_20260909_210617_Kobo%20Books.jpg)
+
+2026-048
+
+---
+
 ### The Fractalist 
 
 ![](../books/images/2026/IMG_0499.jpg)
