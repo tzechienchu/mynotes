@@ -14,6 +14,18 @@ ICEStorm Install [icestorm_install.md](subtitles/icestorm_install.md)
 
 [getting-started-with-litex](https://sourcesup.renater.fr/www/mic-sec-2022/labs/getting-started-with-litex.html)
 
+---
+
+### LiteLib
+
+💾[LiteLIB](https://github.com/hansfbaier/litelib)
+
+LiteLib provides a collection of small, reusable hardware building blocks for Migen-based FPGA designs. These cores fill gaps not covered by LiteX's built-in core library.
+
+Originally ported from the Amaranth-based amlib utility library, all cores are pure Migen with no LiteX dependency — they can be used standalone in any Migen project or integrated into a LiteX SoC.
+
+---
+
 ### Litex and Efinix 2026-08
 
 - Use Ubuntu 22.04 Python > 3.9
@@ -281,6 +293,16 @@ timing: $(BUILD)/$(PROJ).asc
 clean:
     rm build/*
 ```
+
+## Lattice Radiant and Propel
+
+### Lattice Propel and Radiant Install IP or Module 
+
+```sh
+ip_catalog_install -vlnv latticesemi.com:ip:debayer:1.4.1
+```
+
+---
 
 ## Chisel FPGA開発日記
 
