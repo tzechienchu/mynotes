@@ -47,13 +47,33 @@ When using the system in handheld mode or with an NS2 Pro Controller, the standa
 
 ---
 
-### Fin Gleam 水下呼吸
-
 ### Oblivion Gate 沒有必須要解
+
+### Amazing Things You Want To Get Early In Elder Scrolls Oblivion Remastered
+
+🎬[Amazing Things You Want To Get Early](https://www.youtube.com/watch?v=QngigWUPXiE)
+
+- Chillrend
+- Fin Gleam 水下呼吸
+- Umbra
+
+---
+
+### Insanely Powerful RAREST ITEMS in Oblivion Remastered
+
+🎬[Insanely Powerful RAREST ITEMS in Oblivion Remastered](https://www.youtube.com/watch?v=oYWetzZyDyg)
 
 ---
 
 ## Skyrime
+
+## 薩爾達傳說
+
+### Official Timeline
+
+![](./images/2026/original.jpg)
+
+---
 
 ## 王國之淚
 
