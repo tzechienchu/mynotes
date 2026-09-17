@@ -1,0 +1,25 @@
+<mxfile host="65bd71144e">
+    <diagram id="6DRD0VmWG-OzALPsjFqj" name="Page-1">
+        <mxGraphModel dx="566" dy="354" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&amp;lt;JTAG:16&amp;gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;1-3.5V&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;2-3.5V&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;div&gt;3-TDI-J1-4-BD1&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;4-TDO-J1-2-BD2&lt;/span&gt;&lt;/div&gt;&lt;div&gt;5-TMS-J1-6-BD3&lt;/div&gt;&lt;div&gt;6-TCK-J1-8-BD0&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;7-GND&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;8-DONE-J1-17-BD4&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;9-INIT-J1-19-BD5&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;10-PROGRAM-J1-21-BD6&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;11-GND&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;12-TX-J2-1-AD0&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;13-RX-J2-3-AD1&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;14-GND&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;15-SDA-J1-10-Open&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;16-SCL-J1-12-Open&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="120" width="160" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&amp;lt;FT245:16&amp;gt;&lt;div&gt;&lt;div&gt;AD0-J2-1-(TX)&lt;/div&gt;&lt;div&gt;AD1-J2-3-(RX)&lt;/div&gt;&lt;div&gt;AD2-J2-5&lt;/div&gt;&lt;div&gt;AD3-J2-7&lt;/div&gt;&lt;div&gt;AD4-J2-9&lt;/div&gt;&lt;div&gt;AD5-J2-11&lt;/div&gt;&lt;div&gt;AD6-J2-13&lt;/div&gt;&lt;div&gt;AD7-J2-15&lt;/div&gt;&lt;div&gt;AC0-RXF-J2-2&lt;/div&gt;&lt;div&gt;AC1-TXE-J2-4&lt;/div&gt;&lt;div&gt;AC2-RD-J2-6&lt;/div&gt;&lt;div&gt;AC3-WR-J2-8&lt;/div&gt;&lt;div&gt;AC4-SIWU-J2-10&lt;/div&gt;&lt;div&gt;AC5-CLKOUT-J12&lt;/div&gt;&lt;div&gt;AC6-OE-J14&lt;/div&gt;&lt;div&gt;GND&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="120" width="160" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="16-Pin 2.5 排針" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="80" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="16-Pin 2.5 排針" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="80" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Pay Attention to&amp;nbsp;&lt;div&gt;JTAG_En Pin&lt;/div&gt;&lt;div&gt;Neet to Pull Low&lt;/div&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;direction=west;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="410" width="120" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
