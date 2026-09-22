@@ -1,5 +1,11 @@
 # Welcome to Frank's Notebook
 
+---
+
+## [Need to Solve](./needSolve.md)
+
+---
+
 ## [2026-09 Notes](./Y2026/Y2026-09.md)
 
 ## [2026-08 Notes](./Y2026/Y2026-08.md)

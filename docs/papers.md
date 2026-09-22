@@ -190,3 +190,9 @@ Wearable_EEG_electronics_for_a_Brain-AI_Closed-Loop_System_to_enhance_autonomous
 [Silicon Photomultiplier-based Low-light in vivo Fiber Photometry](../papers/2026/Silicon%20Photomultiplier-based%20Low-light%20in%20vivo%20Fiber%20Photometry.pdf)
 
 [SiPM-based Fiber Photometry and EIS for Cortisol Detection](../papers/2026/SiPM-based%20Fiber%20Photometry%20and%20EIS%20for%20Cortisol%20Detection.pdf)
+
+## AI Machine Learning
+
+### Incident Analysis for AI Agents
+
+[Incident Analysis for AI Agents](./papers/2026/Incident%20Analysis%20for%20AI%20Agents.pdf)
