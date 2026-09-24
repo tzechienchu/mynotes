@@ -8,6 +8,8 @@
 
 LiteXModule -> SOC -> LiteXSoc -> SocCore -> SocMINI
 
+#### SDK Generation become an issue ?
+
 ---
 
 ### Litex DSP 
@@ -44,6 +46,10 @@ LiteXModule -> SOC -> LiteXSoc -> SocCore -> SocMINI
 
 ---
 
+### Harp TX/RX and Sync
+
+---
+
 ## Python
 
 ### DearPyGUI for Data flow
@@ -57,6 +63,8 @@ LiteXModule -> SOC -> LiteXSoc -> SocCore -> SocMINI
 ### CH32H417 UHSIF to FPGA
 
 ### Pi 5 Mipi no I2C
+
+---
 
 ## Instrumentation
 
