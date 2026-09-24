@@ -1,0 +1,52 @@
+<mxfile host="65bd71144e">
+    <diagram id="erdGFNemUbAa6YlYWboh" name="Page-1">
+        <mxGraphModel dx="1000" dy="511" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="46" value="Artix-7&lt;div&gt;Intel Max10&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="40" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="MC2000x" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="40" width="60" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="No Mipi DPHY IO" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="40" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="ECP5" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="200" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="Resistors" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="200" width="60" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="Soft Mipi DPHY IO" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="200" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="Efinix T13 &amp;gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;div&gt;CrossLink-NX&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="360" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="Hard Mipi DPHY IO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="360" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="Efinix Ti85 &amp;gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;UltraScale +&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="520" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="Hard Mipi DPHY IO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="520" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="Axi-Stream&lt;div&gt;Interface&lt;/div&gt;&lt;div&gt;for MIPI-CSI2&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="520" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="Implement&lt;div&gt;CSI-2&lt;/div&gt;&lt;div&gt;Data Package&lt;/div&gt;&lt;div&gt;and Rx FIFO&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="360" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="Axi-Stream&lt;div&gt;Interface&lt;/div&gt;&lt;div&gt;for MIPI-CSI2&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="40" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="Implement&lt;div&gt;CSI-2&lt;/div&gt;&lt;div&gt;Data Package&lt;/div&gt;&lt;div&gt;and Rx FIFO&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="200" width="120" height="120" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

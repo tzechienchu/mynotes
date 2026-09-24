@@ -1,0 +1,31 @@
+<mxfile host="65bd71144e">
+    <diagram id="ZEbB8Sbyuf0xwUvM35bn" name="Page-1">
+        <mxGraphModel dx="573" dy="325" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&amp;lt;JTAG:6&amp;gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;3.3V&lt;br&gt;&lt;/font&gt;&lt;div&gt;TDI-J1-4-AD1&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;TDO-J1-2-AD2&lt;/span&gt;&lt;/div&gt;&lt;div&gt;TMS-J1-6-AD3&lt;/div&gt;&lt;div&gt;TCK-J1-8-AD0&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;GND&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="80" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&amp;lt;Control:8&amp;gt;&lt;div&gt;DONE-J1-17-AD4&lt;/div&gt;&lt;div&gt;INIT-J1-19-AD5&lt;/div&gt;&lt;div&gt;PROGRAM-J1-21-AD6&lt;/div&gt;&lt;div&gt;MCSNO-J1-15-Open&lt;/div&gt;&lt;div&gt;WAKEUP-J1-11-Open&lt;/div&gt;&lt;div&gt;3.3V&lt;/div&gt;&lt;div&gt;GND&lt;/div&gt;&lt;div&gt;GND&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="80" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&amp;lt;FT245:16&amp;gt;&lt;div&gt;AD0-J2-1-(TX)&lt;/div&gt;&lt;div&gt;AD1-J2-3-(RX)&lt;/div&gt;&lt;div&gt;AD2-J2-5&lt;/div&gt;&lt;div&gt;AD3-J2-7&lt;/div&gt;&lt;div&gt;AD4-J2-9&lt;/div&gt;&lt;div&gt;AD5-J2-11&lt;/div&gt;&lt;div&gt;AD6-J2-13&lt;/div&gt;&lt;div&gt;AD7-J2-15&lt;/div&gt;&lt;div&gt;AC0-RXF-J2-2&lt;/div&gt;&lt;div&gt;AC1-TXE-J2-4&lt;/div&gt;&lt;div&gt;AC2-RD-J2-6&lt;/div&gt;&lt;div&gt;AC3-WR-J2-8&lt;/div&gt;&lt;div&gt;AC4-SIWU-J2-10&lt;/div&gt;&lt;div&gt;AC5-CLKOUT-J12&lt;/div&gt;&lt;div&gt;AC6-OE-J14&lt;/div&gt;&lt;div&gt;GND&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="240" width="160" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="22-Pin(FPC)&lt;div&gt;JTAG-FT245&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="120" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="8-Pin(2.45mm)&lt;div&gt;Control&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="120" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="22-Pin(FPC)&lt;div&gt;JTAG-FT245&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="200" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="8-Pin(2.45mm)&lt;div&gt;Control&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="200" width="120" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
