@@ -58,9 +58,13 @@ LiteXModule -> SOC -> LiteXSoc -> SocCore -> SocMINI
 
 ## Embedded
 
-### CH32H417 Serdes to FPGA
+### CH32H417 Lib
 
-### CH32H417 UHSIF to FPGA
+#### CH32H417 Serdes to FPGA
+
+#### CH32H417 UHSIF to FPGA
+
+---
 
 ### Pi 5 Mipi no I2C
 
@@ -69,3 +73,7 @@ LiteXModule -> SOC -> LiteXSoc -> SocCore -> SocMINI
 ## Instrumentation
 
 ### CH347 for GPIO Access
+
+### CH446Q 5x24 CrossBar Switch
+
+📚[CH446 Crossbar Analog Switch](https://www.wch.cn/products/CH446.html)
