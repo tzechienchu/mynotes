@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="wX2lEilXwYwtU-0gW1Co" name="Page-1">
-        <mxGraphModel dx="964" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="light-dark(#ffffff, #121212)" math="0" shadow="1">
+        <mxGraphModel dx="925" dy="453" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="light-dark(#ffffff, #121212)" math="0" shadow="1">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -95,6 +95,11 @@
                 </mxCell>
                 <mxCell id="43" edge="1" parent="1" source="38" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="24">
                     <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="-CCuEu8eQOepAMrU-mBs-55" connectable="0" parent="43" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="SPI + 2 Control" vertex="1">
+                    <mxGeometry relative="1" x="-0.1497" as="geometry">
+                        <mxPoint x="6" y="-73" as="offset"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Program ICE" vertex="1">
                     <mxGeometry height="40" width="80" x="280" y="240" as="geometry"/>
