@@ -1,0 +1,91 @@
+<mxfile host="65bd71144e">
+    <diagram id="AAyvbfcYEtJ94svD30jq" name="Page-1">
+        <mxGraphModel dx="771" dy="400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="43FEDI56UXVgNoup0ppt-3" edge="1" parent="1" source="43FEDI56UXVgNoup0ppt-1" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="43FEDI56UXVgNoup0ppt-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-13" edge="1" parent="1" source="43FEDI56UXVgNoup0ppt-1" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;fillColor=#f8cecc;strokeColor=#b85450;" target="43FEDI56UXVgNoup0ppt-12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-18" connectable="0" parent="43FEDI56UXVgNoup0ppt-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="SCLK" vertex="1">
+                    <mxGeometry relative="1" x="-0.1992" y="-1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-14" edge="1" parent="1" source="43FEDI56UXVgNoup0ppt-1" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fillColor=#f8cecc;strokeColor=#b85450;" target="43FEDI56UXVgNoup0ppt-12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-17" connectable="0" parent="43FEDI56UXVgNoup0ppt-14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="CS" vertex="1">
+                    <mxGeometry relative="1" x="-0.2326" y="2" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Max96717&lt;div&gt;SPI Master&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="160" width="200" x="200" y="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-8" edge="1" parent="1" source="43FEDI56UXVgNoup0ppt-2" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="43FEDI56UXVgNoup0ppt-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-10" connectable="0" parent="43FEDI56UXVgNoup0ppt-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="BNE" vertex="1">
+                    <mxGeometry relative="1" x="0.1429" y="-3" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Max96716F&lt;div&gt;SPI Slave&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="160" width="240" x="520" y="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-5" edge="1" parent="1" source="43FEDI56UXVgNoup0ppt-4" style="edgeStyle=none;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;shape=flexArrow;" target="43FEDI56UXVgNoup0ppt-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-6" connectable="0" parent="43FEDI56UXVgNoup0ppt-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="SCLK/MOSI/MISO" vertex="1">
+                    <mxGeometry relative="1" x="-0.3251" y="2" as="geometry">
+                        <mxPoint y="-23" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-7" edge="1" parent="1" source="43FEDI56UXVgNoup0ppt-4" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="43FEDI56UXVgNoup0ppt-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-9" connectable="0" parent="43FEDI56UXVgNoup0ppt-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="RO" vertex="1">
+                    <mxGeometry relative="1" x="-0.2715" y="2" as="geometry">
+                        <mxPoint x="2" y="-9" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="PICO&lt;div&gt;SPI Master&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="60" width="240" x="520" y="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="BNE=1 , Data to Read&lt;div&gt;RO=1, Data to Send&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="60" width="160" x="520" y="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-15" edge="1" parent="1" source="43FEDI56UXVgNoup0ppt-12" style="edgeStyle=none;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="43FEDI56UXVgNoup0ppt-1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-16" connectable="0" parent="43FEDI56UXVgNoup0ppt-15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="MOSI/MISO" vertex="1">
+                    <mxGeometry relative="1" x="0.0826" y="-1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Scope" vertex="1">
+                    <mxGeometry height="80" width="200" x="200" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Short MOSI to MISO&lt;div&gt;Data will read on PICO&lt;/div&gt;&lt;div&gt;But&lt;/div&gt;&lt;div&gt;No CS and SCLK Signl&amp;nbsp;&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="90" width="120" x="60" y="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-22" parent="1" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" value="SCLK are different on Both side&lt;div&gt;Because SCLK on 96717&lt;/div&gt;&lt;div&gt;is&lt;/div&gt;&lt;div&gt;Regenerat&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="150" width="200" x="370" y="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-23" parent="1" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" value="SPI data are transmmit in Packet" vertex="1">
+                    <mxGeometry height="80" width="120" x="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Pack" vertex="1">
+                    <mxGeometry height="60" width="60" x="520" y="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="43FEDI56UXVgNoup0ppt-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="UnPack" vertex="1">
+                    <mxGeometry height="60" width="60" x="340" y="90" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

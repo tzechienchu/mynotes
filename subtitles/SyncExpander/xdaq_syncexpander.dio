@@ -1,0 +1,49 @@
+<mxfile host="65bd71144e">
+    <diagram id="Nn_1PZHVwE1rVfoJ6H03" name="Page-1">
+        <mxGraphModel dx="715" dy="382" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="LVDS&lt;div&gt;M-LVDS&lt;/div&gt;&lt;div&gt;IC&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="120" width="160" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="CLK1&lt;div&gt;CLK2&lt;/div&gt;&lt;div&gt;RX&lt;/div&gt;&lt;div&gt;TX&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;LVDS&lt;/div&gt;" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="147.5" width="60" height="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="CLK1&lt;div&gt;CLK2&lt;/div&gt;&lt;div&gt;RX&lt;/div&gt;&lt;div&gt;TX&lt;/div&gt;&lt;div&gt;TX_EN&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;CMOS&lt;/div&gt;" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="130" width="60" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="CLK1&lt;div&gt;CLK2&lt;/div&gt;&lt;div&gt;RX&lt;/div&gt;&lt;div&gt;TX&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;LVDS&lt;/div&gt;" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="407.5" width="60" height="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="ICE40UP8K&lt;br&gt;&lt;div&gt;+&lt;/div&gt;&lt;div&gt;DAC&lt;/div&gt;&lt;div&gt;ADC&lt;/div&gt;&lt;div&gt;DIO&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="380" width="160" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="SPI" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="405" width="60" height="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="efinix 10K&lt;br&gt;&lt;div&gt;+&lt;/div&gt;&lt;div&gt;DAC 16&lt;/div&gt;&lt;div&gt;ADC 16&lt;/div&gt;&lt;div&gt;DIO LA Grade&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="750" width="160" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="CLK1&lt;div&gt;CLK2&lt;/div&gt;&lt;div&gt;RX&lt;/div&gt;&lt;div&gt;TX&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;LVDS&lt;/div&gt;" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="777.5" width="60" height="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="ICLink&lt;br&gt;&lt;div&gt;CK&lt;/div&gt;&lt;div&gt;TX&lt;/div&gt;&lt;div&gt;RX&lt;/div&gt;" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="770" width="60" height="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Analog / Digital IO" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="580" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Analog / Digital IO" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="950" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="FPGA as SPI slave TimeStamp Provider" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="380" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="FPGA as TimeStamp Provider&lt;div&gt;and&lt;/div&gt;&lt;div&gt;DAC/ADC/IO&lt;/div&gt;&lt;div&gt;Sampler&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;ICELink to XDaq&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="720" width="160" height="160" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

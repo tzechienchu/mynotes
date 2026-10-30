@@ -1,0 +1,34 @@
+<mxfile host="65bd71144e">
+    <diagram id="Yvtkhj3Mn6LKw3Wo107G" name="Page-1">
+        <mxGraphModel dx="750" dy="383" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Source Code" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="160" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="MIPI as IO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="160" width="80" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Source Code" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="400" width="240" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="MIPI as Instance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="490" width="95" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Don&#39;t know how to generate this, yet." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="305" y="80" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="All are verilog" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;direction=south;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="460" width="80" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Efinix" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="40" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Lattice and Other" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="320" width="120" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
