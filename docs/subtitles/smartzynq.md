@@ -20,6 +20,8 @@
 
 ## Petalinux Page
 
+🌐[PetaLinux Install](http://www.hellofpga.com/index.php/2022/11/28/petalinux/)
+
 🌐[PS Setup and PL](http://www.hellofpga.com/index.php/2025/02/23/smart_zynq_petalinux_01/)
 
 🌐[Petalinux of TF](http://www.hellofpga.com/index.php/2025/02/23/smart_zynq_building_petalinux/)

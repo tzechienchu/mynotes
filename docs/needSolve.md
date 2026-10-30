@@ -50,6 +50,10 @@ LiteXModule -> SOC -> LiteXSoc -> SocCore -> SocMINI
 
 ---
 
+### TTA MCU Design
+
+---
+
 ## Python
 
 ### DearPyGUI for Data flow
