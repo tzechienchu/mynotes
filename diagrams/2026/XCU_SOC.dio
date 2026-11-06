@@ -1,0 +1,69 @@
+<mxfile host="65bd71144e">
+    <diagram id="fsMcC1YoVt3273UElbn_" name="Page-1">
+        <mxGraphModel dx="908" dy="472" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-3" edge="1" parent="1" source="pvNK_qyTn0lxOY4d2du4-1" style="edgeStyle=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="pvNK_qyTn0lxOY4d2du4-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-6" connectable="0" parent="pvNK_qyTn0lxOY4d2du4-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="MIPI" vertex="1">
+                    <mxGeometry relative="1" x="-0.1968" y="-2" as="geometry">
+                        <mxPoint x="14" y="-12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="XCU" vertex="1">
+                    <mxGeometry height="80" width="120" x="120" y="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-4" edge="1" parent="1" source="pvNK_qyTn0lxOY4d2du4-2" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="pvNK_qyTn0lxOY4d2du4-1">
+                    <mxGeometry relative="1" x="0.0862" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="340" y="190"/>
+                            <mxPoint x="340" y="160"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-5" connectable="0" parent="pvNK_qyTn0lxOY4d2du4-4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="I2C" vertex="1">
+                    <mxGeometry relative="1" x="0.0362" y="-1" as="geometry">
+                        <mxPoint x="-12" y="11" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-7" edge="1" parent="1" source="pvNK_qyTn0lxOY4d2du4-2" style="edgeStyle=none;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="pvNK_qyTn0lxOY4d2du4-1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="210" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-8" connectable="0" parent="pvNK_qyTn0lxOY4d2du4-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Config IO" vertex="1">
+                    <mxGeometry relative="1" x="0.055" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Pi 5" vertex="1">
+                    <mxGeometry height="200" width="120" x="380" y="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-11" edge="1" parent="1" source="pvNK_qyTn0lxOY4d2du4-9" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="pvNK_qyTn0lxOY4d2du4-10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Power Gen" vertex="1">
+                    <mxGeometry height="60" width="120" x="120" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-12" edge="1" parent="1" source="pvNK_qyTn0lxOY4d2du4-10" style="edgeStyle=none;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="pvNK_qyTn0lxOY4d2du4-9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-13" edge="1" parent="1" source="pvNK_qyTn0lxOY4d2du4-10" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="180" y="560" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Serializer&lt;div&gt;FPGA&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="60" width="120" x="120" y="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="pvNK_qyTn0lxOY4d2du4-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Nothing to Say" vertex="1">
+                    <mxGeometry height="60" width="120" x="380" y="360" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

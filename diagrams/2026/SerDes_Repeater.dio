@@ -1,0 +1,73 @@
+<mxfile host="65bd71144e">
+    <diagram id="TvQze4W8Hl-CcIK8_7Ee" name="Page-1">
+        <mxGraphModel dx="961" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="" vertex="1">
+                    <mxGeometry height="240" width="320" x="100" y="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="" vertex="1">
+                    <mxGeometry height="250" width="320" x="100" y="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="" vertex="1">
+                    <mxGeometry height="430" width="140" x="290" y="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-6" edge="1" parent="1" source="C17FDRC8b_ILNp7tULzy-1" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="C17FDRC8b_ILNp7tULzy-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-16" edge="1" parent="1" source="C17FDRC8b_ILNp7tULzy-1" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" target="C17FDRC8b_ILNp7tULzy-15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="MAX96717" vertex="1">
+                    <mxGeometry height="80" width="80" x="130" y="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-7" edge="1" parent="1" source="C17FDRC8b_ILNp7tULzy-2" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="C17FDRC8b_ILNp7tULzy-3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="MAX96716A" vertex="1">
+                    <mxGeometry height="80" width="80" x="320" y="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-8" edge="1" parent="1" source="C17FDRC8b_ILNp7tULzy-3" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="C17FDRC8b_ILNp7tULzy-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Repeater&lt;div&gt;FPGA&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="80" width="80" x="320" y="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-9" edge="1" parent="1" source="C17FDRC8b_ILNp7tULzy-4" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" target="C17FDRC8b_ILNp7tULzy-5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="MAX96717" vertex="1">
+                    <mxGeometry height="80" width="80" x="320" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="MAX96716A" vertex="1">
+                    <mxGeometry height="80" width="80" x="130" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-11" edge="1" parent="1" source="C17FDRC8b_ILNp7tULzy-10" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="C17FDRC8b_ILNp7tULzy-5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Host&lt;div&gt;FPGA&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="80" width="80" x="130" y="480" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="XCU&lt;div&gt;FPGA&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="80" width="80" x="130" y="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Host to Green Serde" vertex="1">
+                    <mxGeometry height="60" width="160" x="520" y="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Repeater to Blue SerDes" vertex="1">
+                    <mxGeometry height="60" width="160" x="520" y="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Repeater FPGA Handshake to Host" vertex="1">
+                    <mxGeometry height="60" width="160" x="520" y="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Repeater FPGA Handshake to XCU&lt;div&gt;or&lt;/div&gt;&lt;div&gt;Configuration&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="60" width="160" x="520" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="C17FDRC8b_ILNp7tULzy-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="Repeater Passthrough" vertex="1">
+                    <mxGeometry height="60" width="160" x="520" y="400" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
