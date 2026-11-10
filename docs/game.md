@@ -200,6 +200,12 @@ When using the system in handheld mode or with an NS2 Pro Controller, the standa
 	隊伍裡一定要帶一個主要負責輔助的法師隨從，技能最好有「冰刃之佑」（冰附魔，龍怕冰）和「沉默術」。
     沉默術能直接封印龍的吐火與大範圍隕石魔法，讓牠變成一隻大壁虎。
 
+#### 龍族教義 2 (Dragon’s Dogma 2) 主線及支線任務圖文攻略
+
+[龍族教義 2 (Dragon’s Dogma 2) 主線及支線任務圖文攻略 part1](https://www.entertainment14.net/blog/post/110991767-%e9%be%8d%e6%97%8f%e6%95%99%e7%be%a9-2-dragons-dogma-2-%e4%b8%bb%e7%b7%9a%e5%8f%8a%e6%94%af%e7%b7%9a%e4%bb%bb%e5%8b%99%e5%9c%96%e6%96%87%e6%94%bb%e7%95%a5)
+
+[龍族教義 2 (Dragon’s Dogma 2) 主線及支線任務圖文攻略 part2](https://www.entertainment14.net/blog/post/110992191-%E9%BE%8D%E6%97%8F%E6%95%99%E7%BE%A9-2-dragons-dogma-2-%E4%B8%BB%E7%B7%9A%E5%8F%8A%E6%94%AF%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E6%96%87%E6%94%BB%E7%95%A5-part2)
+
 ---
 
 ## 薩爾達傳說
