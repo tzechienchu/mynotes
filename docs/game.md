@@ -1,5 +1,13 @@
 # Game Notes
 
+## Skyrim
+
+### The 10 BEST Skyrim Quests Most Players NEVER See
+
+[The 10 BEST Skyrim Quests Most Players NEVER See](https://www.youtube.com/watch?v=9yXbNfHOBIA)
+
+---
+
 ## Obvilion
 
 ### 偷竊前要儲存
