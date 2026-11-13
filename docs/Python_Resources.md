@@ -612,7 +612,95 @@ Output:
 'order # confirmed'
 ```
 ---
+## Python KiCAD
 
+### Python Generate Block Schematic with IO Port
+
+```py
+from string import Template
+import uuid
+
+# Define the template using $placeholders
+header_template = Template(
+'(kicad_sch \r'
+'	(version 20260306) \r'
+'	(generator "eeschema") \r'
+'	(generator_version "10.0") \r'
+'	(uuid "$uuid") \r'
+'	(paper "A4") \r'
+'	(lib_symbols) \r'
+)
+
+footer_template = Template(
+'	(sheet_instances \r'
+'		(path "/" \r'
+'			(page "1") \r'
+'		)\r'
+'	)\r'
+'	(embedded_fonts no)\r'
+')\r'
+)
+
+label_template = Template(
+'	(hierarchical_label "$label" \r'
+'		(shape $shape) \r'
+'		(at $x $y $angle)\r'
+'		(effects \r'
+'			(font (size 3.81 3.81) ) \r'
+'			(justify $justify) \r'
+'		)\r'
+'		(uuid "$uuid") \r'
+'	)\r'
+)
+
+def create_hierarchical_label(label, shape="input", x=50, y=50, angle=0, justify="left", custom_uuid=None):
+    # Generate a new UUIDv4 automatically if one isn't provided
+    label_uuid = custom_uuid if custom_uuid else str(uuid.uuid4())
+    
+    return label_template.substitute(
+        label=label,
+        shape=shape,
+        x=x,
+        y=y,
+        angle=angle,
+        justify=justify,
+        uuid=label_uuid
+    )
+
+def generate_block(blockname, ports):
+    line = 50
+    ystep = 6
+    path = blockname+'.kicad_sch'
+    f = open(path, 'w')
+    header = header_template.substitute(
+        uuid=str(uuid.uuid4())
+    )
+    f.write(header)
+
+    for i, (k, v) in enumerate(ports.items()):
+        print(i, k, v)
+
+        pin = create_hierarchical_label(
+            label=k, 
+            shape=v,
+            y=line, 
+            custom_uuid=str(uuid.uuid4())
+        )
+        f.write(pin)
+        line += ystep
+
+    footer = footer_template.substitute()
+    f.write(footer)
+
+ports = {
+	"I2C-SCL":"input",
+	"I2C-SDA":"bidirectional"
+}
+
+
+generate_block("block1",ports)
+
+```
 ## Python TK
 
 ### Python UART TK GUI Program
