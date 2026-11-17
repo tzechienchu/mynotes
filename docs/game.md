@@ -223,7 +223,10 @@ When using the system in handheld mode or with an NS2 Pro Controller, the standa
 ![](./images/2026/original.jpg)
 
 ---
+## 時之笛
 
 ## 王國之淚
+
+## 禦天劍
 
 ## 曠野之息
