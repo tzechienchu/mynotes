@@ -1,4 +1,4 @@
-# Game Notes
+# Game Notes 🌐 🎬 💾 📚 📑 🔬
 
 ## Skyrim
 

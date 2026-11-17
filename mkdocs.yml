@@ -26,6 +26,7 @@ nav:
   #- '*Peoples' : './private/peoples.md'
   #- '*Projects': './private/projects.md'
   #- '*Personal': './private/personal.md'
+  #- '*Agent': './private/agent.md'
   #- '*Source (Local)': './private/local_source.md'
   #- 'TWOT': './TWOT/twot.md'
   - 'Help' : 'Help.md'

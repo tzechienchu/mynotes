@@ -2,6 +2,14 @@
 
 ## 2026
 
+### Six Math Essentials
+
+![](../books/images/2026/IMG_0533.jpg)
+
+2026-061
+
+---
+
 ### The 21th Century Brain
 
 ![](../books/images/2026/IMG_0532.jpg)
@@ -11,16 +19,6 @@
 ---
 
 ### 回憶我的苦妓
-
-![](../books/images/2026/IMG_0531.jpg)
-
-2026-059
-
-不是苦妓的回憶錄 是 回憶與一位憂鬱的妓女的點點滴滴
-
----
-
-### 回憶苦妓
 
 ![](../books/images/2026/IMG_0531.jpg)
 
