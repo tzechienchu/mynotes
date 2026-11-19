@@ -1,0 +1,67 @@
+<mxfile host="65bd71144e">
+    <diagram id="INjnVKDUcLmja0CE4r3G" name="Page-1">
+        <mxGraphModel dx="750" dy="383" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="36" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="590" width="160" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="MIPI&lt;div&gt;0&lt;/div&gt;&lt;div&gt;22Pin&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="220" width="40" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="MIPI&lt;div&gt;1&lt;/div&gt;&lt;div&gt;22Pin&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="380" width="40" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Lattice&lt;div&gt;CrossLink-NX&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: open_sansregular, arial, helvetica, clean, &amp;quot;sans-serif&amp;quot;; white-space: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;LIFCL-40&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: open_sansregular, arial, helvetica, clean, &amp;quot;sans-serif&amp;quot;; white-space: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;LIFCL-17&lt;/span&gt;&lt;span style=&quot;color: rgb(51, 51, 51); font-family: open_sansregular, arial, helvetica, clean, &amp;quot;sans-serif&amp;quot;; white-space: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="260" width="240" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="FT2232(1.8V)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="610" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Type-C" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="660" width="40" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="EEPROM" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+                    <mxGeometry x="307.5" y="415" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="290" width="20" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="290" width="20" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="LVDS" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="530" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="8 Pair&lt;div&gt;16 Pin&lt;/div&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;direction=south;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="490" width="80" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="24 Pin IO" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="180" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="&amp;nbsp;24 Pin" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="110" width="95" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="jtag and uart or ft245" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="530" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="jtag : 4&lt;div&gt;uart : 2&lt;/div&gt;&lt;div&gt;ft245:15&lt;/div&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;direction=north;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="480" width="90" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="HDMI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="590" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="Power" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="400" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="1.8V" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="205" y="425" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="Connector all use&lt;div&gt;FPC ?&lt;/div&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="160" width="120" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
