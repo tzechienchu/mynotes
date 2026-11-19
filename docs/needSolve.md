@@ -1,5 +1,15 @@
 # Need to Solve
 
+## AI Assist Working Enviroment
+
+### What is LLM ?
+
+### What is Agent ?
+
+### How to Prompt ? What to Change ? What to Include ?
+
+---
+
 ## FPGA
 
 ### Litex 2 Independent CPU
